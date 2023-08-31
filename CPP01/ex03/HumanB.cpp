@@ -6,19 +6,24 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:07:24 by rarraji           #+#    #+#             */
-/*   Updated: 2023/08/30 19:20:51 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/08/31 13:03:35 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#include"HumanB.hpp"
+#include"Weapon.hpp"
 
-
-class HumanB
-{
-  
-  
-};
-
-
-#endif
+  Humanb::Humanb(std::string name) : name(name)
+  {
+  }
+  void Humanb::set_weapen(Weapon &weapon)
+  {
+    this->weapon = &weapon;
+  }
+  void Humanb::attack()
+  {
+    std::cout << this->name << "attacks with their" << this->weapon->get_type() << std::endl;
+  }
+  Humanb::~Humanb()
+  {
+  }

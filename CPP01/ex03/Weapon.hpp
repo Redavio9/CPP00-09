@@ -6,24 +6,24 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:44:04 by rarraji           #+#    #+#             */
-/*   Updated: 2023/08/30 19:06:45 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/08/31 13:01:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VIOLENCE_HPP
-# define VIOLENCE_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-#include<istream>
-#include<string.h>
+# include <iostream>
 
 class Weapon
 {
   private:
     std::string type;
   public:
-    void setType(std::string x);
-    std::string getType(void);
-    
+    Weapon(std::string type);
+    const std::string &get_type();
+    void	set_Type(std::string type);
+    ~Weapon();
 };
 
 #endif

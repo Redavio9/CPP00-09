@@ -1,42 +1,72 @@
 #include <iostream>
 #include <string>
 
-class Zombie {
-public:
-    Zombie() {} // Constructeur par défaut
-
-    Zombie(std::string name) : name(name) {}
-    void announce() const {
-        std::cout << name << " : Braaaiiinnssss..." << std::endl;
-    }
-
-private:
-    std::string name;
+class Weapon
+{
+	private:
+		std::string type;
+	public:
+		Weapon(std::string type);
+		void setType(std::string newtype);
+		std::string getType() const;
+		~Weapon();
 };
 
-Zombie* zombieHorde(int N, std::string name) {
-    Zombie* horde = new Zombie[N]; // Alloue N objets Zombie en une seule allocation
+class HumanA
+{
+	private:
+			std::string name;
+			Weapon &weapon;
+            // L'arme de HumanA ne peut pas être
+            // NULL et doit être modifiée en externe, elle est donc utilisée comme variable de référence
+	public:
+			HumanA(std::string name, Weapon &weapon);
+            // Dans les constructeurs qui initialisent des variables de référence,
+            // vous devez utiliser une liste d'initialisation plutôt que la méthode habituelle.
+			void attack();
+			void setWeapon(Weapon &newweapon);
+			~HumanA();
+};
 
-    for (int i = 0; i < N; ++i) {
-        horde[i] = Zombie(name); // Initialise chaque zombie avec le nom donné
-    }
+class HumanB
+{
+	private:
+			std::string name;
+			Weapon *weapon;
+            // HumanB의 weapon은 NULL일 수 있고 외부에서 변경해야하기에 ptr변수로 사용
+	public:
+			HumanB(std::string name);
+			HumanB(std::string name, Weapon &weapon);
+			void attack();
+			void setWeapon(Weapon &newweapon);
+			~HumanB();
+};
 
-    return horde; // Retourne un pointeur vers le premier zombie
+HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon)
+{
 }
+// Constructeur utilisant la liste d'initialisation
 
-int main() {
-    int numZombies = 5;
-    std::string zombieName = "Fred";
-
-    Zombie* horde = zombieHorde(numZombies, zombieName);
-
-    // Appel de la fonction announce() pour chacun des zombies
-    for (int i = 0; i < numZombies; ++i) {
-        horde[i].announce();
-    }
-
-    // N'oubliez pas de libérer la mémoire allouée
-    delete[] horde;
-
+HumanB::HumanB(std::string name)
+{
+	this->name = name;
+}
+int main()
+{
+    // {
+    Weapon club = Weapon("crude spiked club");
+    HumanA bob("Bob", club);
+    bob.attack();
+    club.setType("some other type of club");
+    bob.attack();
+    // }
+    // {
+    // Weapon club = Weapon("crude spiked club");
+    // HumanB jim("Jim");
+    // jim.setWeapon(club);
+    // jim.attack();
+    // club.setType("some other type of club");
+    // jim.attack();
+    // }
     return 0;
 }

@@ -6,17 +6,25 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:04:15 by rarraji           #+#    #+#             */
-/*   Updated: 2023/08/30 19:06:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/08/31 13:01:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Weapon.hpp"
 
-void Weapon::setType(std::string x)
-{
-    type = x;
-}
-std::string Weapon::getType(void)
-{
-  return(type);
-}
+ Weapon::Weapon(std::string type)
+ {
+  this->type = type;
+ }
+
+ const std::string& Weapon::get_type()
+ {
+    return(this->type);
+ }
+ void	Weapon::set_Type(std::string	type)
+ {
+    this->type = type;
+ }
+ Weapon::~Weapon()
+ {
+ }
