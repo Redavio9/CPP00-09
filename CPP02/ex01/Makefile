@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/02 19:56:31 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/03 21:43:21 by rarraji          ###   ########.fr        #
+#    Created: 2023/09/04 11:31:11 by rarraji           #+#    #+#              #
+#    Updated: 2023/09/04 11:31:12 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,4 +28,3 @@ clean : rm -rf $(NAME)
 fclean : clean
 
 re: fclean all
-
