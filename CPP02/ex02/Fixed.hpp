@@ -5,31 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 11:34:49 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/06 08:45:34 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/06 10:44:58 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/06 12:54:52 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include<iostream>
-#include <cmath>
+
+#include<istream>
+
 class Fixed
 {
-  private:
+private:
     int fixed_point;
     static const int fractional_bits = 8;
-  public:
-    Fixed();
-    Fixed(const int i);
-    Fixed(const float nb);
-    float toFloat( void ) const;
-    int toInt( void ) const;
-    int getRawBits( void );
-    void setRawBits( int const raw ); 
-    Fixed &operator=(const Fixed &assign);
-    ~Fixed();
+
+public:
+    bool operator>(const Fixed &c2) const;
+    bool operator<(const Fixed &c2) const;
+    bool operator<=(const Fixed &c2) const;
+    bool operator>=(const Fixed &c2) const;
+    bool operator==(const Fixed &c2) const;
+    bool operator!=(const Fixed &c2) const;
+    bool operator!=(const Fixed &c2) const;
+    bool operator!=(const Fixed &c2) const;
+    bool operator!=(const Fixed &c2) const;
 };
 
 #endif

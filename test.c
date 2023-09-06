@@ -6,4 +6,8 @@ int main() {
     if (c == "reda")
         printf("%s\n", c);
     return 0;
-}
+}  
+
+
+
+#khoya pidro
