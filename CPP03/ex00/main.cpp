@@ -5,23 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 13:35:21 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/06 20:07:35 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/07 12:45:41 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/07 12:45:42 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Fixed.hpp"
-
-int main( void ) 
-{
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
-}
