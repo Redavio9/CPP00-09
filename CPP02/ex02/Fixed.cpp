@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:13:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/08 10:47:51 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/09 14:58:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ bool Fixed::operator==(const Fixed &c2) const
 }
 
 // --------------- OPERATOR + - * / ----------------------//
-
 
 Fixed Fixed::operator+(const Fixed &c2)
 {
@@ -118,3 +117,4 @@ const Fixed& Fixed::max(const Fixed &fix1, const Fixed &fix2)
 		return (fix1);
 	return (fix2);
 }
+

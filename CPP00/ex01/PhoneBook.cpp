@@ -6,18 +6,13 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:43:18 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/02 10:23:07 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/10 15:29:39 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include"Contact.hpp"
 #include"PhoneBook.hpp"
-
-
-
-
-
 
 
 int main()
@@ -38,19 +33,29 @@ int main()
         {
             std::cout << "------->First Name : ";
             std::cin >> y;
-            book[index].ft_set_name(y);
+            if(std::cin.eof())
+                exit(0);
+            book[index % 8].ft_set_name(y);
             std::cout << "------->Last Name : ";
             std::cin >> y;
-            book[index].ft_set_lastname(y);
+            if(std::cin.eof())
+                exit(0);
+            book[index % 8].ft_set_lastname(y);
             std::cout << "------->Nickname : ";
             std::cin >> y;
-            book[index].ft_set_phonenumber(y);
+            if(std::cin.eof())
+                exit(0);
+            book[index % 8].ft_set_phonenumber(y);
             std::cout << "------->phone number : ";
             std::cin >> y;
-            book[index].ft_set_nickname(y);
+            if(std::cin.eof())
+                exit(0);
+            book[index % 8].ft_set_nickname(y);
             std::cout << "------->Darkestsecret : ";
             std::cin >> y;
-            book[index].ft_set_darkestsecret(y);
+            if(std::cin.eof())
+                exit(0);
+            book[index % 8].ft_set_darkestsecret(y);
             std::cout << std::endl;
             index++;
         }
@@ -92,6 +97,8 @@ int main()
             std::cout << "____________________________________________" << std::endl;
             std::cout << "entrer index contact : ";
             std::cin >> input2;
+            if(std::cin.eof())
+                exit(0);
             std::cout << "------->First Name : ";
             std::cout << book[input2].ft_get_firstname() << std::endl;
             std::cout << "------->Last Name : ";
