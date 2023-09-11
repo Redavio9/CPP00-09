@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 12:45:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/11 11:05:48 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/11 11:48:33 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/11 11:49:35 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main()
-{
-  ClapTrap obj("Sollix");
+#include "ClapTrap.hpp"
 
-  obj.attack("reda");
-  obj.beRepaired(9);
-  obj.takeDamage(3);
-}
+class FragTrap: public ClapTrap {
+	public:
+		FragTrap();
+		FragTrap( std::string _name);
+		~FragTrap();
+		void	attack(std::string const & target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+		void  highFivesGuys();
+};
+
+#endif

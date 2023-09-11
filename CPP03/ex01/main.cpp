@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 12:45:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/11 11:05:48 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/11 11:36:57 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/11 11:38:07 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#include"ScavTrap.hpp"
 
 int main()
 {
-  ClapTrap obj("Sollix");
+  ScavTrap obj("Sollix");
 
   obj.attack("reda");
   obj.beRepaired(9);

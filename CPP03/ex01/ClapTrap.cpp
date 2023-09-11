@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 12:45:35 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/11 10:59:45 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/11 11:09:51 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/11 11:10:19 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,3 @@ void ClapTrap::beRepaired(unsigned int amount)
   this->Hit_points += amount;
   std::cout << "ClapTrap " << this->name << " is repaired by " << amount << " and remaning hp is " << this->Energy_points << std::endl;
 }
-
-
-

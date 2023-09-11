@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 12:45:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/11 11:05:48 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/11 11:10:03 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/11 11:21:08 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-int main()
+#include<iostream>
+
+class ClapTrap
 {
-  ClapTrap obj("Sollix");
+  protected:
+    std::string name;
+    int Hit_points;
+    int Energy_points;
+    int Attack_damage;
+  public:
+    ClapTrap();
+    ClapTrap(std::string name);
+    void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+    ~ClapTrap();
+};
 
-  obj.attack("reda");
-  obj.beRepaired(9);
-  obj.takeDamage(3);
-}
+#endif

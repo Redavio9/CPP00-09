@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/07 12:45:43 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/11 11:06:18 by rarraji          ###   ########.fr        #
+#    Created: 2023/09/11 11:42:14 by rarraji           #+#    #+#              #
+#    Updated: 2023/09/11 11:42:38 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = FragTrap
 
-SRC  = main.cpp ClapTrap.cpp
+SRC  = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 CC   = c++
 
