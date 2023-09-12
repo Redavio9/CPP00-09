@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
+#    By: hp <hp@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/02 19:56:31 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/03 21:43:21 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/05 13:00:01 by hp               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(SRC)
 			$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-clean : rm -rf $(NAME)
+clean : rm -f $(NAME)
 
 fclean : clean
 

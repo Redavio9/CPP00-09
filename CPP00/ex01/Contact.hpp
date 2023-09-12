@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hp <hp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 12:57:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/01 11:37:05 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/12 12:13:54 by hp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class Contact
         void ft_set_phonenumber(std::string x);
         void ft_set_nickname(std::string x);
         void ft_set_darkestsecret(std::string x);
-                    // -----------------//
         std::string ft_get_firstname();
         std::string ft_get_lastname();
         std::string ft_get_phonenumber();

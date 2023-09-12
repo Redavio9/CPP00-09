@@ -3,35 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
+#    By: hp <hp@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 15:54:50 by rarraji           #+#    #+#              #
-#    Updated: 2023/08/26 10:47:37 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/12 13:03:47 by hp               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME	= megaphone
+	
+CC		= c++
+FLAGS	= -Wall -Wextra -Werror -std=c++98
+RM		= rm -rf
 
-SRC = magaphone.cpp
+#Colors:
+GREEN		=	\e[92;5;118m
+YELLOW		=	\e[93;5;226m
+GRAY		=	\e[33m
 
-OBJ = megaphone.o
 
-CPP = c++ 
+all: $(NAME)
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+$(NAME): 
+	@printf "$(GRAY) 	- Compiling $(NAME)... \n"
+	@ $(CC) $(FLAGS) megaphone.cpp -o $(NAME)
+	@printf "$(GREEN)    - Executable ready.\n$"
 
-%.o : %.c
-	${CC} ${CFLAGS} -c $< -o $@
-
-all : $(NAME)
-
-$(NAME) : $(OBJ)
-		$(CPP) $(OBJ) $(CFLAGS) -o $(NAME)
 clean:
-	@rm -f $(OBJ)
+	@$(RM) $(NAME)
+	@printf "$(YELLOW)    - Executable removed.\n"
 
-fclean: clean
-	@rm -f $(NAME)
+fclean:
+	@$(RM) $(NAME)
+	@printf "$(YELLOW)    - Executable removed.\n"
 
-re: fclean all
-
+re: clean all
