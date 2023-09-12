@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:52:03 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 10:10:06 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/12 10:04:48 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/12 10:06:10 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Dog.hpp"
-#include"Cat.hpp"
+#include"animal.hpp"
 
-
-int main()
+Animal::Animal()
 {
-  Animal a;
-  Animal *b = new(Dog);
-  Animal *c = new(Cat);
-  b->makeSound();
-  c->makeSound();
-  delete b;
-  delete c;
+}
+Animal::Animal(std::string type)
+{
+  this->type = type;
+}
+
+Animal::~Animal()
+{
+}
+
+void Animal::makeSound()
+{
+  std::cout << "I AM ANIMAL Meow! Meow! Woof! Woof!\n";
 }

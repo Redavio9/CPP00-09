@@ -1,26 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:52:03 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 10:10:06 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/12 10:09:07 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/12 10:09:08 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Dog.hpp"
-#include"Cat.hpp"
-
-
-int main()
-{
-  Animal a;
-  Animal *b = new(Dog);
-  Animal *c = new(Cat);
-  b->makeSound();
-  c->makeSound();
-  delete b;
-  delete c;
-}

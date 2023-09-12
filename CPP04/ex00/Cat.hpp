@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:52:03 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 10:10:06 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/12 09:46:08 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/12 09:48:17 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Dog.hpp"
-#include"Cat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
+#include"animal.hpp"
 
-int main()
+class Cat:public Animal
 {
-  Animal a;
-  Animal *b = new(Dog);
-  Animal *c = new(Cat);
-  b->makeSound();
-  c->makeSound();
-  delete b;
-  delete c;
-}
+  private:
+    std::string type;
+  public:
+    Cat();
+    Cat(std::string type);
+    ~Cat();
+    void makeSound(); 
+};
+
+#endif
