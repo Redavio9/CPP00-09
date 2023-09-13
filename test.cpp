@@ -70,3 +70,24 @@ int main()
     // }
     return 0;
 }
+
+
+
+
+
+
+while (true) {
+		displayPhoneBook();
+		std::cout << "Enter the index number(0 ~ " << len - 1 << "): ";
+		std::cin >> search;
+		if (std::cin.eof())
+			return ;
+		if (std::cin.fail() || search < 0 || search >= len) 
+		{
+			std::cout << "\nAn error occurred in the input. Please try again.\n";
+			std::cin.clear();
+			std::cin.ignore(4096, '\n');
+			continue;
+		}
+		break;
+}

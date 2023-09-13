@@ -3,22 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp <hp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 12:57:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 12:13:54 by hp               ###   ########.fr       */
+/*   Updated: 2023/09/13 09:27:01 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-
-
 #include <iostream>
 #include <iomanip>
-
-
 
 class Contact
 {

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hp <hp@student.42.fr>                      +#+  +:+       +#+         #
+#    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 15:54:50 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/12 13:03:47 by hp               ###   ########.fr        #
+#    Updated: 2023/09/12 15:36:51 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,26 +15,27 @@ NAME	= megaphone
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
+SRC		= megaphone.cpp
 
 #Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33m
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
 
 
 all: $(NAME)
 
 $(NAME): 
-	@printf "$(GRAY) 	- Compiling $(NAME)... \n"
-	@ $(CC) $(FLAGS) megaphone.cpp -o $(NAME)
-	@printf "$(GREEN)    - Executable ready.\n$"
+	@printf "$(YELLOW) Compiling $(NAME)... \n"
+	@ $(CC) $(FLAGS) $(SRC) -o $(NAME)
+	@printf "$(GREEN) Executable ready.\n"
 
 clean:
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.\n"
+	@printf "$(RED)    - Executable removed.\n"
 
 fclean:
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.\n"
+	@printf "$(RED)    - Executable removed.\n"
 
 re: clean all

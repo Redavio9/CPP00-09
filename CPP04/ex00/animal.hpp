@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:35:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 09:57:36 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/13 11:43:29 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Animal
   public:
     Animal();
     Animal(std::string type);
-    ~Animal();
-    virtual void makeSound(); 
+    virtual ~Animal();
+    virtual void  makeSound(); 
 };
 
 #endif
