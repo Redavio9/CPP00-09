@@ -3,28 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hp <hp@student.42.fr>                      +#+  +:+       +#+         #
+#    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 15:23:15 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/05 13:01:16 by hp               ###   ########.fr        #
+#    Updated: 2023/09/14 10:33:30 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = prg
+NAME	= prg
+	
+CC		= c++
+FLAGS	= -Wall -Wextra -Werror -std=c++98
+RM		= rm -rf
+SRC		= main.cpp
 
-SRC  = main.cpp
+#Colors:
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
 
-CC   = c++
+all: $(NAME)
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+$(NAME): 
+	@printf "$(YELLOW) Compiling $(NAME)... \n"
+	@ $(CC) $(FLAGS) $(SRC) -o $(NAME)
+	@printf "$(GREEN) $(NAME) ready.\n"
 
-all : $(NAME)
+clean:
+	@$(RM) $(NAME)
+	@printf "$(RED) $(NAME) removed.\n"
 
-$(NAME) : $(SRC)
-			$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+fclean:
+	@$(RM) $(NAME)
+	@printf "$(RED) $(NAME) removed.\n"
 
-clean : rm -f $(NAME)
-
-fclean : clean
-
-re: fclean all
+re: clean all

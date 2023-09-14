@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:42:52 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/13 11:48:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 10:57:00 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class ClapTrap
   public:
     ClapTrap();
     ClapTrap(std::string name);
+    ClapTrap &operator=(const ClapTrap &assign);
+    ClapTrap(const ClapTrap &copy);
     virtual void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
