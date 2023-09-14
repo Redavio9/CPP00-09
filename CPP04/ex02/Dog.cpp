@@ -6,7 +6,27 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:13:04 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 10:13:05 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 12:58:28 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include"Dog.hpp"
+
+Dog::Dog()
+{
+}
+Dog::Dog(std::string type)
+{
+  brain = new(Brain);
+  this->type = type;
+}
+
+Dog::~Dog()
+{
+  delete brain;
+}
+
+void Dog::makeSound()
+{
+  std::cout << "I AM A DOG Woof! Woof!\n";
+}

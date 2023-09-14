@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:09:11 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 10:12:57 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 12:55:57 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 Brain::Brain()
 {
+  std::cout << "Default constructor";
 }
 // Brain::Brain(std::string type)
 // {
@@ -23,4 +24,5 @@ Brain::Brain()
 
 Brain::~Brain()
 {
+  std::cout << " Destructor";
 }
