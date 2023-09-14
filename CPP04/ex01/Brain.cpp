@@ -6,7 +6,21 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:09:11 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 10:09:12 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 10:12:57 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include"Brain.hpp"
+
+
+Brain::Brain()
+{
+}
+// Brain::Brain(std::string type)
+// {
+//   this->type = type;
+// }
+
+Brain::~Brain()
+{
+}

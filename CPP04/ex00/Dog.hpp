@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:50:11 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 09:50:34 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 10:10:56 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class Dog:public Animal
 {
-  private:
-    std::string type;
   public:
     Dog();
     Dog(std::string type);

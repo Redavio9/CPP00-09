@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:48:40 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 09:49:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 11:19:50 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ Cat::Cat()
 Cat::Cat(std::string type)
 {
   this->type = type;
+}
+Cat::Cat(const Cat &copy)
+{
+  this->type = copy.type;
+}
+
+Cat &Cat::operator=(const Cat &assign)
+{
+  this->type = assign.type;
+  return(*this);
 }
 
 Cat::~Cat()

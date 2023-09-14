@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:05:05 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/13 11:33:34 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 10:27:22 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 int main()
 {
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// delete j;
-// delete i;
-Animal s;
-std::cout << sizeof(s);
-return 0;
+// 
+  Animal *arr[16];
+  for(int i = 0; i < 16; i++)
+  {
+    if(i % 2 == 0)
+      arr[i] = new Dog();
+    else
+      arr[i] = new Cat();  
+  }
 }

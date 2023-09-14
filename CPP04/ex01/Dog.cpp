@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:05:00 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/12 10:06:50 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 10:14:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ Dog::Dog()
 }
 Dog::Dog(std::string type)
 {
+  brain = new(Brain);
   this->type = type;
 }
 
 Dog::~Dog()
 {
+  delete brain;
 }
 
 void Dog::makeSound()
