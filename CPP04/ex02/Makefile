@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 10:13:11 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/14 12:59:46 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/14 13:18:00 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,3 +38,4 @@ fclean:
 	@printf "$(RED) $(NAME) removed.\n"
 
 re: clean all
+

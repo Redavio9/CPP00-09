@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:12:47 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 12:54:00 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/14 13:20:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ Aanimal &Aanimal::operator=(const Aanimal &assing)
 
 Aanimal::Aanimal(const Aanimal &copy)
 {
-   this->type = copy.type;
+   this->type = copy.type;   
 }
