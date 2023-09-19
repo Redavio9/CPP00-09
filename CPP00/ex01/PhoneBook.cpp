@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:43:18 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/13 10:31:48 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/19 10:32:21 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void Phonebook::add()
 void Phonebook::displayPhoneBook()
 {
     int cnt = 0;
-    while (cnt < this->index)
+    while (cnt < 8)
     {
         std::cout << "____________________________________________" << std::endl;
         std::cout << "|";
@@ -99,7 +99,7 @@ void Phonebook::search()
     std::cout << std::endl;
     displayPhoneBook();
     std::cout << "____________________________________________" << std::endl;
-    std::cout << "Enter the index number(0 ~ " << this->index - 1 << "): ";
+    std::cout << "Enter the index number : ";
     std::cin >> input2;
     if(std::cin.eof())
         exit(0);

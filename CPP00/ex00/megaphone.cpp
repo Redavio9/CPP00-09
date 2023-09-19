@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:54:25 by rarraji           #+#    #+#             */
-/*   Updated: 2023/08/26 15:29:27 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/15 10:21:04 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,10 @@ int main(int ac, char **av)
 		{
 			ft_uppercase(av[i]);
 			i++;
-			if(av[i])
-				std::cout << " ";
 		}
 	}
 	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"; 
+	std::cout << std::endl;	
 }
 

@@ -6,14 +6,14 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 15:54:50 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/13 09:26:24 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/19 10:24:48 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= PhoneBook
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 RM		= rm -rf
 SRC		= Contact.cpp PhoneBook.cpp
 
