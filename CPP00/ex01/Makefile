@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
+#    By: hp <hp@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 15:54:50 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/19 10:24:48 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/19 12:13:28 by hp               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ YELLOW = \033[0;33m
 
 all: $(NAME)
 
-$(NAME): 
+$(NAME): $(SRC)
 	@printf "$(YELLOW) Compiling $(NAME)... \n"
 	@ $(CC) $(FLAGS) $(SRC) -o $(NAME)
 	@printf "$(GREEN) $(NAME) ready.\n"

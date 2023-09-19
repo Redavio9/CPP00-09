@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hp <hp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 12:57:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/13 09:27:01 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/19 12:18:42 by hp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 class Contact
 {
@@ -25,6 +26,8 @@ class Contact
         std::string nickname;
         std::string darkestsecret;
     public :
+        Contact();
+        ~Contact();
         void ft_set_name(std::string x);
         void ft_set_lastname(std::string x);
         void ft_set_phonenumber(std::string x);

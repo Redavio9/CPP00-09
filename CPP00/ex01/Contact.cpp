@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hp <hp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 08:40:10 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/13 09:26:40 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/19 12:19:23 by hp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+Contact::Contact()
+{
+}
+Contact::~Contact()
+{
+}
 
 void	Contact::ft_set_name(std::string x)
 {

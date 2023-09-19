@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hp <hp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:43:18 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/19 10:32:21 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/19 12:17:45 by hp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,43 @@ void Phonebook::add()
     std::string y;
     std::cout << "------->First Name : ";
     std::cin >> y;
-    if(std::cin.eof())
-        exit(0);
+    if (std::cin.eof())
+    {
+        std::cout << "Input cancelled" << std::endl;
+        std::exit(1);
+    }
     this->contact[this->index % 8].ft_set_name(y);
     std::cout << "------->Last Name : ";
     std::cin >> y;
-    if(std::cin.eof())
-        exit(0);
+    if (std::cin.eof())
+    {
+        std::cout << "Input cancelled" << std::endl;
+        std::exit(1);
+    }
     this->contact[this->index % 8].ft_set_lastname(y);
     std::cout << "------->Nickname : ";
     std::cin >> y;
-    if(std::cin.eof())
-        exit(0);
+    if (std::cin.eof())
+    {
+        std::cout << "Input cancelled" << std::endl;
+        std::exit(1);
+    }
     this->contact[this->index % 8].ft_set_phonenumber(y);
     std::cout << "------->phone number : ";
     std::cin >> y;
-    if(std::cin.eof())
-        exit(0);
+    if (std::cin.eof())
+    {
+        std::cout << "Input cancelled" << std::endl;
+        std::exit(1);
+    }
     this->contact[this->index % 8].ft_set_nickname(y);
     std::cout << "------->Darkestsecret : ";
     std::cin >> y;
-    if(std::cin.eof())
-        exit(0);
+    if (std::cin.eof())
+    {
+        std::cout << "Input cancelled" << std::endl;
+        std::exit(1);
+    }
     this->contact[this->index % 8].ft_set_darkestsecret(y);
     std::cout << std::endl;
     this->index++;
@@ -84,8 +99,13 @@ void Phonebook::displayPhoneBook()
 
 void Phonebook::search()
 {
+    int tmp;
+
+    if (this->index == 0){
+        std::cout << "The phonebook is currently empty." << std::endl;
+        std::exit(1);
+    }
     int input2;
-    // int cnt = 0;
     std::cout << "____________________________________________" << std::endl;
     std::cout << "|";
     std::cout << std::setw(10) << "INDEX";
@@ -101,9 +121,16 @@ void Phonebook::search()
     std::cout << "____________________________________________" << std::endl;
     std::cout << "Enter the index number : ";
     std::cin >> input2;
-    if(std::cin.eof())
-        exit(0);
-    if(input2 >= this->index)
+    if (std::cin.eof())
+    {
+        std::cout << "Input cancelled" << std::endl;
+        std::exit(1);
+    }
+    if(this->index >= 8)
+        tmp = 7;
+    else
+        tmp = this->index;
+    if(input2 > tmp)
         std::cout << "INDEX NOT EXACT !!!\n";
     else
     {
@@ -113,7 +140,6 @@ void Phonebook::search()
         std::cout << this->contact[input2].ft_get_lastname() << std::endl;;
         std::cout << "------->Nickname : ";
         std::cout << this->contact[input2].ft_get_nickname() << std::endl;;
-        // this->contact[index].ft_set_phonenumber();
         std::cout << "------->phone number : ";
         std::cout << this->contact[input2].ft_get_phonenumber() << std::endl;;
         std::cout << "------->Darkestsecret : ";
@@ -124,21 +150,18 @@ void Phonebook::search()
 
 int main()
 {
-    // Contact book[8];
     Phonebook phone;
     std::string input;
 
-    while(1)
+    while(true)
     {
         std::cout << "entrer the commande : ";
         std::cin >> input;
-        if(std::cin.eof())
-            exit(0);
         if(input == "ADD")
            phone.add();
         else if(input == "SEARCH")
             phone.search();
-        else if(input == "EXIT")
-            exit(1);
+        else if(input == "EXIT" || std::cin.eof())
+            std::exit(1);
     }
 }
