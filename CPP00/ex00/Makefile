@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 15:54:50 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/19 22:45:57 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/20 16:02:42 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,3 @@ fclean:
 	@printf "$(RED)    - Executable removed.\n"
 
 re: fclean all
-
-.PHONY: all clean fclean re
