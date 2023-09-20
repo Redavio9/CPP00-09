@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 15:54:50 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/20 16:02:37 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/20 16:11:14 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	= PhoneBook
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
-SRC		= Contact.cpp PhoneBook.cpp
+SRC		= main.cpp Contact.cpp PhoneBook.cpp
 
 #Colors:
 RED = \033[0;31m
