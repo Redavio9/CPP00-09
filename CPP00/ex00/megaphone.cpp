@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:54:25 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/15 10:21:04 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/19 15:30:32 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void ft_uppercase(std::string myString)
 {
-	std::string currentChar;
+	std::string str;
 	int i;
 
 	i = 0;
 	while (myString[i]) 
 	{
-		currentChar = toupper(myString[i]);
-		std::cout << currentChar;
+		str = toupper(myString[i]);
+		std::cout << str;
 		i++;
 	}
 }

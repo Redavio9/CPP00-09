@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hp <hp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:43:18 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/19 12:17:45 by hp               ###   ########.fr       */
+/*   Updated: 2023/09/20 12:08:36 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void Phonebook::add()
     if (std::cin.eof())
     {
         std::cout << "Input cancelled" << std::endl;
-        std::exit(1);
+        exit(1);
     }
     this->contact[this->index % 8].ft_set_name(y);
     std::cout << "------->Last Name : ";
@@ -39,7 +39,7 @@ void Phonebook::add()
     if (std::cin.eof())
     {
         std::cout << "Input cancelled" << std::endl;
-        std::exit(1);
+        exit(1);
     }
     this->contact[this->index % 8].ft_set_lastname(y);
     std::cout << "------->Nickname : ";
@@ -47,7 +47,7 @@ void Phonebook::add()
     if (std::cin.eof())
     {
         std::cout << "Input cancelled" << std::endl;
-        std::exit(1);
+        exit(1);
     }
     this->contact[this->index % 8].ft_set_phonenumber(y);
     std::cout << "------->phone number : ";
@@ -55,7 +55,7 @@ void Phonebook::add()
     if (std::cin.eof())
     {
         std::cout << "Input cancelled" << std::endl;
-        std::exit(1);
+        exit(1);
     }
     this->contact[this->index % 8].ft_set_nickname(y);
     std::cout << "------->Darkestsecret : ";
@@ -63,7 +63,7 @@ void Phonebook::add()
     if (std::cin.eof())
     {
         std::cout << "Input cancelled" << std::endl;
-        std::exit(1);
+        exit(1);
     }
     this->contact[this->index % 8].ft_set_darkestsecret(y);
     std::cout << std::endl;
@@ -71,10 +71,10 @@ void Phonebook::add()
 }
 
 
-void Phonebook::displayPhoneBook()
+void Phonebook::displayPhoneBook(int tmp)
 {
     int cnt = 0;
-    while (cnt < 8)
+    while (cnt < tmp)
     {
         std::cout << "____________________________________________" << std::endl;
         std::cout << "|";
@@ -100,12 +100,17 @@ void Phonebook::displayPhoneBook()
 void Phonebook::search()
 {
     int tmp;
+    std::string input;
+    int input2;
 
     if (this->index == 0){
         std::cout << "The phonebook is currently empty." << std::endl;
-        std::exit(1);
+        return ;
     }
-    int input2;
+    if(this->index >= 8)
+        tmp = 8;
+    else
+        tmp = this->index;
     std::cout << "____________________________________________" << std::endl;
     std::cout << "|";
     std::cout << std::setw(10) << "INDEX";
@@ -117,23 +122,21 @@ void Phonebook::search()
     std::cout << std::setw(10) << "NICKNAME";
     std::cout << "|";
     std::cout << std::endl;
-    displayPhoneBook();
+    displayPhoneBook(tmp);
     std::cout << "____________________________________________" << std::endl;
     std::cout << "Enter the index number : ";
-    std::cin >> input2;
+    std::cin >> input;
     if (std::cin.eof())
     {
         std::cout << "Input cancelled" << std::endl;
-        std::exit(1);
+        exit(1);
     }
-    if(this->index >= 8)
-        tmp = 7;
-    else
-        tmp = this->index;
-    if(input2 > tmp)
+    // if (input2 > tmp || input2 < 0 || std::isalpha(input[0]) == 0){
+    input2 = input[0] - 48;
+    if (input.empty() || input.length() > 1 || !std::isdigit(input[0]) || input2 > tmp){
         std::cout << "INDEX NOT EXACT !!!\n";
-    else
-    {
+        return ;
+    }
         std::cout << "------->First Name : ";
         std::cout << this->contact[input2].ft_get_firstname() << std::endl;
         std::cout << "------->Last Name : ";
@@ -145,7 +148,6 @@ void Phonebook::search()
         std::cout << "------->Darkestsecret : ";
         std::cout << this->contact[input2].ft_get_darkestsecret() << std::endl;;
         std::cout << std::endl;
-    }
 }
 
 int main()
@@ -153,7 +155,7 @@ int main()
     Phonebook phone;
     std::string input;
 
-    while(true)
+    while(std::cout)
     {
         std::cout << "entrer the commande : ";
         std::cin >> input;
@@ -162,6 +164,6 @@ int main()
         else if(input == "SEARCH")
             phone.search();
         else if(input == "EXIT" || std::cin.eof())
-            std::exit(1);
+            exit(1);
     }
 }

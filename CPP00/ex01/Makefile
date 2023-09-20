@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hp <hp@student.42.fr>                      +#+  +:+       +#+         #
+#    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 15:54:50 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/19 12:13:28 by hp               ###   ########.fr        #
+#    Updated: 2023/09/19 22:46:49 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= PhoneBook
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 SRC		= Contact.cpp PhoneBook.cpp
 
@@ -26,7 +26,7 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	@printf "$(YELLOW) Compiling $(NAME)... \n"
-	@ $(CC) $(FLAGS) $(SRC) -o $(NAME)
+	@$(CC) $(FLAGS) $(SRC) -o $(NAME)
 	@printf "$(GREEN) $(NAME) ready.\n"
 
 clean:
@@ -37,4 +37,6 @@ fclean:
 	@$(RM) $(NAME)
 	@printf "$(RED) $(NAME) removed.\n"
 
-re: clean all
+re: fclean all
+
+.PHONY: all clean fclean re
