@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:07:24 by rarraji           #+#    #+#             */
-/*   Updated: 2023/08/31 13:03:35 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/23 22:14:21 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
   }
   void Humanb::attack()
   {
-    std::cout << this->name << "attacks with their" << this->weapon->get_type() << std::endl;
+    std::cout << this->name << " attacks with their " << this->weapon->get_type() << std::endl;
   }
   Humanb::~Humanb()
   {
+    std::cout << " Destructor\n";
   }

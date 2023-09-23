@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 15:23:15 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/14 10:33:30 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/21 08:54:33 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ YELLOW = \033[0;33m
 
 all: $(NAME)
 
-$(NAME): 
+$(NAME): $(SRC)
 	@printf "$(YELLOW) Compiling $(NAME)... \n"
 	@ $(CC) $(FLAGS) $(SRC) -o $(NAME)
 	@printf "$(GREEN) $(NAME) ready.\n"

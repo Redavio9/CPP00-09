@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:04:57 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/20 16:15:22 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/20 22:34:40 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int main()
         else if(input == "SEARCH")
             phone.search();
         else if(input == "EXIT" || std::cin.eof())
-            exit(1);
+            exit(0);
     }
 }

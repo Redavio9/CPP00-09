@@ -6,13 +6,20 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 20:37:32 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/02 19:44:51 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/22 08:57:19 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl(){}
+Harl::Harl()
+{
+  std::cout << "Default constructor\n";  
+}
+Harl::~Harl()
+{
+  std::cout << " Destructor\n";  
+}
 
 void Harl::debug(void)
 {

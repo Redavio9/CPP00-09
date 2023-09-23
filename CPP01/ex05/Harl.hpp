@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 20:37:30 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/02 15:15:25 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/22 08:56:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Harl
     
   public:
     Harl();
+    ~Harl();
     void debug( void );
     void info( void );
     void warning( void );

@@ -6,14 +6,14 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/01 10:17:01 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/14 10:34:36 by rarraji          ###   ########.fr        #
+#    Updated: 2023/09/23 22:30:20 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= remplace
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 RM		= rm -rf
 SRC		= main.cpp remplace.cpp
 
