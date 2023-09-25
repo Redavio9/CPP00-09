@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:13:40 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/21 08:47:53 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:07:50 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Zombie
     Zombie();
     Zombie(std::string name);
     ~Zombie(); 
+    void set_name(std::string name);
     void announce(void);
 };
 

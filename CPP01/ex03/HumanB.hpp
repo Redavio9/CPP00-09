@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:07:27 by rarraji           #+#    #+#             */
-/*   Updated: 2023/08/31 13:02:33 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:11:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Humanb
     std::string name;
     Weapon *weapon;
   public:
+    Humanb();
     Humanb(std::string name);
     void set_weapen(Weapon &Weapon);
     void attack();

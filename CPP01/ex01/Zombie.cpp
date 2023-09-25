@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:06:01 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/21 08:52:03 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:09:06 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ void Zombie::announce( void )
 
 Zombie::~Zombie()
 {
-  std::cout << " Destructor\n";
+  std::cout << "Destructor\n";
+}
+
+void Zombie::set_name(std::string name)
+{
+  this->name = name;
 }

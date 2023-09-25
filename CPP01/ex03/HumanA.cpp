@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:07:22 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/23 22:12:03 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:15:29 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
   }
   void Humana::attack()
   {
-    std::cout << this->name << "attacks with their" << this->weapon.get_type() << std::endl;
+    std::cout << this->name << " attacks with their" << this->weapon.get_type() << std::endl;
   }
   Humana::~Humana()
   {
-    std::cout << " Destructor\n";
+    std::cout << "Destructor\n";
   }

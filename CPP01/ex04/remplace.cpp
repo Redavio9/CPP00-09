@@ -6,28 +6,50 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 11:30:23 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/23 22:41:12 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 10:56:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "remplace.hpp"
 
+std::string remplir_string(std::ifstream& inFile)
+{
+    std::string tmp;
+    std::string line;
+
+    while (std::getline(inFile, line))
+    {
+        tmp += line + '\n';
+    }
+
+    return tmp;
+}
+
+
+std::string remplace_line(std::string tmp, const std::string& av2, const std::string& av3)
+{
+    size_t index = 0;
+    while ((index = tmp.find(av2, index)) != std::string::npos)
+    {
+        tmp.erase(index, av2.length());
+        tmp.insert(index, av3);
+        index += av3.length();
+    }
+    return tmp;
+}
 void remplace_fn(char **av)
 {
 	std::ifstream inFile;	 // R
 	std::ofstream outFile; // W
 	std::string name;
+	std::string tmp;
 	std::string av3;
 	std::string av2;
-	std::string line;
-	int i = 0;
-	size_t foundpos;
-	// size_t foundpos1 = -1;
 
-	// std::cout << foundpos1;
 	name = av[1];
-	av3 = av[3];
 	av2 = av[2];
+	av3 = av[3];
+	
 	inFile.open(name, std::ios::in);
 	outFile.open(name + ".replace", std::ios::out);
 	if (!inFile.is_open() || !outFile.is_open() || av2.length() == 0)
@@ -35,26 +57,8 @@ void remplace_fn(char **av)
 		std::cerr << "Error: Could not open the file." << std::endl;
 		return;
 	}
-	// 
-	// while string, getline + "\n" if (getline.eof != 0)
-	// replace using npos, 
-	// write in outFile, 
-	// 
-	while (std::getline(inFile, line))
-	{
-		foundpos = line.find(av[2]);
-		std::cout << foundpos << "\n";
-		while (foundpos != std::string::npos)
-		{
-			i = 0;
-			outFile << line.substr(i, foundpos);
-			outFile << av3;
-			i = foundpos + av3.length();
-			line = line.substr(i, line.length());
-			foundpos = line.find(av[2], foundpos);
-		}
-		// if (foundpos == std::string::npos)
-		// 	outFile << line.substr(i, line.length()) << std::endl;
-	}
-	std::cout << "\n";
+	tmp = remplir_string(inFile);
+	tmp = remplace_line(tmp, av2, av3);
+	outFile << tmp;
 }
+

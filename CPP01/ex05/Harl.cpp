@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 20:37:32 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/22 08:57:19 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:25:24 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Harl::Harl()
 }
 Harl::~Harl()
 {
-  std::cout << " Destructor\n";  
+  std::cout << "Destructor\n";  
 }
 
 void Harl::debug(void)
