@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 20:37:32 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/25 11:56:13 by rarraji          ###   ########.fr       */
+/*   Created: 2023/09/25 11:41:01 by rarraji           #+#    #+#             */
+/*   Updated: 2023/09/25 11:45:45 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,28 @@ void Harl::error(void)
 {
   std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
-
-void Harl::complain( std::string level )
+void Harl::complain(std::string level) 
 {
-  void (Harl::*funcptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-  std::string levles[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-  for (int i = 0 ;i < 4;i++)
-  {
-    if(levles[i] == level)
-    {
-      (this->*funcptr[i])();
+    int flag = 0;
+    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    void (Harl::*funcptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+
+    for (int j = 0; j < 4; j++) {
+        if (levels[j] == level) 
+        {
+            flag = 1;
+            switch(j) 
+            {
+                case 0:
+                    (this->*funcptr[0])();
+                case 1:
+                    (this->*funcptr[1])();
+                case 2:
+                    (this->*funcptr[2])();
+                case 3:
+                    (this->*funcptr[3])();
+            }
+            break;
+        }
     }
-  } 
 }
