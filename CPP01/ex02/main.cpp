@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:23:39 by rarraji           #+#    #+#             */
-/*   Updated: 2023/08/30 15:41:17 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 20:17:14 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main()
   std::cout << &str << std::endl;
   std::cout << stringPTR << std::endl;
   std::cout << &stringREF << std::endl;
+
+  std::cout << std::endl;
 
   std::cout << str << std::endl;
   std::cout << *stringPTR << std::endl;

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:07:17 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/23 22:12:15 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/26 10:07:55 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 # include "Weapon.hpp"
 
 
-class Humana
+class HumanA
 {
   private:
     std::string name;
-    Weapon &weapon;
+    Weapon      &weapon;
   public:
-    Humana(std::string name, Weapon &weapon);
-    void set_weapen(Weapon &weapon);
+    HumanA(std::string name, Weapon &weapon);
     void attack();
-    ~Humana();
+    ~HumanA();
     
 };
 

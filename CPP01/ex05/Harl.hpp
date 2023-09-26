@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 20:37:30 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/22 08:56:26 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/26 09:59:01 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,7 @@
 
 class Harl
 {
-  // private:
-  //   std::string DEBUG;
-  //   std::string INFO;
-  //   std::string WARNING;
-  //   std::string ERROR;
-    
+  
   public:
     Harl();
     ~Harl();
@@ -31,7 +26,6 @@ class Harl
     void warning( void );
     void error( void );
     void complain( std::string level );
-    // void *funcptr();
 };
 
 

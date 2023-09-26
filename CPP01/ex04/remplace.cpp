@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 11:30:23 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/25 10:56:26 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/25 21:37:13 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ std::string remplir_string(std::ifstream& inFile)
     std::string line;
 
     while (std::getline(inFile, line))
-    {
         tmp += line + '\n';
-    }
 
     return tmp;
 }
@@ -50,9 +48,9 @@ void remplace_fn(char **av)
 	av2 = av[2];
 	av3 = av[3];
 	
-	inFile.open(name, std::ios::in);
-	outFile.open(name + ".replace", std::ios::out);
-	if (!inFile.is_open() || !outFile.is_open() || av2.length() == 0)
+	inFile.open(name);
+	outFile.open(name + ".replace");
+	if (inFile.fail() || outFile.fail() || av2.empty())
 	{
 		std::cerr << "Error: Could not open the file." << std::endl;
 		return;
