@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:56:37 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 10:35:52 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/02 10:13:18 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Fixed
     Fixed(const Fixed &copy);
     ~Fixed();
     Fixed &operator=(const Fixed &assign);
+    void setRawBits(int raw); 
     int getRawBits( void );
-    void setRawBits( int const raw ); 
 };
 
 

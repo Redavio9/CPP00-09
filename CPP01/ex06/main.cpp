@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:41:04 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/25 11:57:05 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/26 15:11:38 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int ac, char **av)
         break;
       if(i == 3)
       {
-        std::cout << "LEVEL DONT EXICT !!!" << std::endl;
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         return(0);
       }
     }

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 20:37:32 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/25 11:56:13 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/26 10:34:24 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ void Harl::complain( std::string level )
     {
       (this->*funcptr[i])();
     }
-  } 
+  }  
 }

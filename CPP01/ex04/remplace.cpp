@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 11:30:23 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/25 21:37:13 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/09/28 23:03:05 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,7 @@ void remplace_fn(char **av)
 	tmp = remplir_string(inFile);
 	tmp = remplace_line(tmp, av2, av3);
 	outFile << tmp;
+	inFile.close();
+	outFile.close();
 }
 

@@ -6,32 +6,44 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 19:56:43 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/04 11:39:07 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/03 08:41:41 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : fixed_point(0)
 {
-  this->fixed_point = 0;
+  std::cout << "Default constructor called" << std::endl;
 }
+
 Fixed::Fixed(const Fixed &copy)
 {
-  this->fixed_point = copy.fixed_point;
+  std::cout << "Copy constructor called" << std::endl;
+  *this = copy;
 }
-int Fixed::getRawBits( void )
-{
- return(this->fixed_point);
-}
+
 void Fixed::setRawBits( int const raw )
 {
   this->fixed_point = raw; 
 }
+int Fixed::getRawBits( void )
+{
+  std::cout << "getRawBits member function called" << std::endl;
+  return(this->fixed_point);
+}
+
+
 Fixed &Fixed::operator=(const Fixed &assign)
 {
-  this->fixed_point = assign.fixed_point;
+  std::cout << "Copy assignment operator called" << std::endl;
+  if (this != &assign)
+    this->fixed_point = assign.fixed_point;
   return(*this);
 }
-  
- Fixed::~Fixed(){};
+
+
+Fixed::~Fixed()
+{
+  std::cout << "Destructor called" << std::endl;
+};
