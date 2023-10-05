@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 12:45:35 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 10:54:40 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/04 14:39:18 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,20 @@ ClapTrap::~ClapTrap()
 }
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-  his->name = copy.name;
+  this->name = copy.name;
   this->Hit_points = copy.Hit_points;
   this->Energy_points = copy.Energy_points;
   this->Attack_damage = copy.Attack_damage;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap &assign)
 {
-  this->name = assign.name;
-  this->Hit_points = assign.Hit_points;
-  this->Energy_points = assign.Energy_points;
-  this->Attack_damage = assign.Attack_damage;
+  if(this != &assign)
+  {
+    this->name = assign.name;
+    this->Hit_points = assign.Hit_points;
+    this->Energy_points = assign.Energy_points;
+    this->Attack_damage = assign.Attack_damage;
+  }
   return(*this);
 }
 
@@ -56,7 +59,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-  this->Hit_points -= amount;
+    this->Hit_points -= amount;
 		std::cout << "ClapTrap " << this->name << " take Damage " << amount << " , remaning hp is " << this->Energy_points << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 08:41:37 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/27 10:28:07 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/04 11:01:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main( void )
   Fixed const b( 10 );
   Fixed const c( 42.42f );
   Fixed const d( b );
+
   a = Fixed( 1234.4321f );
   std::cout << "a is " << a << std::endl;
   std::cout << "b is " << b << std::endl;

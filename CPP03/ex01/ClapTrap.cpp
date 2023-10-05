@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:09:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 10:51:51 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/04 14:39:56 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ClapTrap::~ClapTrap()
 }
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-  his->name = copy.name;
+  this->name = copy.name;
   this->Hit_points = copy.Hit_points;
   this->Energy_points = copy.Energy_points;
   this->Attack_damage = copy.Attack_damage;

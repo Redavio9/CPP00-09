@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:13:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/03 09:05:57 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/04 23:12:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,19 +114,17 @@ Fixed &Fixed::operator++()
     fixed_point++;
     return(*this);
 }
-Fixed &Fixed::operator--()
-{
-    fixed_point--;
-    return(*this);
-}
-
 const Fixed Fixed::operator++(int) 
 {
     Fixed tmp = *this;
     fixed_point++;
     return (tmp);
 }
-
+Fixed &Fixed::operator--()
+{
+    fixed_point--;
+    return(*this);
+}
 const Fixed Fixed::operator--(int) 
 {
     Fixed tmp = *this;

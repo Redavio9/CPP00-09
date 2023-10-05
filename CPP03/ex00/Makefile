@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 12:45:43 by rarraji           #+#    #+#              #
-#    Updated: 2023/09/11 11:06:18 by rarraji          ###   ########.fr        #
+#    Updated: 2023/10/04 14:41:28 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,29 @@ CC   = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all : $(NAME)
+OBJ		= $(SRC:.cpp=.o)
 
-$(NAME) : $(SRC)
-			$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+#Colors:
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
 
-clean : rm -f $(NAME)
+%.c: %.o
+	@${CC} ${CFLAGS} -c $< -o $@
 
-fclean : clean
+all: $(NAME)
 
-re: fclean all
+$(NAME): $(OBJ)
+	@printf "$(YELLOW) Compiling $(NAME)... \n"
+	@ $(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	@printf "$(GREEN) $(NAME) ready.\n"
+
+clean:
+	@$(RM) $(OBJ)
+	@printf "$(RED) $(OBJ) removed.\n"
+
+fclean: clean
+	@$(RM) $(NAME)
+	@printf "$(RED) $(NAME) removed.\n"
+
+re: clean all

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:37:12 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/02 20:00:46 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/04 11:12:40 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Fixed::Fixed(const int i) : fixed_point(i * pow(2, Fixed::fractional_bits))
 
 Fixed::Fixed(const float nb)
 {
-  this->fixed_point = (int)roundf(nb * pow(2, Fixed::fractional_bits));
+  this->fixed_point = roundf(nb * pow(2, Fixed::fractional_bits));
   std::cout << "Float constructor called" << std::endl;
 }
 
@@ -37,6 +37,7 @@ void Fixed::setRawBits( int const raw )
 {
   this->fixed_point = raw; 
 }
+
 Fixed::Fixed(const Fixed &copy)
 {
   std::cout << "Copy constructor called" << std::endl;
@@ -66,7 +67,7 @@ int Fixed::toInt( void ) const
   return(fixed_point / pow(2, Fixed::fractional_bits));
 }
 
-std::ostream &operator<< (std::ostream &out, const Fixed &fixed) 
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) 
 {
     out << fixed.toFloat();
     return out;
