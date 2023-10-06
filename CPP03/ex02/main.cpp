@@ -6,15 +6,17 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:44:43 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/13 11:46:15 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/06 12:04:56 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ScavTrap.hpp"
+#include"FragTrap.hpp"
 
 int main()
 {
-  ClapTrap *a;
-  a = new ScavTrap();
-  a->attack("solix");
+  FragTrap obj("Sollix");
+
+  obj.attack("reda");
+  obj.beRepaired(9);
+  obj.takeDamage(3);
 }
