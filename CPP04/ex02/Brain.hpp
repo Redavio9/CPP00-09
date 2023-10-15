@@ -6,14 +6,15 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:12:56 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 13:23:40 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/13 12:32:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-#include"animal.hpp"
+#include"Animal.hpp"
+
 
 class Brain
 {

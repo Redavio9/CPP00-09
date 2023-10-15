@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:12:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/15 09:35:45 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/13 12:32:24 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,33 @@
 
 Cat::Cat()
 {
+  this->brain = new Brain;
+  std::cout << this->type << "Default Cat constructor\n";
 }
 Cat::Cat(std::string type)
 {
-  brain = new(Brain);
   this->type = type;
 }
 Cat::Cat(const Cat &copy)
 {
-  brain = new Brain();
+  this->brain = new Brain;
   this->type = copy.type;
 }
 
 Cat &Cat::operator=(const Cat &assign)
 {
-  brain = new Brain();
-  this->type = assign.type;
+  if (this != &assign)
+  {
+    this->type = assign.type;
+    this->brain = new Brain;
+  }
   return(*this);
 }
+
 Cat::~Cat()
 {
   delete brain;
+  std::cout << this->type << "Cat Destructor\n";
 }
 
 void Cat::makeSound()

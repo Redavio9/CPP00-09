@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animal.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:12:47 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/21 08:51:48 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/14 13:18:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"animal.hpp"
+#include"Animal.hpp"
 
-
-Aanimal::Aanimal()
+Animal::Animal()
 {
-  std::cout << "Default constructor\n";
+  std::cout << this->type << "Default Animal constructor\n";
 }
-Aanimal::Aanimal(std::string type)
+Animal::Animal(std::string type)
 {
   this->type = type;
 }
-Aanimal::~Aanimal()
+Animal::Animal(const Animal &copy)
 {
-  std::cout << " Destructor\n";
+  this->type = copy.type;
 }
-Aanimal &Aanimal::operator=(const Aanimal &assing)
+Animal &Animal::operator=(const Animal &assign)
 {
-  this->type = type;
+  if (this != &assign)
+    this->type = assign.type;
+  return(*this);  
 }
 
-Aanimal::Aanimal(const Aanimal &copy)
+Animal::~Animal()
 {
-   this->type = copy.type;   
+  std::cout << this->type << "Destructor Animal\n";
 }

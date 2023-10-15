@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:48:40 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/14 13:19:10 by rarraji          ###   ########.fr       */
+/*   Created: 2023/10/14 10:13:13 by rarraji           #+#    #+#             */
+/*   Updated: 2023/10/14 13:20:21 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Cat.hpp"
+#include"AMateria.hpp"
 
-Cat::Cat()
+AMateria::AMateria()
 {
-  // std::cout << this->type << "Default Cat constructor\n";
+  // std::cout << this->type << "Default AMateria constructor\n";
 }
-Cat::Cat(std::string type)
+AMateria::AMateria(std::string const &type) : type(type)
 {
-  this->type = type;
 }
-Cat::Cat(const Cat &copy)
+AMateria::AMateria(const AMateria &copy)
 {
   this->type = copy.type;
 }
-
-Cat &Cat::operator=(const Cat &assign)
+AMateria &AMateria::operator=(const AMateria &assign)
 {
   if (this != &assign)
     this->type = assign.type;
-  return(*this);
+  return(*this);  
 }
 
-Cat::~Cat()
+const std::string &AMateria::getType() const
 {
-   std::cout << this->type << "Cat Destructor\n";
+  return(this->type);
 }
 
-void Cat::makeSound()
+AMateria::~AMateria()
 {
-  std::cout << "I AM A CAT Meow! Meow!\n";
+  // std::cout << this->type << "Destructor AMateria\n";
+}
+
+void AMateria::use(ICharacter& target)
+{
+  (void)target;
 }

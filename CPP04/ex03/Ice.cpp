@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:48:40 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/14 13:19:10 by rarraji          ###   ########.fr       */
+/*   Created: 2023/10/14 10:33:14 by rarraji           #+#    #+#             */
+/*   Updated: 2023/10/15 11:19:30 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Cat.hpp"
+#include"Ice.hpp"
 
-Cat::Cat()
+Ice::Ice() : AMateria(type)
 {
-  // std::cout << this->type << "Default Cat constructor\n";
+  // std::cout << this->type << "Default Ice constructor\n";
+  type = "Ice";
 }
-Cat::Cat(std::string type)
-{
-  this->type = type;
-}
-Cat::Cat(const Cat &copy)
+Ice::Ice(const Ice &copy)
 {
   this->type = copy.type;
 }
-
-Cat &Cat::operator=(const Cat &assign)
+Ice &Ice::operator=(const Ice &assign)
 {
   if (this != &assign)
     this->type = assign.type;
-  return(*this);
+  return(*this);  
 }
 
-Cat::~Cat()
+Ice::~Ice()
 {
-   std::cout << this->type << "Cat Destructor\n";
+  // std::cout << this->type << "Destructor Ice\n";
+}
+Ice* Ice::clone() const
+{
+    return new Ice(*this);
 }
 
-void Cat::makeSound()
+void Ice::use(ICharacter& target)
 {
-  std::cout << "I AM A CAT Meow! Meow!\n";
+  std::cout << "* heals < " << target.getName() << "s wounds " << std::endl;
 }

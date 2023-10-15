@@ -6,15 +6,14 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:35:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 11:15:00 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/13 08:58:44 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef Animal_HPP
+# define Animal_HPP
 
 #include<iostream>
-#include"Brain.hpp"
 
 class Animal
 {
@@ -25,8 +24,8 @@ class Animal
     Animal(std::string type);
     Animal(const Animal &copy);
     Animal &operator=(const Animal &assign);
-    virtual ~Animal();
     virtual void makeSound(); 
+    virtual ~Animal();
 };
 
 #endif

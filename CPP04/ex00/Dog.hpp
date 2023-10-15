@@ -6,14 +6,14 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:50:11 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/15 09:36:44 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/13 12:01:58 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-#include"animal.hpp"
+#include"Animal.hpp"
 
 class Dog:public Animal
 {

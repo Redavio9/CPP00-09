@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animal.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:38:47 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 11:13:53 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/14 13:19:14 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"animal.hpp"
+#include"Animal.hpp"
 
 Animal::Animal()
 {
+  std::cout <<  "Default Aminal constructor\n";
 }
 Animal::Animal(std::string type)
 {
@@ -25,15 +26,18 @@ Animal::Animal(const Animal &copy)
 }
 Animal &Animal::operator=(const Animal &assign)
 {
-  this->type = assign.type;
+  if (this != &assign)
+    this->type = assign.type;
+  return(*this);  
 }
 
 Animal::~Animal()
 {
+  std::cout << this->type << "Animal Destructor\n";
 }
 
 void Animal::makeSound()
 {
-  std::cout << "I AM ANIMAL Meow! Meow! Woof! Woof!\n";
+  std::cout << "I AM Animal Meow! Meow! Woof! Woof!\n";
 }
 

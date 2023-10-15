@@ -6,18 +6,18 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:13:01 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 12:58:46 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/13 12:32:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include"animal.hpp"
+#include"Animal.hpp"
 #include"Brain.hpp"
 
 
-class Cat:public Aanimal
+class Cat:public Animal
 {
   private:
     Brain* brain;

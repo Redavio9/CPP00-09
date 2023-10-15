@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:48:40 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/14 13:19:10 by rarraji          ###   ########.fr       */
+/*   Created: 2023/10/14 10:33:12 by rarraji           #+#    #+#             */
+/*   Updated: 2023/10/15 11:19:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Cat.hpp"
+#include"Cure.hpp"
 
-Cat::Cat()
+Cure::Cure() : AMateria(type)
 {
-  // std::cout << this->type << "Default Cat constructor\n";
+  // std::cout << this->type << "Default Cure constructor\n";
+  type = "Cure";
 }
-Cat::Cat(std::string type)
-{
-  this->type = type;
-}
-Cat::Cat(const Cat &copy)
+Cure::Cure(const Cure &copy)
 {
   this->type = copy.type;
 }
-
-Cat &Cat::operator=(const Cat &assign)
+Cure &Cure::operator=(const Cure &assign)
 {
   if (this != &assign)
     this->type = assign.type;
-  return(*this);
+  return(*this);  
 }
 
-Cat::~Cat()
+Cure::~Cure()
 {
-   std::cout << this->type << "Cat Destructor\n";
+  // std::cout << this->type << "Destructor Cure\n";
+}
+Cure* Cure::clone() const
+{
+    return new Cure(*this);
 }
 
-void Cat::makeSound()
+void Cure::use(ICharacter& target)
 {
-  std::cout << "I AM A CAT Meow! Meow!\n";
+  std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
 }

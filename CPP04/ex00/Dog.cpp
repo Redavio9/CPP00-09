@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:50:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/15 09:36:25 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/14 13:19:07 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Dog::Dog()
 {
+  // std::cout << this->type << "Default Dog constructor\n";
 }
 Dog::Dog(std::string type)
 {
@@ -26,11 +27,13 @@ Dog::Dog(const Dog &copy)
 
 Dog &Dog::operator=(const Dog &assign)
 {
-  this->type = assign.type;
-  return(*this);
+ if (this != &assign)
+    this->type = assign.type;
+  return(*this); 
 }
 Dog::~Dog()
 {
+   std::cout << this->type << "Dog Destructor\n";
 }
 
 void Dog::makeSound()

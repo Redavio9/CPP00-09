@@ -6,18 +6,20 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:09:11 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/15 09:38:18 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/14 13:19:03 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include"Brain.hpp"
 
 #include"Brain.hpp"
 
 
 Brain::Brain()
 {
-  std::cout << "Default constructor";
+  // for(int i = 0; i < 100 ; i++)
+  // {
+  //   this->ideas[i] = 0;
+  // }
+  std::cout << "Default Brain constructor\n";
 }
 Brain::Brain(const Brain &copy)
 {
@@ -32,9 +34,10 @@ Brain Brain::operator=(const Brain &assign)
   {
     this->ideas[i] = assign.ideas[i];
   }
+  return(*this);
 }
 
 Brain::~Brain()
 {
-  std::cout << " Destructor";
+  std::cout << "Brain Destructor\n";
 }
