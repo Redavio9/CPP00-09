@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:49:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:43:09 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 16:23:55 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,14 +245,14 @@ int main()
 	test5();
 	std::cout << "--------- test 6 ----------" << std::endl;
 	test6();
-	// std::cout << "--------- test 7 ----------" << std::endl;
-	// test7();
+	std::cout << "--------- test 7 ----------" << std::endl;
+	test7();
 	std::cout << "--------- test 8 ----------" << std::endl;
 	test8();
-	// std::cout << "--------- test 9 ----------" << std::endl;
-	// test9();
-	// std::cout << "--------- test 10 ----------" << std::endl;
-	// test10();
+	std::cout << "--------- test 9 ----------" << std::endl;
+	test9();
+	std::cout << "--------- test 10 ----------" << std::endl;
+	test10();
 	std::cout << "--------- test LEAKS ----------" << std::endl;
 	system("leaks -q prg");
 	return 0;

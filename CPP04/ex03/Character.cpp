@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:30:10 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:39:35 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 19:00:15 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Character::Character()
 {
   for (size_t i = 0; i < 4; i++)
   {
+    this->tmp[i] = NULL;
     this->inventory[i] = NULL;
   }
   this->name = "Default";
@@ -25,6 +26,7 @@ Character::Character(std::string const &name) : name(name)
 {
   for (size_t i = 0; i < 4; i++)
   {
+    this->tmp[i] = NULL;
     this->inventory[i] = NULL;
   }
   this->name = name;
@@ -33,6 +35,7 @@ Character::Character(const Character &copy)
 {
   for (size_t i = 0; i < 4; i++)
   {
+    this->tmp[i] = NULL;
     this->inventory[i] = NULL;
   }
   this->name = copy.name;
@@ -43,6 +46,7 @@ Character &Character::operator=(const Character &assign)
   {
     for (size_t i = 0; i < 4; i++)
     {
+      this->tmp[i] = NULL;
       this->inventory[i] = NULL;
     }
   }
@@ -62,6 +66,7 @@ Character::~Character()
 void Character::equip(AMateria* m)
 {
   size_t i = 0;
+  
   for (i = 0; i < 4; i++)
   {
     if(this->inventory[i] == NULL)
@@ -76,15 +81,13 @@ void Character::unequip(int idx)
 {
   for (size_t i = 0; i < 4; i++)
   {
-    if(this->inventory[i])
+    if (this->inventory[i])
       this->inventory[i] = NULL;
   }
 }
 void Character::use(int idx, ICharacter& target)
 {
-  
-    // for(int i = 0; i < 4 && inventory[i]; i++)
-    if(idx >= 0 && idx < 4)
+  if (idx >= 0 && idx < 4 && this->inventory[idx])
       this->inventory[idx]->use(target);
     
 }

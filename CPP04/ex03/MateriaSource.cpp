@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:07:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:36:16 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 19:04:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ MateriaSource::MateriaSource()
 {
   for (size_t i = 0; i < 4; i++)
   {
+    this->tmp[i] = NULL;
     this->Materia[i] = NULL;
   }
   this->name = "Default";
@@ -25,6 +26,7 @@ MateriaSource::MateriaSource(std::string const &name) : name(name)
 {
   for (size_t i = 0; i < 4; i++)
   {
+    this->tmp[i] = NULL;
     this->Materia[i] = NULL;
   }
   this->name = name;
@@ -33,6 +35,7 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 {
   for (size_t i = 0; i < 4; i++)
   {
+    this->tmp[i] = NULL;
     this->Materia[i] = NULL;
   }
   this->name = copy.name;
@@ -43,6 +46,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &assign)
   {
     for (size_t i = 0; i < 4; i++)
     {
+      this->tmp[i] = NULL;
       this->Materia[i] = NULL;
     }
   }
