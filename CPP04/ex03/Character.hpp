@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:30:08 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:04:46 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:21:00 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 class Character : public ICharacter
 {
-  protected:
+  private:
     std::string name;
     AMateria *inventory[4];
   public:

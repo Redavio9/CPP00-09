@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:07:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:11:24 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:29:50 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,18 @@ void MateriaSource::learnMateria(AMateria* m)
       break ;
   }
   if (i < 4)
-  {
     this->Materia[i] = m;
-      std::cout << m->getType() << "\n";
-  }
   else
     std::cout << "ERROR !!" << std::endl;
 }
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-  std::cout << Materia[0]->getType() << "\n";
-  for (size_t i = 0; i < 4 && Materia[i]; i++)
+  for (size_t i = 0; i < 4 ; i++)
   {
-    printf("looking\n");
+     std::cout << Materia[i]->getType() << std::endl;
     if(Materia[i]->getType() == type)
     {
-          printf("here");
+      printf("reda");
       return(Materia[i]->clone());  
     }
   }

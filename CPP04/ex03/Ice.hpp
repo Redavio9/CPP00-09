@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 10:33:19 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:13:25 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:28:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class Ice : public AMateria
     Ice* clone() const;
     void use(ICharacter& target);
 
-    std::string getType(){
-      return (type);
-    }
+    // std::string getType(){
+    //   return (type);
+    // }
     ~Ice();
 };
 

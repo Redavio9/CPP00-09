@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 10:33:17 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:15:29 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:28:30 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class Cure : public AMateria
     Cure* clone() const;
     void use(ICharacter& target);
     ~Cure();
-    std::string getType(){
-      return (type);
-    }
+    // std::string getType(){
+    //   return (type);
+    // }
 };
 
 #endif

@@ -6,16 +6,16 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 10:33:12 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:19:26 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:32:38 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Cure.hpp"
 
-Cure::Cure() : AMateria(type)
+Cure::Cure()
 {
   // std::cout << this->type << "Default Cure constructor\n";
-  type = "Cure";
+  type = "cure";
 }
 Cure::Cure(const Cure &copy)
 {
