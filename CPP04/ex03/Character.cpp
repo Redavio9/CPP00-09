@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:30:10 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:28:49 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:39:35 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
   
-    for(int i = 0; i < 4 && inventory[i]; i++)
+    // for(int i = 0; i < 4 && inventory[i]; i++)
+    if(idx >= 0 && idx < 4)
       this->inventory[idx]->use(target);
     
 }

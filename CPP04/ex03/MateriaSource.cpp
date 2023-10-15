@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:07:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:29:50 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:36:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,8 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
   for (size_t i = 0; i < 4 ; i++)
   {
-     std::cout << Materia[i]->getType() << std::endl;
     if(Materia[i]->getType() == type)
     {
-      printf("reda");
       return(Materia[i]->clone());  
     }
   }
