@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:38:47 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/16 10:16:20 by rarraji          ###   ########.fr       */
+/*   Created: 2023/10/15 22:17:32 by rarraji           #+#    #+#             */
+/*   Updated: 2023/10/16 10:19:12 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Animal.hpp"
+#include"WrongCat.hpp"
 
-Animal::Animal()
+WrongCat::WrongCat()
 {
-  std::cout <<  "Default Animal constructor\n";
+  // std::cout << this->type << "Default WrongCat constructor\n";
 }
-Animal::Animal(std::string type)
+WrongCat::WrongCat(std::string type)
 {
   this->type = type;
 }
-Animal::Animal(const Animal &copy)
+WrongCat::WrongCat(const WrongCat &copy)
 {
   this->type = copy.type;
 }
-Animal &Animal::operator=(const Animal &assign)
+
+WrongCat &WrongCat::operator=(const WrongCat &assign)
 {
   if (this != &assign)
     this->type = assign.type;
-  return(*this);  
+  return(*this);
 }
 
-Animal::~Animal()
+WrongCat::~WrongCat()
 {
-  std::cout << this->type << "Animal Destructor\n";
+   std::cout << this->type << "WrongCat Destructor\n";
 }
 
-void Animal::makeSound()
+void WrongCat::makeSound()
 {
-  std::cout << "I AM Animal Meow! Meow! Woof! Woof!\n";
+  std::cout << "I AM A CAT Meow! Meow!\n";
 }
-

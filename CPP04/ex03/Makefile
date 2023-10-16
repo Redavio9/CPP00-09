@@ -6,14 +6,14 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/10 08:49:23 by rarraji           #+#    #+#              #
-#    Updated: 2023/10/14 12:57:52 by rarraji          ###   ########.fr        #
+#    Updated: 2023/10/16 13:00:38 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= prg
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++98 #-fsanitize=address 
 RM		= rm -rf
 SRC		= main.cpp AMateria.cpp Character.cpp MateriaSource.cpp Cure.cpp Ice.cpp  
 OBJ   = $(SRC:.cpp=.o)

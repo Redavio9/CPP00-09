@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 09:38:47 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/16 10:16:20 by rarraji          ###   ########.fr       */
+/*   Created: 2023/10/15 22:17:36 by rarraji           #+#    #+#             */
+/*   Updated: 2023/10/16 10:16:12 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Animal.hpp"
+#include"WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-  std::cout <<  "Default Animal constructor\n";
+  std::cout <<  "Default WrongAnimal constructor\n";
 }
-Animal::Animal(std::string type)
+WrongAnimal::WrongAnimal(std::string type)
 {
   this->type = type;
 }
-Animal::Animal(const Animal &copy)
+WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
   this->type = copy.type;
 }
-Animal &Animal::operator=(const Animal &assign)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &assign)
 {
   if (this != &assign)
     this->type = assign.type;
   return(*this);  
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-  std::cout << this->type << "Animal Destructor\n";
+  std::cout << this->type << "WrongAnimal Destructor\n";
 }
 
-void Animal::makeSound()
+void WrongAnimal::makeSound()
 {
-  std::cout << "I AM Animal Meow! Meow! Woof! Woof!\n";
+  std::cout << "I AM WrongAnimal Meow! Meow! Woof! Woof!\n";
 }
-

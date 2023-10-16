@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:30:10 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 19:00:15 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/16 13:10:22 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Character::Character()
     this->inventory[i] = NULL;
   }
   this->name = "Default";
-  // std::cout << this->name << "Default Character constructor\n";
 }
 Character::Character(std::string const &name) : name(name)
 {
@@ -46,11 +45,19 @@ Character &Character::operator=(const Character &assign)
   {
     for (size_t i = 0; i < 4; i++)
     {
-      this->tmp[i] = NULL;
-      this->inventory[i] = NULL;
+      if (assign.tmp[i])
+      {
+        delete this->tmp[i];
+        this->tmp[i] = assign.tmp[i]->clone();
+      }
+      if (assign.inventory[i])
+      {
+        delete this->inventory[i];
+        this->inventory[i] = assign.inventory[i]->clone();;
+      }  
     }
+    this->name = assign.name;
   }
-  this->name = assign.name;
   return(*this);  
 }
 
@@ -61,12 +68,20 @@ const std::string &Character::getName() const
 
 Character::~Character()
 {
-  // std::cout << this->name << "Destructor Character\n";
+  for (size_t i = 0; i < 4; i++)
+  {
+    delete this->inventory[i];
+    delete this->tmp[i];
+  }
 }
 void Character::equip(AMateria* m)
 {
   size_t i = 0;
   
+  for (int j = 0; j < 4 && tmp[j]; j++)
+  {
+    delete tmp[j];
+  }
   for (i = 0; i < 4; i++)
   {
     if(this->inventory[i] == NULL)
@@ -75,14 +90,26 @@ void Character::equip(AMateria* m)
   if (i < 4)
     this->inventory[i] = m;
   else
+  {
     std::cout << "ERROR !!" << std::endl;
+    delete m;
+  }
+    
 }
 void Character::unequip(int idx)
 {
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << "wrong idx number" << std::endl;
+		return ;
+	}
   for (size_t i = 0; i < 4; i++)
   {
     if (this->inventory[i])
+    {
+      this->tmp[i] = this->inventory[i];
       this->inventory[i] = NULL;
+    }
   }
 }
 void Character::use(int idx, ICharacter& target)

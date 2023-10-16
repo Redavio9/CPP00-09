@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:49:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 16:23:55 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/16 13:11:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,36 @@
 #include"Cure.hpp"
 #include"Ice.hpp"
 
-// int main()
-// {
-//   IMateriaSource* src = new MateriaSource();
-  
-//   src->learnMateria(new Ice());
-//   src->learnMateria(new Cure());
-  
-//   ICharacter* me = new Character("me");
-  
-//   AMateria* tmp;
-  
-//   tmp = src->createMateria("ice");
-//   me->equip(tmp);
-  
-//   tmp = src->createMateria("cure");
-//   me->equip(tmp);
-  
-//   ICharacter* bob = new Character("bob");
-  
-//   me->use(0, *bob);
-//   me->use(1, *bob);
-  
-//   delete bob;
-//   delete me;
-//   delete src;
-//   return(0);
-// }
 
-void	test1()
+void test1()
+{
+	IMateriaSource* src = new MateriaSource();
+  
+  src->learnMateria(new Ice());
+  src->learnMateria(new Cure());
+  
+  ICharacter* me = new Character("me");
+  
+  AMateria* tmp;
+  
+  tmp = src->createMateria("ice");
+  me->equip(tmp);
+  
+  tmp = src->createMateria("cure");
+  me->equip(tmp);
+  
+  ICharacter* bob = new Character("bob");
+  
+  me->use(0, *bob);
+  me->use(1, *bob);
+  
+  delete bob;
+  delete me;
+  delete src;
+}
+
+
+void	test2()
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
@@ -66,29 +67,6 @@ void	test1()
 	delete src;	
 }
 
-void	test2()
-{
-	Character *c = new Character;
-	Character *c2 = new Character;
-	Ice *ice = new Ice;
-	c->equip(ice);
-	c->equip(ice);
-	c->equip(ice);
-	c->equip(ice);
-	c->equip(new Ice);
-	c->equip(new Ice);
-	c->equip(new Ice);
-	c->equip(ice);
-	c->unequip(0);
-	c->unequip(1);
-	c->unequip(2);
-	c->unequip(3);
-	c->unequip(4);
-	c->unequip(5);
-	*c = *c2;
-	delete c;
-	delete c2;
-}
 
 void	test3()
 {
@@ -244,16 +222,14 @@ int main()
 	std::cout << "--------- test 5 ----------" << std::endl;
 	test5();
 	std::cout << "--------- test 6 ----------" << std::endl;
-	test6();
-	std::cout << "--------- test 7 ----------" << std::endl;
 	test7();
-	std::cout << "--------- test 8 ----------" << std::endl;
+	std::cout << "--------- test 7 ----------" << std::endl;
 	test8();
-	std::cout << "--------- test 9 ----------" << std::endl;
+	std::cout << "--------- test 8 ----------" << std::endl;
 	test9();
-	std::cout << "--------- test 10 ----------" << std::endl;
+	std::cout << "--------- test 9 ----------" << std::endl;
 	test10();
-	std::cout << "--------- test LEAKS ----------" << std::endl;
+	std::cout << "--------- test 10 LEAKS ----------" << std::endl;
 	system("leaks -q prg");
 	return 0;
 }

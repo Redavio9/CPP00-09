@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 12:08:31 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 18:57:43 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/16 11:46:24 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class MateriaSource : public IMateriaSource
   private:
     std::string name;
     AMateria *Materia[4];
-    std::string *tmp[4];
+    AMateria *tmp[4];
   public:
     MateriaSource();
     MateriaSource(std::string const & type);

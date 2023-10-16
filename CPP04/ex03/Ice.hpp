@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 10:33:19 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:28:26 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/16 13:10:56 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ class Ice : public AMateria
     Ice &operator=(const Ice &assign);
     Ice* clone() const;
     void use(ICharacter& target);
-
-    // std::string getType(){
-    //   return (type);
-    // }
     ~Ice();
 };
 
