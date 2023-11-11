@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:01:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/11 10:09:19 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/11 22:13:27 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ void Bureaucrat::increment()
 {
   this->grade--;
   if (grade > 150)
-    throw Bureaucrat::GradeTooLowException();
+    throw GradeTooLowException();
   else if (grade < 1)
-    throw Bureaucrat::GradeTooHighException();
+    throw GradeTooHighException();
 }
 void Bureaucrat::decrement()
 {
   this->grade++;
    if (grade > 150)
-    throw Bureaucrat::GradeTooLowException();
+    throw GradeTooLowException();
   else if (grade < 1)
-    throw Bureaucrat::GradeTooHighException();
+    throw GradeTooHighException();
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) 

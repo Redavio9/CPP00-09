@@ -6,21 +6,21 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/11 10:11:36 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/11 22:27:10 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Bureaucrat.hpp"
+#include"Form.hpp"
 
 
 int main()
 {
   Bureaucrat a("reda", 1);
+  Form b;
   
-  Bureaucrat b("reda", 150); 
   try 
   {
-    b.decrement();
+    b.beSigned(a);
   } 
   catch (std::exception &e) 
   {
