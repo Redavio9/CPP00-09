@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:07:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/16 12:58:01 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:12:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,7 @@ MateriaSource::~MateriaSource()
 void MateriaSource::learnMateria(AMateria* m)
 {
   size_t i = 0;
-  // for (int j = 0; j < 4 && tmp[i]; j++)
-  // {
-  //   delete tmp[i];
-  // }
+  
   for (i = 0; i < 4; i++)
   {
     if(this->Materia[i] == NULL)
@@ -86,9 +83,7 @@ void MateriaSource::learnMateria(AMateria* m)
   }
   if (i < 4)
   {
-    delete Materia[i];
     this->Materia[i] = m;
-    // delete m;
   }
   else
   {

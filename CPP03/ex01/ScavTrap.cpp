@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:13:03 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/06 11:58:04 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:39:08 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,14 @@ ScavTrap::ScavTrap(const ScavTrap &copy)
 }
 ScavTrap &ScavTrap::operator=(const ScavTrap &assign)
 {
-  this->name = assign.name;
-  this->Hit_points = assign.Hit_points;
-  this->Energy_points = assign.Energy_points;
-  this->Attack_damage = assign.Attack_damage;
-	std::cout << "ScavTrap "<< this->name << " operator= is called" << std::endl;
+	if(this != &assign)
+	{
+		this->name = assign.name;
+		this->Hit_points = assign.Hit_points;
+		this->Energy_points = assign.Energy_points;
+		this->Attack_damage = assign.Attack_damage;
+		std::cout << "ScavTrap "<< this->name << " operator= is called" << std::endl;
+	}
   return(*this);
 }
 
@@ -60,24 +63,6 @@ void ScavTrap::attack(const std::string& target)
 		this->Energy_points--;
 		std::cout << "ScavTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!" << std::endl;
 	}   
-}
-
-void ScavTrap::takeDamage(unsigned int amount)
-{
-		this->Hit_points -= amount;
-		std::cout << "ScavTrap " << this->name << " take Damage " << amount << " , remaning hp is " << this->Energy_points << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if (Hit_points == 0 || Energy_points == 0)
-		 std::cout << "ScavTrap " << this->name << " No Repaired " << std::endl;
-	else
-	{
-		this->Energy_points--;
-		this->Hit_points += amount;
-		std::cout << "ScavTrap " << this->name << " is repaired by " << amount << " and remaning hp is " << this->Energy_points << std::endl;
-	}
 }
 
 void	ScavTrap::guardGate() 

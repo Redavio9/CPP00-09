@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:49:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/06 12:08:11 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:45:45 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,34 +53,6 @@ FragTrap &FragTrap::operator=(const FragTrap &assign)
   return(*this);
 }
 
-void FragTrap::attack(const std::string& target)
-{
-	if (Hit_points == 0 || Energy_points == 0)
-		 std::cout << "FragTrap " << this->name << " No attacks " << std::endl;
-	else
-	{  
-		this->Energy_points--;
-		std::cout << "FragTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!" << std::endl;
-	}   
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-		this->Hit_points -= amount;
-		std::cout << "FragTrap " << this->name << " take Damage " << amount << " , remaning hp is " << this->Energy_points << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-	if (Hit_points == 0 || Energy_points == 0)
-		 std::cout << "FragTrap " << this->name << " No Repaired " << std::endl;
-	else
-	{
-		this->Energy_points--;
-		this->Hit_points += amount;
-		std::cout << "FragTrap " << this->name << " is repaired by " << amount << " and remaning hp is " << this->Energy_points << std::endl;
-	}
-}
 
 void	FragTrap::highFivesGuys() 
 {

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:48:40 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/14 13:19:10 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/16 19:49:43 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat()
 {
-  // std::cout << this->type << "Default Cat constructor\n";
+  std::cout << this->type << "Default Cat constructor\n";
 }
 Cat::Cat(std::string type)
 {

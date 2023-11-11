@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 10:33:12 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:32:38 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:15:32 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Cure::~Cure()
 }
 Cure* Cure::clone() const
 {
-    return new Cure(*this);
+    return new Cure;
 }
 
 void Cure::use(ICharacter& target)

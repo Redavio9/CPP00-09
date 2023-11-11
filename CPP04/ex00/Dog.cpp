@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:50:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/14 13:19:07 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/16 19:49:49 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog()
 {
-  // std::cout << this->type << "Default Dog constructor\n";
+  std::cout << this->type << "Default Dog constructor\n";
 }
 Dog::Dog(std::string type)
 {

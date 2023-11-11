@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 12:45:35 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/06 11:59:14 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:07:05 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 	this->Hit_points = copy.Hit_points;
 	this->Energy_points = copy.Energy_points;
 	this->Attack_damage = copy.Attack_damage;
-	std::cout << "ClapTrap "<< this->name << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap "<< this->name << " Copy constructor called" << std::endl;
 }
-ClapTrap &ClapTrap::operator=(const ClapTrap &assign)
+ClapTrap ClapTrap::operator=(const ClapTrap &assign)
 {
 	if(this != &assign)
 	{
@@ -55,10 +55,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &assign)
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (Hit_points == 0 || Energy_points == 0)
+	if (Hit_points <= 0 || Energy_points <= 0)
 		 std::cout << "ClapTrap " << this->name << " No attacks " << std::endl;
 	else
-	{  
+	{
 		this->Energy_points--;
 		std::cout << "ClapTrap " << this->name << " attacks " << target << " , causing " << this->Attack_damage << " points of damage!" << std::endl;
 	}   

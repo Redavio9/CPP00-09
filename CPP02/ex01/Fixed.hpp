@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:34:49 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/04 11:01:30 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:08:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ class Fixed
     int getRawBits( void );
     void setRawBits( int const raw );
 };
-  std::ostream   &operator<<(std::ostream &out, const Fixed &fixed);
+  std::ostream   operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

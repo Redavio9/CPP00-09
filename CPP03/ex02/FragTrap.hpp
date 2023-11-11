@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:48:33 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 10:58:04 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:45:27 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ class FragTrap: public ClapTrap {
 		FragTrap &operator=(const FragTrap &assign);
     FragTrap(const FragTrap &copy);
 		~FragTrap();
-		void	attack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		void  highFivesGuys();
 };
 

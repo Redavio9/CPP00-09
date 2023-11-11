@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 11:30:10 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/16 13:10:22 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:04:38 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ void Character::equip(AMateria* m)
     std::cout << "ERROR !!" << std::endl;
     delete m;
   }
-    
 }
 void Character::unequip(int idx)
 {

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:42:52 by rarraji           #+#    #+#             */
-/*   Updated: 2023/09/14 10:57:00 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/09 12:44:37 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ClapTrap
     virtual void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    ~ClapTrap();
+    virtual ~ClapTrap();
 };
 
 #endif

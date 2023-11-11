@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 10:33:14 by rarraji           #+#    #+#             */
-/*   Updated: 2023/10/15 11:32:25 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:15:44 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ Ice::~Ice()
 }
 Ice* Ice::clone() const
 {
-    return new Ice(*this);
+    return new Ice;
 }
 
 void Ice::use(ICharacter& target)
 {
-  std::cout << "* heals < " << target.getName() << "s wounds " << std::endl;
+  std::cout << "* heals < " << target.getName() << "'s wounds " << std::endl;
 }
