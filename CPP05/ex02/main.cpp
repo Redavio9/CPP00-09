@@ -6,7 +6,14 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:37 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 09:36:38 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/13 13:04:34 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ShrubberyCreationForm.hpp"
+
+int main()
+{
+  Bureaucrat a();
+  
+}

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:54 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 10:04:09 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/13 11:28:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,23 @@
 #include "iostream"
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include <fstream>
 
 class Bureaucrat;
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public AForm
 {
   private:
-    const std::string name;
+		const std::string name;
+		const int grade;
+		const int grade_execute;
   public:
     public:
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string name);
 		~ShrubberyCreationForm();
 		std::string getName() const;
-		virtual void execute(Bureaucrat const & executor);
+		void execute(Bureaucrat const & executor);
 		class GradeTooHighException : public std::exception 
     {
 			public:
