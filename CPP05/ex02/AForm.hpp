@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 09:20:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/13 09:56:00 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
+
 
 #include "iostream"
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
   private:
     const std::string name;
@@ -27,13 +28,14 @@ class Form
     const int grade_execute;
   public:
     public:
-		Form();
-		Form(std::string name, int grade, bool signe, int grade_execute);
-		~Form();
+		AForm();
+		AForm(const std::string name);
+		~AForm();
 		std::string getName() const;
 		int getGrade() const;
 		bool getSigne() const;
     void beSigned(Bureaucrat obj);
+		virtual void execute(Bureaucrat const & executor) = 0;
 		class GradeTooHighException : public std::exception 
     {
 			public:
@@ -42,7 +44,6 @@ class Form
 					return "Grade too high";
 				}
 		};
-
 		class GradeTooLowException : public std::exception 
     {
 		public:

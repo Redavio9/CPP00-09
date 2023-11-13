@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 09:20:59 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/13 09:36:46 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/13 10:10:56 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
+
 
 #include "iostream"
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat;
 
-class Form
+class PresidentialPardonForm
 {
   private:
     const std::string name;
-    const int grade;
-    bool signe;
-    const int grade_execute;
   public:
     public:
-		Form();
-		Form(std::string name, int grade, bool signe, int grade_execute);
-		~Form();
+		PresidentialPardonForm();
+		PresidentialPardonForm(const std::string name);
+		~PresidentialPardonForm();
 		std::string getName() const;
-		int getGrade() const;
-		bool getSigne() const;
-    void beSigned(Bureaucrat obj);
+		virtual void execute(Bureaucrat const & executor);
 		class GradeTooHighException : public std::exception 
     {
 			public:
@@ -42,7 +39,6 @@ class Form
 					return "Grade too high";
 				}
 		};
-
 		class GradeTooLowException : public std::exception 
     {
 		public:
@@ -53,8 +49,5 @@ class Form
 		};
   
 };
-
-
-std::ostream &operator<<(std::ostream &out, const Form& obj);
-
-#endif
+                                                                                                
+# endif

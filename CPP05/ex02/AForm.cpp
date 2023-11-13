@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 09:23:22 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/13 09:56:17 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
-Form::Form() : grade(1), grade_execute(1), signe(false)
+AForm::AForm()
 {
 }
-Form::Form(std::string name, int grade, bool signe, int grade_execute) : name(name), grade(grade), signe(false) , grade_execute(grade_execute)
+AForm::AForm(std::string name) : name(name)
 {
 }
-std::string Form::getName() const
+std::string AForm::getName() const
 {
   return(this->name);
 }
 
-int Form::getGrade() const
+int AForm::getGrade() const
 {
   return(this->grade);
 }
 
-bool Form::getSigne() const
+bool AForm::getSigne() const
 {
   return(this->signe);
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 }
 
-void Form::beSigned(Bureaucrat obj)
+void AForm::beSigned(Bureaucrat obj)
 {
   if (obj.getGrade() < this->grade)
     throw GradeTooLowException();
@@ -46,7 +46,7 @@ void Form::beSigned(Bureaucrat obj)
 }
 
 
-std::ostream& operator<<(std::ostream& os, const Form& obj) 
+std::ostream& operator<<(std::ostream& os, const AForm& obj) 
 {
     os << obj.getName() << ", Form grade " << obj.getGrade() << ".";
     return os;
