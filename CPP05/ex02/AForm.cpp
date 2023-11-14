@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/14 10:00:46 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 13:04:48 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,26 @@ std::string AForm::getName() const
 {
   return(this->name);
 }
+Aform::~Aform()
+{
+}
+
+Aform::Aform(Aform const &obj)
+{
+	*this = obj;
+}
+Aform::operator=(Aform const &obj)
+{
+	if(this != obj)
+	{
+		obj->name = this->name;
+		obj->grade = this->grade;
+		obj->grade_execute = this->grade_execute;
+    obj->signe = this->signe;
+	}
+	return(*this);
+}
+
 
 int AForm::getGrade() const
 {

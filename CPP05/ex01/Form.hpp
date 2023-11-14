@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 09:20:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 12:57:14 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class Form
 		Form();
 		Form(std::string name, int grade, bool signe, int grade_execute);
 		~Form();
+		Form(Form const &obj);
+		Form operator=(Form const &obj);
 		std::string getName() const;
 		int getGrade() const;
 		bool getSigne() const;

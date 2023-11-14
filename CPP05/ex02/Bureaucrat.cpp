@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:01:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 11:50:46 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 13:05:04 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ int Bureaucrat::getGrade() const
 Bureaucrat::~Bureaucrat()
 {
 }
+Bureaucrat::Bureaucrat(Bureaucrat const &obj)
+{
+	*this = obj;
+}
+Bureaucrat::operator=(Bureaucrat const &obj)
+{
+	if(this != obj)
+	{
+		obj->name = this->name;
+		obj->grade = this->grade;
+	}
+	return(*this);
+}
+
 void Bureaucrat::increment()
 {
   this->grade--;
