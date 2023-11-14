@@ -6,12 +6,11 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 11:55:21 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:00:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
-
 
 AForm::AForm() : name("Default") , grade(5) , grade_execute(4)
 {
@@ -19,6 +18,8 @@ AForm::AForm() : name("Default") , grade(5) , grade_execute(4)
 AForm::AForm(std::string name) : name(name) , grade(5), grade_execute(4)
 {
 }
+
+AForm::AForm(const std::string name, int grade_sign, int grade_execution): name(name), grade(grade_sign), grade_execute(grade_execution), signe(false) {}
 std::string AForm::getName() const
 {
   return(this->name);
@@ -50,8 +51,8 @@ void AForm::beSigned(Bureaucrat obj)
 }
 
 
-// std::ostream& operator<<(std::ostream& os, const AForm& obj) 
-// {
-//     os << obj.getName() << ", Form grade " << obj.getGrade() << ".";
-//     return os;
-// }
+std::ostream& operator<<(std::ostream& os, const AForm& obj) 
+{
+    os << obj.getName() << ", Form grade " << obj.getGrade() << ".";
+    return os;
+}

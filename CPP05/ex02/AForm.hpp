@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 11:55:45 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 09:59:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ class AForm
   private:
     const std::string name;
     const int grade;
-    bool signe;
     const int grade_execute;
+    bool signe;
   public:
     public:
 		AForm();
 		AForm(const std::string name);
+		AForm(const std::string name, int grade_sign, int grade_execution);
 		~AForm();
 		std::string getName() const;
 		int getGrade() const;
@@ -57,6 +58,6 @@ class AForm
 };
 
 
-// std::ostream &operator<<(std::ostream &out, const AForm& obj);
+std::ostream &operator<<(std::ostream &out, const AForm& obj);
 
 #endif

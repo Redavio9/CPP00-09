@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:46 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/13 10:20:36 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:56:05 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,10 @@ class Bureaucrat;
 
 class PresidentialPardonForm : public AForm
 {
-  private:
-		const std::string name;
-		const int grade;
-		const int grade_execute;
   public:
-    public:
 		PresidentialPardonForm();
 		PresidentialPardonForm(const std::string name);
 		~PresidentialPardonForm();
-		std::string getName() const;
 		void execute(Bureaucrat const & executor);
 		class GradeTooHighException : public std::exception 
     {
@@ -43,7 +37,7 @@ class PresidentialPardonForm : public AForm
 		};
 		class GradeTooLowException : public std::exception 
     {
-		public:
+			public:
 			const char *what() const throw() 
       {
 				return "Grade too low";
