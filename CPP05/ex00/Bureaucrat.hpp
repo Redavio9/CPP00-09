@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:03 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/14 12:54:27 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 14:26:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ class Bureaucrat
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 
 #endif
-
 

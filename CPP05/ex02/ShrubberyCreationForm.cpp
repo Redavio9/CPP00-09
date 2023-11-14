@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:58 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/14 13:09:06 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/14 13:10:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ ShrubberyCreationForm::operator=(ShrubberyCreationForm const &obj)
 	}
 	return(*this);
 }
+
 void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
   if(this->getSigne() && (executor.getGrade() > this->getGrade()))
