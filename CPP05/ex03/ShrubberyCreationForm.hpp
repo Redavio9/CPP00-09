@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/11 22:43:03 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/13 09:36:54 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/15 09:21:59 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
+
 
 #include "iostream"
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include <fstream>
 
-class Form
+class Bureaucrat;
+
+class ShrubberyCreationForm : public AForm
 {
-  private:
-    const std::string name;
-    const int grade;
-    bool signe;
-    const int grade_execute;
   public:
     public:
-		Form();
-		Form(std::string name, int grade, bool signe, int grade_execute);
-		~Form();
-		std::string getName() const;
-		int getGrade() const;
-		bool getSigne() const;
-    void beSigned(Bureaucrat obj);
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(const std::string name);
+		~ShrubberyCreationForm();
+		ShrubberyCreationForm(ShrubberyCreationForm const & obj);
+		ShrubberyCreationForm operator=(ShrubberyCreationForm const & obj);
+		void execute(Bureaucrat const & executor);
 		class GradeTooHighException : public std::exception 
     {
 			public:
@@ -40,7 +39,6 @@ class Form
 					return "Grade too high";
 				}
 		};
-
 		class GradeTooLowException : public std::exception 
     {
 		public:
@@ -49,10 +47,6 @@ class Form
 				return "Grade too low";
 			}
 		};
-  
 };
-
-
-std::ostream &operator<<(std::ostream &out, const Form& obj);
-
-#endif
+                                                                                                
+# endif

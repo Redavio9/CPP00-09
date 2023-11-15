@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 11:01:28 by rarraji           #+#    #+#              #
-#    Updated: 2023/11/13 09:38:33 by rarraji          ###   ########.fr        #
+#    Updated: 2023/11/15 11:42:09 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	= Bureaucrat
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
-SRC		= Bureaucrat.cpp main.cpp Form.cpp
+SRC		= Bureaucrat.cpp Form.cpp main.cpp 
 OBJ   = $(SRC:.cpp=.o)
 #Colors:
 RED = \033[0;31m

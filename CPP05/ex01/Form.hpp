@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/14 12:57:14 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:48:31 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,16 @@ class Form
     bool signe;
     const int grade_execute;
   public:
-    public:
 		Form();
-		Form(std::string name, int grade, bool signe, int grade_execute);
 		~Form();
 		Form(Form const &obj);
 		Form operator=(Form const &obj);
+		
+		Form(std::string name, int grade, bool signe, int grade_execute);
 		std::string getName() const;
 		int getGrade() const;
 		bool getSigne() const;
+		int getExecGrade() const;
     void beSigned(Bureaucrat obj);
 		class GradeTooHighException : public std::exception 
     {

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/11 22:27:10 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:26:17 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 int main()
 {
-  Bureaucrat a("reda", 1);
-  Form b;
-  
   try 
   {
+    Bureaucrat a("reda", -1);
+    Form b;
     b.beSigned(a);
   } 
   catch (std::exception &e) 
