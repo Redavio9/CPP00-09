@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 11:56:34 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 12:17:44 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ Form::Form(std::string name, int grade, bool signe, int grade_execute) : name(na
 Form::~Form()
 {
 }
-Form::Form(Form const &obj) : Form()
+Form::Form(Form const &obj) : name(obj.getName()) , grade(obj.getGrade()) , grade_execute(obj.getExecGrade())
 {
 	*this = obj;
 }
-Form Form::operator=(Form const &obj) : name(obj.getName()) , grade(obj.getGrade()) , grade_execute(obj.getExecGrade())
+Form Form::operator=(Form const &obj) 
 {
-	if(this != &obj)
-    this->signe = obj.getSigne(); 
+	 if (this != &obj) 
+      signe = obj.getSigne();
 	return(*this);
 }
 std::string Form::getName() const
@@ -67,7 +67,6 @@ void Form::beSigned(Bureaucrat obj)
     throw GradeTooLowException();
   this->signe = true;  
 }
-
 
 std::ostream& operator<<(std::ostream& os, const Form& obj) 
 {

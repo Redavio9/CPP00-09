@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 11:37:29 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 12:18:21 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ AForm::AForm(AForm const &obj) : name(obj->getName()) , grade(obj->getGrade()) ,
 {
 	*this = obj;
 }
-AForm::operator=(AForm const &obj) : name(obj->getName()) , grade(obj->getGrade()) , grade_execute(obj->getExecGrade())
+AForm::operator=(AForm const &obj)
 {
 	if(this != obj)
     this.sign = obj->getSigne(); 
