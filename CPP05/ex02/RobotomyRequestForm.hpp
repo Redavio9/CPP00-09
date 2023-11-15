@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 09:22:43 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:28:52 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(const std::string name);
 		~RobotomyRequestForm();
 		RobotomyRequestForm(RobotomyRequestForm const & obj);
-		RobotomyRequestForm operator=(RobotomyRequestForm const & obj);
+		RobotomyRequestForm &operator=(RobotomyRequestForm const & obj);
 		void execute(Bureaucrat const & executor);
 		class GradeTooHighException : public std::exception 
     {

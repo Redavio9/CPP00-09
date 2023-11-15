@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:48 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 11:38:17 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:28:42 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,9 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &obj)
 {
 	*this = obj;
 }
-RobotomyRequestForm::operator=(RobotomyRequestForm const &obj)
+RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &obj)
 {
-	if(this != obj)
-	{
-		obj->name = this->name;
-		obj->grade = this->grade;
-		obj->grade_execute = this->grade_execute;
-    obj->signe = this->signe;
-	}
+	(void) obj;
 	return(*this);
 }
 void RobotomyRequestForm::execute(Bureaucrat const & executor)

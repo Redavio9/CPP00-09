@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:54 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 09:21:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:28:59 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(const std::string name);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm(ShrubberyCreationForm const & obj);
-		ShrubberyCreationForm operator=(ShrubberyCreationForm const & obj);
+		ShrubberyCreationForm &operator=(ShrubberyCreationForm const & obj);
 		void execute(Bureaucrat const & executor);
 		class GradeTooHighException : public std::exception 
     {

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:43 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 11:38:34 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:28:03 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,9 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &obj
 {
 	*this = obj;
 }
-PresidentialPardonForm::operator=(PresidentialPardonForm const &obj)
+PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const &obj)
 {
-	if(this != obj)
-	{
-		obj->name = this->name;
-		obj->grade = this->grade;
-		obj->grade_execute = this->grade_execute;
-    obj->signe = this->signe;
-	}
+	(void) obj;
 	return(*this);
 }
 void PresidentialPardonForm::execute(Bureaucrat const & executor)
