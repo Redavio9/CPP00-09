@@ -6,14 +6,14 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:01:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 11:30:12 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/17 10:04:51 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-
-Bureaucrat::Bureaucrat() : name("default name"), grade(50) 
+// ---------------------------------------------------------------------------- //
+Bureaucrat::Bureaucrat() : name("Default"), grade(50) 
 {
 }
 
@@ -25,17 +25,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 		throw GradeTooHighException();
 	this->grade = grade;
 }
-
-std::string Bureaucrat::getName() const
-{
-	return(this->name);
-}
-
-int Bureaucrat::getGrade() const
-{
-	return(this->grade);
-}
-
 Bureaucrat::~Bureaucrat()
 {
 }
@@ -49,6 +38,19 @@ Bureaucrat Bureaucrat::operator=(Bureaucrat const &obj)
 		this->grade = obj.getGrade();
 	return(*this);
 }
+// ---------------------------------------------------------------------------- //
+
+std::string Bureaucrat::getName() const
+{
+	return(this->name);
+}
+
+int Bureaucrat::getGrade() const
+{
+	return(this->grade);
+}
+
+// ---------------------------------------------------------------------------- //
 
 void Bureaucrat::increment()
 {
@@ -67,6 +69,8 @@ void Bureaucrat::decrement()
 		throw GradeTooHighException();
 	this->grade++;
 }
+
+// ---------------------------------------------------------------------------- //
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) 
 {

@@ -6,20 +6,19 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 12:24:03 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/17 10:09:12 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Intern.hpp"
 
-
 int main()
 {
-    Intern b;
   try 
   {
+    Intern b;
     Bureaucrat a("reda", -1);
-    b.beSigned(a);
+    a.signForm();
   } 
   catch (std::exception &e) 
   {

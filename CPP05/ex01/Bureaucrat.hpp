@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:03 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/14 12:56:57 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/17 10:03:57 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,14 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat(Bureaucrat const &obj);
 		Bureaucrat operator=(Bureaucrat const &obj);
+		
 		std::string getName() const;
 		int getGrade() const;
+		
 		void increment();
 		void decrement();
 		void signForm(Form &obj);
+		
 		class GradeTooHighException : public std::exception {
 			public:
 				const char *what() const throw() {

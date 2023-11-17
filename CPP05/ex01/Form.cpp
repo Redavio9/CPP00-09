@@ -6,12 +6,13 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 12:17:44 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/17 10:06:11 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
+// ---------------------------------------------------------------------------- //
 
 Form::Form() : name("Default") , grade(1), signe(false), grade_execute(1)
 {
@@ -40,6 +41,8 @@ Form Form::operator=(Form const &obj)
       signe = obj.getSigne();
 	return(*this);
 }
+
+// ---------------------------------------------------------------------------- //
 std::string Form::getName() const
 {
   return(this->name);
@@ -59,7 +62,7 @@ bool Form::getSigne() const
 {
   return(this->signe);
 }
-
+// ---------------------------------------------------------------------------- //
 
 void Form::beSigned(Bureaucrat obj)
 {
@@ -67,6 +70,7 @@ void Form::beSigned(Bureaucrat obj)
     throw GradeTooLowException();
   this->signe = true;  
 }
+// ---------------------------------------------------------------------------- //
 
 std::ostream& operator<<(std::ostream& os, const Form& obj) 
 {
