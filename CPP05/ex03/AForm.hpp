@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 12:22:38 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 11:59:14 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ class AForm
 		AForm();
 		AForm(const std::string name);
 		AForm(const std::string name, int grade_sign, int grade_execution);
-		~AForm();
+		virtual ~AForm();
 		AForm(AForm const &obj);
+		AForm &operator=(AForm const &obj);
 		std::string getName() const;
 		int getGrade() const;
 		bool getSigne() const;

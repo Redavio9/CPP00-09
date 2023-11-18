@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/17 10:06:11 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 10:23:48 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form() : name("Default") , grade(1), signe(false), grade_execute(1)
 	else if (grade  < 1 || grade_execute < 1)
 		throw GradeTooHighException();
 }
-Form::Form(std::string name, int grade, bool signe, int grade_execute) : name(name), grade(grade), signe(signe) , grade_execute(grade_execute)
+Form::Form(std::string name, int grade, int grade_execute) : name(name), grade(grade), signe(false) , grade_execute(grade_execute)
 {
   if (grade > 150 || grade_execute > 150)
 		throw GradeTooLowException();
@@ -64,7 +64,7 @@ bool Form::getSigne() const
 }
 // ---------------------------------------------------------------------------- //
 
-void Form::beSigned(Bureaucrat obj)
+void Form::beSigned(Bureaucrat &obj)
 {
   if (obj.getGrade() > this->grade)
     throw GradeTooLowException();

@@ -6,29 +6,34 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 14:16:31 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 14:52:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() : name("Default") , grade(5) , grade_execute(4)
+AForm::AForm() : name("Default") , grade(5) , grade_execute(4), signe(false)
 {
-   if (grade > 150 || grade_execute > 150)
-		throw GradeTooLowException();
-	else if (grade  < 1 || grade_execute < 1)
-		throw GradeTooHighException();
+//    if (grade > 150 || grade_execute > 150)
+// 		throw GradeTooLowException();
+// 	else if (grade  < 1 || grade_execute < 1)
+// 		throw GradeTooHighException();
 }
-AForm::AForm(std::string name) : name(name) , grade(5), grade_execute(4)
-{
+// AForm::AForm(std::string name) : name(name) , grade(5), grade_execute(4), signe(false)
+// {
+  
+//   if (grade > 150 || grade_execute > 150)
+// 		throw GradeTooLowException();
+// 	else if (grade  < 1 || grade_execute < 1)
+// 		throw GradeTooHighException();
+// }
+
+AForm::AForm(std::string name, int grade_sign, int grade_execution): name(name), grade(grade_sign), grade_execute(grade_execution), signe(false) 
+{ 
   if (grade > 150 || grade_execute > 150)
 		throw GradeTooLowException();
 	else if (grade  < 1 || grade_execute < 1)
 		throw GradeTooHighException();
-}
-
-AForm::AForm(const std::string name, int grade_sign, int grade_execution): name(name), grade(grade_sign), grade_execute(grade_execution), signe(false) 
-{
 }
 
 AForm::~AForm()
@@ -42,7 +47,7 @@ AForm::AForm(AForm const &obj) : name(obj.getName()) , grade(obj.getGrade()) , g
 AForm& AForm::operator=(AForm const &obj)
 {
 	if(this != &obj)
-    this->signe = obj.getSigne(); 
+    this->signe = obj.signe; 
 	return(*this);
 }
 
@@ -65,11 +70,11 @@ bool AForm::getSigne() const
   return(this->signe);
 }
 
-void AForm::beSigned(Bureaucrat obj)
+void AForm::beSigned(Bureaucrat& obj)
 {
   if (obj.getGrade() < this->grade)
     throw GradeTooLowException();
-  this->signe = true;  
+  this->signe = true;
 }
 
 

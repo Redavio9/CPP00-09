@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/17 10:09:12 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 11:59:34 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ int main()
   {
     std::cout << e.what() << std::endl;
   }
-  std::cout << b.getGrade() << std::endl;
 }

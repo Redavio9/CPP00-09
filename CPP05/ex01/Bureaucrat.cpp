@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:01:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/17 10:04:51 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 10:30:58 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::increment()
 {
-	if (grade - 1 > 150)
-		throw GradeTooLowException();
-	else if (grade - 1 < 1)
+	// if (grade - 1 > 150)
+	// 	throw GradeTooLowException();
+	if (grade - 1 < 1)
 		throw GradeTooHighException();
 	this->grade--;
 }
@@ -65,8 +65,8 @@ void Bureaucrat::decrement()
 {
 	 if (grade + 1 > 150)
 		throw GradeTooLowException();
-	else if (grade + 1 < 1)
-		throw GradeTooHighException();
+	// else if (grade + 1 < 1)
+	// 	throw GradeTooHighException();
 	this->grade++;
 }
 
@@ -76,4 +76,13 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
 		os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 		return os;
+}
+
+void Bureaucrat::signForm(Form & obj) {
+	try {
+		obj.beSigned(*this);
+		std::cout << this->getName() << " signed " << obj.getName() << std::endl;  
+	} catch (std::exception &e) {
+		std::cout << this->getName() << " couldn’t sign " << obj.getName() << " because " << e.what() << std::endl;
+	}
 }

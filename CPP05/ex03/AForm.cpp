@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 12:22:31 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 11:59:20 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,19 @@ AForm::AForm(const std::string name, int grade_sign, int grade_execution): name(
 {
 }
 
-Aform::~Aform()
+AForm::~AForm()
 {
 }
 
-AForm::AForm(AForm const &obj) : name(obj->getName()) , grade(obj->getGrade()) , grade_execute(obj->getExecGrade())
+AForm::AForm(AForm const &obj) : name(obj.getName()) , grade(obj.getGrade()) , grade_execute(obj.getGrade_execute())
 {
 	*this = obj;
+}
+AForm &AForm::operator=(AForm const &obj) 
+{
+	 if (this != &obj) 
+      signe = obj.getSigne();
+	return(*this);
 }
 
 
@@ -73,6 +79,6 @@ std::ostream& operator<<(std::ostream& os, const AForm& obj)
   os << "FORM_NAME : " << obj.getName() << "\n";
   os << "Form_grade " << obj.getGrade() << "\n";
   os << "Form_SIGNE " << obj.getSigne() << "\n";
-  os << "Form_EXECUTGRADE " << obj.getExecGrade() << "\n";
+  os << "Form_EXECUTGRADE " << obj.getGrade_execute() << "\n";
   return os;
 }
