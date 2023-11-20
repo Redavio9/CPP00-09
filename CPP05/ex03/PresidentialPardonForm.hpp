@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:46 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 09:23:21 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/20 09:25:25 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 
 #include "iostream"
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 
 class Bureaucrat;
 
-class PresidentialPardonForm : public AForm
+class PresidentialPardonForm : public Form
 {
   public:
 		PresidentialPardonForm();
 		PresidentialPardonForm(const std::string name);
 		~PresidentialPardonForm();
 		PresidentialPardonForm(PresidentialPardonForm const & obj);
-		PresidentialPardonForm operator=(PresidentialPardonForm const & obj);
-		void execute(Bureaucrat const & executor);
+		PresidentialPardonForm &operator=(PresidentialPardonForm const & obj);
+		void execute(Bureaucrat const & executor) const;
 		class GradeTooHighException : public std::exception 
     {
 			public:

@@ -6,39 +6,33 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:58 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 11:18:02 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/20 09:27:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ShrubberyCreationForm.hpp"
 
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", 145, 137)
-{ 
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("default", 145, 137)
+{
 }
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm(name, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145, 137)
 {
 }
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &obj)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &obj) : Form("default", 145, 137)
 {
 	*this = obj;
 }
-ShrubberyCreationForm::operator=(ShrubberyCreationForm const &obj)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &obj)
 {
-	if(this != obj)
-	{
-		obj->name = this->name;
-		obj->grade = this->grade;
-		obj->grade_execute = this->grade_execute;
-    obj->signe = this->signe;
-	}
+	(void) obj;
 	return(*this);
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor)
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
   if(this->getSigne() && (executor.getGrade() <= this->getGrade()))
   {
@@ -67,4 +61,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
   }
   else 
     throw ShrubberyCreationForm::GradeTooLowException();
+  // (void) executor;
+  // std::cout << "heere\n";
 }

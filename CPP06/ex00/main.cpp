@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 19:58:21 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 09:25:43 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/20 10:34:25 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/20 12:46:25 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#include "ScalarConverte.hpp"
 
-#include"iostream"
-#include"ShrubberyCreationForm.hpp"
-#include"RobotomyRequestForm.hpp"
-#include"PresidentialPardonForm.hpp"
-
-class Form;
-
-
-class Intern
+int main(int ac, char **av)
 {
-	public:
-			Intern();
-			Intern(const Intern &intern);
-			Intern &operator=(const Intern &intern);
-			Form *makeForm(std::string name, std::string target);
-			~Intern();
-};
-
-
-
-
-# endif
+  ScalarConverte::Converte(av[1]);
+}

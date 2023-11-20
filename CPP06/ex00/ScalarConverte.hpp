@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 10:01:24 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/16 10:03:22 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/20 13:04:36 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,29 @@
 #define SCALARCONVERTE_HPP
 
 
-#include "iostream"
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <limits>
 
 
 class ScalarConverte
 {
-  
+  public:
+    ScalarConverte();
+    ScalarConverte(ScalarConverte &obj);
+    ScalarConverte operator=(ScalarConverte &obj);
+    ~ScalarConverte();
+    static void Converte(std::string str);
 };
 
+int check_point(std::string str);
+int check_is_string(std::string str);
 
+void convert_to_char(std::string str);
+void convert_to_int(std::string str);
+void convert_to_double(std::string str);
+void convert_to_float(std::string str);
 
 
 #endif

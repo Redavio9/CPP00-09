@@ -6,11 +6,11 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:58:18 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 11:55:53 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/20 09:50:55 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"intern.hpp"
+#include"Intern.hpp"
 
 Intern::Intern()
 {
@@ -21,9 +21,14 @@ Intern::Intern(const Intern &intern)
 }
 Intern &Intern::operator=(const Intern &intern)
 {
+  (void)intern;
+  return(*this);
 }
 
-AForm *Intern::makeForm(std::string name, std::string target)
+Intern::~Intern()
+{
+}
+Form *Intern::makeForm(std::string name, std::string target)
 {
   int i;
 
@@ -37,7 +42,6 @@ AForm *Intern::makeForm(std::string name, std::string target)
   }
   switch(i)
   {
-    //you chold print message somthing like : Intern creates <form>, befor return the derived class object
     case 0 :
       return new ShrubberyCreationForm();
     case 1 :

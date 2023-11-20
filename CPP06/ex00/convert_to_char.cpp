@@ -1,0 +1,76 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   convert_to_char.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/20 13:05:53 by rarraji          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ScalarConverte.hpp"
+
+int check_point(std::string str)
+{
+	int check_point = 0;
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if(str[i] == '.')
+			check_point++;  
+	}
+	if(check_point > 1)
+		return(1);
+	return(0);  
+}
+int check_is_string(std::string str)
+{
+// 	if(!str)
+// 		return(1);
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if(str[0] == '-' && str[0] == '+')
+			continue;
+		if (str[i] == '.' && str[i + 1] == 'f')
+			continue;
+		if(std::isdigit(str[i]) == 0 && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '\0') && str.length() > 1)
+		{
+		    printf("reda");
+			return(1);  
+		}
+	}
+	return(0);
+}
+int check_rang(std::string str)
+{
+	double num;
+	num = strtod(str.c_str(), NULL);
+	if(static_cast<int>(str[0]) <= 32 || static_cast<int>(str[0]) > 126)
+		return(1);
+	if(num <= 32 || num > 126)
+		return(1);
+	return(0);	
+}
+void printf_char(std::string str)
+{
+	double num;
+	if(std::isdigit(str[0]) == 1)
+	{
+		num = strtod(str.c_str(), NULL);
+		std::cout << "Char : " << static_cast<char>(num) << std::endl;
+	}
+	else
+		std::cout << "Char : " << str << std::endl;
+		
+}
+
+void convert_to_char(std::string str)
+{
+	if(check_is_string(str) || check_point(str) || check_rang(str))
+	{
+		std::cout << "char : ERROR !!\n";
+	}
+	else
+	    printf_char(str);
+}

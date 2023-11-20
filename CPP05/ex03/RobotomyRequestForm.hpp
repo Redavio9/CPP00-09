@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 09:22:43 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/20 09:25:51 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 #include "iostream"
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 
 class Bureaucrat;
 
-class RobotomyRequestForm : public AForm
+class RobotomyRequestForm : public Form
 {
 
     public:
@@ -28,8 +28,8 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(const std::string name);
 		~RobotomyRequestForm();
 		RobotomyRequestForm(RobotomyRequestForm const & obj);
-		RobotomyRequestForm operator=(RobotomyRequestForm const & obj);
-		void execute(Bureaucrat const & executor);
+		RobotomyRequestForm &operator=(RobotomyRequestForm const & obj);
+		void execute(Bureaucrat const & executor) const;
 		class GradeTooHighException : public std::exception 
     {
 			public:
