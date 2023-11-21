@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conver_to_double.cpp                               :+:      :+:    :+:   */
+/*   convert_to_double.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:36:19 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 12:57:46 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/21 10:17:34 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void printf_double(std::string str)
 	{
       std::cout << std::fixed;
 	    num = strtod(str.c_str(), NULL);
-	    std::cout << "Double : " << num << std::endl;
+	    std::cout << "Double : " << num  << std::endl;
 	}
 }
 
@@ -36,6 +36,5 @@ void convert_to_double(std::string str)
 		std::cout << "ERROR !!\n";
 	}
 	else
-	    printf_double(str);
-      
+	  printf_double(str);   
 }

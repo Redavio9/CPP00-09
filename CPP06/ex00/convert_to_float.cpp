@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:02:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 13:04:23 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/21 10:17:50 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void printf_float(std::string str)
    if(str.length() == 1 && std::isdigit(str[0]) == 0)
     {
       std::cout << std::fixed;
-		  std::cout << "float : " << static_cast<double>(str[0]) << std::endl;
+		  std::cout << "float : " << static_cast<double>(str[0]) << "f" << std::endl;
     }
 	else
 	{
       std::cout << std::fixed;
 	    num = strtod(str.c_str(), NULL);
-	    std::cout << "float : " << num << std::endl;
+	    std::cout << "float : " << num << "f" << std::endl;
 	}
 }
 
