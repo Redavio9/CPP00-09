@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:37 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 14:55:23 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/21 20:46:24 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
   try
   {
     
-  Bureaucrat a("reda", 1);
+  Bureaucrat a("reda", 142);
   ShrubberyCreationForm b;
   // PresidentialPardonForm c("REDAS");
   // RobotomyRequestForm d("SOLIIX");

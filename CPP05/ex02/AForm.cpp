@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 14:52:53 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/21 20:50:17 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ bool AForm::getSigne() const
 
 void AForm::beSigned(Bureaucrat& obj)
 {
-  if (obj.getGrade() < this->grade)
+  if (obj.getGrade() > this->grade)
     throw GradeTooLowException();
   this->signe = true;
 }
