@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 10:34:25 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/22 11:57:08 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/22 09:36:57 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/22 09:38:06 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverte.hpp"
+#ifndef C_HPP
+# define C_HPP
 
-int main(int ac, char **av)
+
+#include "iostream"
+#include "Base.hpp"
+
+class  C : public Base
 {
-  int check_double = 0;
-  if(ac == 2)
-    ScalarConverte::Converte(av[1]);
-  return (0);  
-}
+  public:
+    C();
+    ~C();
+    C(C &boj);
+    C operator=(C &boj);
+};
+
+
+#endif

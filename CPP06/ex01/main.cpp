@@ -5,17 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 10:34:25 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/22 11:57:08 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/22 09:20:06 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/22 11:07:44 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverte.hpp"
+#include "Serializer.hpp"
 
-int main(int ac, char **av)
+// int main()
+// {
+//   Data *ptr;
+//   uintptr_t y;
+//   ptr->i = 123;
+
+//   y = Serializer::serialize(ptr);
+  
+//   ptr = Serializer::deserialize(y);
+//   std::cout << ptr->i <<std::endl;
+// }
+
+int main()
 {
-  int check_double = 0;
-  if(ac == 2)
-    ScalarConverte::Converte(av[1]);
-  return (0);  
+  Data *ptr = new Data;
+  uintptr_t y;
+
+  ptr->i = 123;
+
+  y = Serializer::serialize(ptr);
+  ptr = Serializer::deserialize(y);
+  
+  std::cout << ptr->i << std::endl;
+  
+  delete ptr;
+  return 0;
 }

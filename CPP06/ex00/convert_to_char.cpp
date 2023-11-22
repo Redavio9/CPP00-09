@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/21 09:43:48 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/22 11:57:52 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int check_point(std::string str)
 	}
 	if (check_point > 1)
 		return(1);
+	std::cout << "Double" << std::endl;	
 	return(0);  
 }
 int check_is_string(std::string str)
@@ -33,10 +34,13 @@ int check_is_string(std::string str)
 		if(str[0] == '-' && str[0] == '+')
 			continue;
 		if (str[i] == '.' && str[i + 1] == 'f')
+		{
+				
+		}
 			continue;
 		if(std::isdigit(str[i]) == 0 && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '\0') && str.length() > 1)
 		{
-			printf("here1");
+			// printf("here1");
 			return(1);  
 		}
 		// if(std::isdigit(str[]) && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '\0'))
@@ -79,12 +83,12 @@ int check_rang(std::string str, int *check)
 		return (0);
 	else if (static_cast<int>(str[0]) <= 32 || static_cast<int>(str[0]) > 126)
 	{
-		printf("here7");
+		// printf("here7");
 		return(1);
 	}
 	else if ((num < 32 || num > 126) && std::isdigit(str[0]))
 		{
-		printf("here8");
+		// printf("here8");
 		return(1);
 	}
 	return (0);	
@@ -114,10 +118,8 @@ void convert_to_char(std::string str)
 		std::cout << "char : ERROR !!\n";
 	}
 	else
-	    printf_char(str, &check);
+	  printf_char(str, &check);
 }
-
-
 
 // int check_digit(std::string str)
 // {

@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverte.cpp                                 :+:      :+:    :+:   */
+/*   B.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 10:01:21 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/21 11:50:28 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/22 09:41:05 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/22 09:41:22 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverte.hpp"
+#include "B.hpp"
 
-ScalarConverte::ScalarConverte()
+B::B()
 {
 }
-ScalarConverte::ScalarConverte(ScalarConverte &obj)
+B::~B()
+{
+}
+B::B(B &obj)
 {
   *this = obj;
 }
-ScalarConverte ScalarConverte::operator=(ScalarConverte &obj)
+B B::operator=(B &obj)
 {
   if(this != &obj)
   {
     
   }
   return(*this);
-}
-
-ScalarConverte::~ScalarConverte()
-{
-}
-
-void ScalarConverte::Converte(std::string str)
-{
-  convert_to_char(str);
-  convert_to_int(str);
-  convert_to_double(str);
-  convert_to_float(str);
 }

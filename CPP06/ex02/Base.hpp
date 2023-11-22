@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 10:34:25 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/22 11:57:08 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/22 09:35:16 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/22 12:17:25 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverte.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main(int ac, char **av)
+
+#include "iostream"
+
+class  Base
 {
-  int check_double = 0;
-  if(ac == 2)
-    ScalarConverte::Converte(av[1]);
-  return (0);  
-}
+  public:
+    Base();
+    virtual ~Base();
+    Base(Base &boj);
+    Base operator=(Base &boj);
+};
+
+
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
+
+
+#endif
