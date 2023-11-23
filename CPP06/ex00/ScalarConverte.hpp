@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 10:01:24 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/21 11:50:32 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 10:26:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 
 class ScalarConverte
 {
+  ScalarConverte();
+  ScalarConverte(ScalarConverte &obj);
+  ScalarConverte operator=(ScalarConverte &obj);
   public:
-    ScalarConverte();
-    ScalarConverte(ScalarConverte &obj);
-    ScalarConverte operator=(ScalarConverte &obj);
     ~ScalarConverte();
     static void Converte(std::string str);
 };
@@ -33,10 +33,14 @@ class ScalarConverte
 int check_point(std::string str);
 int check_is_string(std::string str);
 
-void convert_to_char(std::string str);
+// int check_max_min(std::string str);
+// void printf_int(std::string str);
+
+
 void convert_to_int(std::string str);
 void convert_to_double(std::string str);
 void convert_to_float(std::string str);
+void convert_to_char(std::string str);
 
 
 #endif

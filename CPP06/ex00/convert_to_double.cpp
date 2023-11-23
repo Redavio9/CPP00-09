@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:36:19 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/22 12:00:40 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 11:11:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void convert_to_double(std::string str)
 {
 	if(check_is_string(str) || check_point(str))
 	{
-		std::cout << "ERROR !!\n";
+		std::cout << "Double : ERROR !!\n";
 	}
 	else
 	  printf_double(str);   

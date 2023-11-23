@@ -6,16 +6,16 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 14:34:24 by rarraji           #+#    #+#              #
-#    Updated: 2023/11/20 13:08:59 by rarraji          ###   ########.fr        #
+#    Updated: 2023/11/23 10:29:29 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ScalarConverte
+NAME	= ScalarConverter
 	
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
-SRC		= convert_to_double.cpp convert_to_char.cpp convert_to_int convert_to_float ScalarConverte.cpp main.cpp
+SRC		= main.cpp convert_to_char.cpp convert_to_double.cpp ScalarConverte.cpp convert_to_float.cpp convert_to_int.cpp
 OBJ   = $(SRC:.cpp=.o)
 #Colors:
 RED = \033[0;31m
@@ -23,7 +23,7 @@ GREEN = \033[0;32m
 YELLOW = \033[0;33m
 
 %.o : %.cpp
-	@${CC} ${FLAGS} -c $< -o $@
+	${CC} ${FLAGS} -c $< -o $@
 
 all: $(NAME)
 
