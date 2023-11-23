@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/21 20:36:01 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:26:12 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
   try 
   {
     Bureaucrat a("reda", 2);
-    Bureaucrat b("reda", 149); 
+    Bureaucrat b("reda", 150); 
     b.decrement();
     std::cout << b.getGrade() << std::endl;
   } 

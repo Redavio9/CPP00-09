@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:58 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 09:27:33 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:59:31 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("default", 145, 137)
 {
+  std::cout << "Default constractor ShrubberyCreationForm Called !!" << std::endl;
 }
 ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145, 137)
 {

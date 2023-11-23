@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:48 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 09:28:33 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 10:00:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 
 RobotomyRequestForm::RobotomyRequestForm() : Form("default", 72, 45)
-{ 
+{
+    std::cout << "Default constractor RobotomyRequestForm Called !!" << std::endl;
 }
 RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name, 72, 45)
 {

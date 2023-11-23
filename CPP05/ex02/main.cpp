@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:37 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/21 20:46:24 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:56:22 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int main()
   try
   {
     
-  Bureaucrat a("reda", 142);
-  ShrubberyCreationForm b;
+  Bureaucrat a("reda", 1);
+  // ShrubberyCreationForm b;
   // PresidentialPardonForm c("REDAS");
-  // RobotomyRequestForm d("SOLIIX");
-  std::cout << b << std::endl;
-  a.signForm(b);
+  RobotomyRequestForm d("SOLIIX");
+  // std::cout << b << std::endl;
+  // a.signForm(b);
   // a.signForm(c);
-  // a.signForm(d);
-  b.execute(a);
+  a.signForm(d);
+  // b.execute(a);
   // c.execute(a);
-  // d.execute(a);
+  d.execute(a);
   }
   catch(const std::exception& e)
   {

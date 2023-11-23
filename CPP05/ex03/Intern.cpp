@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:58:18 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/21 20:54:38 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 10:03:28 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Form *Intern::makeForm(std::string name, std::string target)
   int i;
 
   i = 0;
+  (void) target;
   std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
   while(i < 3)
   {

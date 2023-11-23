@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:58 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/21 20:45:53 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:54:04 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-  std::cout << "Bureaucrat grade: " << executor.getGrade() << std::endl;
-  std::cout << "ShrubberyCreationForm grade: " << this->getGrade() << std::endl;
-  std::cout << "Bureaucrat Signe: " << this->getSigne() << std::endl;
+  // std::cout << "Bureaucrat grade: " << executor.getGrade() << std::endl;
+  // std::cout << "ShrubberyCreationForm grade: " << this->getGrade() << std::endl;
+  // std::cout << "Bureaucrat Signe: " << this->getSigne() << std::endl;
   if(this->getSigne() && (executor.getGrade() <= this->getGrade()))
   {
     std::ofstream file;
@@ -64,6 +64,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
   }
   else 
     throw ShrubberyCreationForm::GradeTooLowException();
-  // (void) executor;
-  // std::cout << "heere\n";
 }

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:43 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 09:27:09 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 10:00:41 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("default", 25, 5)
-{ 
+{
+  std::cout << "Default constractor PresidentialPardonForm Called !!" << std::endl;
 }
 PresidentialPardonForm::PresidentialPardonForm(std::string name) :  Form(name, 25, 5)
 {

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:03 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/15 10:55:27 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:25:09 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,13 @@ class Bureaucrat
 		Bureaucrat operator=(Bureaucrat const &obj);
 		
 		Bureaucrat(std::string name, int grade);
+		
 		std::string getName() const;
 		int getGrade() const;
+		
 		void increment();
 		void decrement();
+		
 		class GradeTooHighException : public std::exception 
 		{
 			public:

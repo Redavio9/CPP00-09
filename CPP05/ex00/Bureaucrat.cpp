@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:01:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 10:31:49 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:25:02 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,19 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 		os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 		return os;
 }
+
+// void Bureaucrat::GradeTooHighException
+// {
+// 	const char *what() const throw() 
+// 	{
+// 		return "Grade too high";
+// 	}
+// }
+
+// void Bureaucrat::GradeTooLowException
+// {
+// 	const char *what() const throw() 
+// 	{
+// 		return "Grade too low";
+// 	}
+// }
