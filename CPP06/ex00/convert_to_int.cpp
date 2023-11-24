@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:21:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/23 10:17:36 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/24 11:51:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void convert_to_int(std::string str)
 {
 	if(check_is_string(str) || check_point(str) || check_max_min(str))
 	{
-		std::cout << "int : ERROR !!\n";
+		std::cout << "int : IMPOSSIBLE !!\n";
 	}
 	else
 	    printf_int(str);

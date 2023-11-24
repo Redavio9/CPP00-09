@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:02:06 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/23 09:26:12 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 10:19:00 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int main()
 {
   try 
   {
-    Bureaucrat a("reda", 2);
+    Bureaucrat a("reda", 1);
     Bureaucrat b("reda", 150); 
-    b.decrement();
-    std::cout << b.getGrade() << std::endl;
+    a.increment();
+    std::cout << a.getGrade() << std::endl;
   } 
   catch (std::exception &e) 
   {

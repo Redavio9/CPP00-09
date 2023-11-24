@@ -6,17 +6,17 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:43 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 09:27:09 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/18 10:57:54 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"PresidentialPardonForm.hpp"
 
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("default", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("default", 25, 5)
 { 
 }
-PresidentialPardonForm::PresidentialPardonForm(std::string name) :  Form(name, 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(std::string name) : AForm(name, 25, 5)
 {
 }
 PresidentialPardonForm::~PresidentialPardonForm()

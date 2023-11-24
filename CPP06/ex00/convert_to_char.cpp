@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/23 11:12:48 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/24 11:52:05 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void convert_to_char(std::string str)
 	int check = 0;
 	if(check_is_string(str) || check_point(str) || check_rang(str, &check))
 	{
-		std::cout << "char : ERROR !!\n";
+		std::cout << "char : IMPOSSIBLE !!\n";
 	}
 	else
 	  printf_char(str, &check);
