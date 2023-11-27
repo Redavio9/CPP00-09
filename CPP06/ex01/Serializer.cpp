@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverte.cpp                                 :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 10:01:21 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:30:13 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/22 09:18:28 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/27 10:30:24 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverte.hpp"
+#include "Serializer.hpp"
 
-ScalarConverte::ScalarConverte()
+Serializer::Serializer()
 {
 }
-ScalarConverte::ScalarConverte(ScalarConverte &obj)
+Serializer::~Serializer()
 {
-  *this = obj;
 }
-ScalarConverte ScalarConverte::operator=(ScalarConverte &obj)
+Serializer::Serializer(Serializer &obj)
 {
-  if(this != &obj)
-  {
-    
-  }
-  return(*this);
+	*this = obj;
+}
+Serializer Serializer::operator=(Serializer &obj)
+{
+	if(this != &obj)
+	{
+		
+	}
+	return(*this);
 }
 
-ScalarConverte::~ScalarConverte()
+uintptr_t Serializer::serialize(Data* ptr)
 {
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-void ScalarConverte::Converte(std::string str)
+Data* Serializer::deserialize(uintptr_t raw)
 {
-  convert_to_char(str);
-  convert_to_int(str);
-  convert_to_double(str);
-  convert_to_float(str);
+	return (reinterpret_cast<Data*>(raw));
 }
+

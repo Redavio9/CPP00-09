@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:02:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/24 11:51:52 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/27 10:30:03 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void convert_to_float(std::string str)
 {
 	if(check_is_string(str) || check_point(str))
 	{
-		std::cout << "float : IMPOSSIBLE !!\n";
+		std::cout << "float : ERROR !!\n";
 	}
 	else
 	    printf_float(str);

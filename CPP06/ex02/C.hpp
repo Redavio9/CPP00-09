@@ -1,13 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.cpp                                       :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 09:16:44 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:31:09 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/22 09:36:57 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/27 10:30:50 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef C_HPP
+# define C_HPP
 
+
+#include "iostream"
+#include "Base.hpp"
+
+class  C : public Base
+{
+  public:
+    C();
+    ~C();
+    C(C &boj);
+    C operator=(C &boj);
+};
+
+
+#endif

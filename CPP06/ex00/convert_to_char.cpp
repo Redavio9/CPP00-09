@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/25 12:11:52 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/27 10:29:59 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void convert_to_char(std::string str)
 	int check = 0;
 	if(check_is_string(str) || check_point(str) || check_rang(str, &check))
 	{
-		std::cout << "char : IMPOSSIBLE !!\n";
+		std::cout << "char : ERROR !!\n";
 	}
 	else
 	  printf_char(str, &check);
@@ -145,6 +145,3 @@ void convert_to_char(std::string str)
 // 	// }
 // 	return (0);	
 // }
-
-
-//MA019181466R

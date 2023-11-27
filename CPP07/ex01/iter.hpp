@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:16:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/23 15:19:17 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/27 10:31:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,4 @@ void iter(T* array, size_t lenght, void (*func)(T& thing))
 }
 
 #endif
+
