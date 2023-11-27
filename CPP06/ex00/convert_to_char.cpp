@@ -6,11 +6,34 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:29:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/27 21:10:15 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverte.hpp"
+
+
+int check_after_point(std::string str)
+{
+	int cnt = 0;
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '.')
+			cnt++;
+	}
+	return(cnt);
+	
+	
+	// int i = str.find('.');
+  // int cnt = 0; 
+  // for (size_t j = i + 1 ; j < str.length(); j++)
+  // {
+  //   cnt++;
+  // }
+  // std::cout << cnt << std::endl;
+  return(cnt);
+}
+
 
 int check_point(std::string str)
 {
@@ -42,9 +65,14 @@ int check_is_string(std::string str)
 		}
 		if (std::isdigit(str[i]) == 0 && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '\0'))
 		{
-			printf("here2");
+			printf("here22");
 			return(1);
 		}
+		// if ((std::isdigit(str[i]) == 1 && str[i] != '.') && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '.'))
+		// {
+		// 	printf("here44");
+		// 	return(1);
+		// }
 		// if(strtod(str.c_str(), NULL) > 126 || strtod(str.c_str(), NULL) <= 32)
 		// {
 		// 	printf("here10");
@@ -90,7 +118,11 @@ int check_rang(std::string str, int *check)
 void printf_char(std::string str, int *check)
 {
 	double num;
-	if (std::isdigit(str[0]) == 1 && std::isdigit(str[1]) == 1)
+	if (str[0] == '.')
+	{
+		std::cout << "char : IMPOSSIBLE !!\n";
+	}
+	else if (std::isdigit(str[0]) == 1 && std::isdigit(str[1]) == 1)
 	{
 		num = strtod(str.c_str(), NULL);
 		std::cout << "char : " << static_cast<char>(num) << std::endl;
@@ -111,7 +143,7 @@ void convert_to_char(std::string str)
 	int check = 0;
 	if(check_is_string(str) || check_point(str) || check_rang(str, &check))
 	{
-		std::cout << "char : ERROR !!\n";
+		std::cout << "char : IMPOSSIBLE !!\n";
 	}
 	else
 	  printf_char(str, &check);
