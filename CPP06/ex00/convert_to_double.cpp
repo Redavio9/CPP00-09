@@ -6,11 +6,25 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:36:19 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:30:01 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:59:30 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverte.hpp"
+
+
+int check_after_point(std::string str)
+{
+	int i = str.find('.');
+  int cnt = 0; 
+  for (size_t j = i + 1 ; j < str.length(); j++)
+  {
+    cnt++;
+  }
+  // std::cout << cnt << std::endl;
+  return(cnt);
+}
+
 
 
 void printf_double(std::string str)
