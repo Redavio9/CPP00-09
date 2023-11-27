@@ -14,10 +14,7 @@
 
 Form::Form() : name("Default") , grade(5) , grade_execute(4), signe(false)
 {
-//    if (grade > 150 || grade_execute > 150)
-// 		throw GradeTooLowException();
-// 	else if (grade  < 1 || grade_execute < 1)
-// 		throw GradeTooHighException();
+  
 }
 // Form::Form(std::string name) : name(name) , grade(5), grade_execute(4), signe(false)
 // {
@@ -72,7 +69,7 @@ bool Form::getSigne() const
 
 void Form::beSigned(Bureaucrat& obj)
 {
-  if (obj.getGrade() < this->grade)
+  if (obj.getGrade() > this->grade)
     throw GradeTooLowException();
   this->signe = true;
 }

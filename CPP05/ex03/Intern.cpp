@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:58:18 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/24 11:28:59 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:19:02 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Form *Intern::makeForm(std::string name, std::string target)
   int i;
 
   i = 0;
-  (void) target;
   std::string forms[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
   while(i < 3)
   {
@@ -44,11 +43,11 @@ Form *Intern::makeForm(std::string name, std::string target)
   switch(i)
   {
     case 0 :
-      return new ShrubberyCreationForm();
+      return new ShrubberyCreationForm(target);
     case 1 :
-      return new RobotomyRequestForm();
+      return new RobotomyRequestForm(target);
     case 2 :
-      return new PresidentialPardonForm();
+      return new PresidentialPardonForm(target);
     default :
       std::cout << "ERROR !" << std::endl;  
     break;  

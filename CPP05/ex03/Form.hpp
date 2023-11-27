@@ -14,7 +14,7 @@
 # define FORM_HPP
 
 
-#include "iostream"
+#include <iostream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -28,7 +28,6 @@ class Form
     bool signe;
   public:
 		Form();
-		// Form(const std::string name);
 		Form(std::string name, int grade_sign, int grade_execution);
 		virtual ~Form();
 		Form(Form const &obj);

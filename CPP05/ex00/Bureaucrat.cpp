@@ -6,12 +6,14 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:01:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 10:31:49 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:03:56 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
 // ---------------------------------------------------------------------------- //
+
 Bureaucrat::Bureaucrat() : name("Default"), grade(50) 
 {
 }
@@ -37,6 +39,7 @@ Bureaucrat Bureaucrat::operator=(Bureaucrat const &obj)
 		this->grade = obj.getGrade();
 	return(*this);
 }
+
 // ---------------------------------------------------------------------------- //
 
 std::string Bureaucrat::getName() const
@@ -50,10 +53,9 @@ int Bureaucrat::getGrade() const
 }
 
 // ---------------------------------------------------------------------------- //
+
 void Bureaucrat::increment()
 {
-	// if (grade - 1 > 150)
-	// 	throw GradeTooLowException();
 	if (grade - 1 < 1)
 		throw GradeTooHighException();
 	this->grade--;
@@ -63,8 +65,6 @@ void Bureaucrat::decrement()
 {
 	 if (grade + 1 > 150)
 		throw GradeTooLowException();
-	// else if (grade + 1 < 1)
-	// 	throw GradeTooHighException();
 	this->grade++;
 }
 
@@ -73,4 +73,13 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
 		os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 		return os;
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw() 
+{
+	return "Grade too high";
+}
+const char *Bureaucrat::GradeTooLowException::what() const throw() 
+{
+	return "Grade too Low";
 }

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 10:01:59 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/24 15:10:52 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/25 09:27:01 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,13 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 }
 
 void Bureaucrat::signForm(Form & obj) {
-	try {
+	try 
+	{
 		obj.beSigned(*this);
 		std::cout << this->getName() << " signed " << obj.getName() << std::endl;  
-	} catch (std::exception &e) {
+	}
+	catch (std::exception &e) 
+	{
 		std::cout << this->getName() << " couldn’t sign " << obj.getName() << " because " << e.what() << std::endl;
 	}
 }

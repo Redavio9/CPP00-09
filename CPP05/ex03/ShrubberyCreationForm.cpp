@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:58 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/20 09:27:33 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:20:22 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
   }
   else 
     throw ShrubberyCreationForm::GradeTooLowException();
-  // (void) executor;
-  // std::cout << "heere\n";
 }

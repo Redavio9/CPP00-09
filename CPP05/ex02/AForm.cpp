@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 14:52:53 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/25 12:00:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,8 @@
 
 AForm::AForm() : name("Default") , grade(5) , grade_execute(4), signe(false)
 {
-//    if (grade > 150 || grade_execute > 150)
-// 		throw GradeTooLowException();
-// 	else if (grade  < 1 || grade_execute < 1)
-// 		throw GradeTooHighException();
-}
-// AForm::AForm(std::string name) : name(name) , grade(5), grade_execute(4), signe(false)
-// {
   
-//   if (grade > 150 || grade_execute > 150)
-// 		throw GradeTooLowException();
-// 	else if (grade  < 1 || grade_execute < 1)
-// 		throw GradeTooHighException();
-// }
+}
 
 AForm::AForm(std::string name, int grade_sign, int grade_execution): name(name), grade(grade_sign), grade_execute(grade_execution), signe(false) 
 { 
@@ -72,7 +61,7 @@ bool AForm::getSigne() const
 
 void AForm::beSigned(Bureaucrat& obj)
 {
-  if (obj.getGrade() < this->grade)
+  if (obj.getGrade() > this->grade)
     throw GradeTooLowException();
   this->signe = true;
 }

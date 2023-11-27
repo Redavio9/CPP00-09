@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:48 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 10:57:13 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/25 12:10:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &o
 }
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-  if(this->getSigne() && (executor.getGrade() <= this->getGrade()))
+  if(this->getSigne() && (executor.getGrade() <= this->getGrade_execute()))
   {
-        // Générer un nombre aléatoire entre 0 et 1
-        std::srand(std::time(0)); 
+        std::srand(std::time(0));
         int success = std::rand() % 2;
         if (success) 
         {
@@ -47,5 +46,5 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
         }
     }
     else 
-        throw RobotomyRequestForm::GradeTooLowException();
+        throw RobotomyRequestForm::GradeTooLowException();    
 }

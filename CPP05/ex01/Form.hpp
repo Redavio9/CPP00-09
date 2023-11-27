@@ -6,14 +6,14 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 10:23:36 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:08:31 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
-# define FORM_HPP
+# define FORM_HPP 
 
-#include "iostream"
+#include <iostream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -56,7 +56,6 @@ class Form
 				return "Grade too low";
 			}
 		};
-  
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 09:36:58 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 13:23:54 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/25 12:07:26 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-  if(this->getSigne() && (executor.getGrade() <= this->getGrade()))
+  if(this->getSigne() && (executor.getGrade() <= this->getGrade_execute()))
   {
     std::ofstream file;
     std::string name_file = this->getName() + "_Shrubbery";
@@ -61,6 +61,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
   }
   else 
     throw ShrubberyCreationForm::GradeTooLowException();
-  // (void) executor;
-  // std::cout << "heere\n";
 }

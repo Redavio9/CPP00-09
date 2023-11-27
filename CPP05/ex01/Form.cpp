@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:45 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 10:23:48 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/25 09:28:34 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 
 Form::Form() : name("Default") , grade(1), signe(false), grade_execute(1)
 {
-  if (grade > 150 || grade_execute > 150)
-		throw GradeTooLowException();
-	else if (grade  < 1 || grade_execute < 1)
-		throw GradeTooHighException();
+
 }
 Form::Form(std::string name, int grade, int grade_execute) : name(name), grade(grade), signe(false) , grade_execute(grade_execute)
 {
@@ -43,6 +40,7 @@ Form Form::operator=(Form const &obj)
 }
 
 // ---------------------------------------------------------------------------- //
+
 std::string Form::getName() const
 {
   return(this->name);
@@ -62,6 +60,7 @@ bool Form::getSigne() const
 {
   return(this->signe);
 }
+
 // ---------------------------------------------------------------------------- //
 
 void Form::beSigned(Bureaucrat &obj)

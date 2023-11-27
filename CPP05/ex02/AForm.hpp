@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:15:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/18 14:52:49 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/26 15:09:05 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define AFORM_HPP
 
 
-#include "iostream"
+#include <iostream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -28,17 +28,19 @@ class AForm
     bool signe;
   public:
 		AForm();
-		// AForm(const std::string name);
 		AForm(std::string name, int grade_sign, int grade_execution);
 		virtual ~AForm();
 		AForm(AForm const &obj);
 		AForm& operator=(AForm const &obj);
+		
 		std::string getName() const;
 		int getGrade() const;
 		bool getSigne() const;
 		int getGrade_execute() const;
+		
     void beSigned(Bureaucrat& obj);
 		virtual void execute(Bureaucrat const & executor) const = 0;
+		
 		class GradeTooHighException : public std::exception 
     {
 			public:
@@ -57,7 +59,6 @@ class AForm
 		};
   
 };
-
 
 std::ostream &operator<<(std::ostream &out, const AForm& obj);
 
