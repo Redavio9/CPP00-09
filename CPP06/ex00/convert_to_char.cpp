@@ -6,33 +6,33 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 21:10:15 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/28 09:30:42 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverte.hpp"
 
 
-int check_after_point(std::string str)
-{
-	int cnt = 0;
-	for (size_t i = 0; i < str.length(); i++)
-	{
-		if (str[i] == '.')
-			cnt++;
-	}
-	return(cnt);
+// int check_after_point1(std::string str)
+// {
+// 	int cnt = 0;
+// 	for (size_t i = 0; i < str.length(); i++)
+// 	{
+// 		if (str[i] == '.')
+// 			cnt++;
+// 	}
+// 	return(cnt);
 	
 	
-	// int i = str.find('.');
-  // int cnt = 0; 
-  // for (size_t j = i + 1 ; j < str.length(); j++)
-  // {
-  //   cnt++;
-  // }
-  // std::cout << cnt << std::endl;
-  return(cnt);
-}
+// 	// int i = str.find('.');
+//   // int cnt = 0; 
+//   // for (size_t j = i + 1 ; j < str.length(); j++)
+//   // {
+//   //   cnt++;
+//   // }
+//   // std::cout << cnt << std::endl;
+//   return(cnt);
+// }
 
 
 int check_point(std::string str)

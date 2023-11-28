@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 09:18:25 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:37:20 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/28 10:29:37 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/28 11:49:57 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
-
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 #include <iostream>
+#include <vector>
+#include <stdexcept>
+#include <algorithm>
 
 
-struct Data
+template <typename T>
+typename T::value_type easyFind(T &vec , int value) 
 {
-  uintptr_t i;
-};
+   for (typename T::iterator it = std::find(vec.begin(), vec.end(), value); it != vec.end(); it++) 
+   {
+       if (*it == value) 
+           return *it;
+   }
+   throw "La valeur n'a pas été trouvée dans le conteneur";
+}
 
-
-
-class  Serializer
-{
-  public:
-    Serializer();
-    ~Serializer();
-    Serializer(Serializer &boj);
-    Serializer operator=(Serializer &boj);
-    static uintptr_t serialize(Data* ptr);
-    static Data* deserialize(uintptr_t raw);
-};
-
-
-#endif
+# endif

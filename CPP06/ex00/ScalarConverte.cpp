@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 10:01:21 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:30:13 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/28 09:24:12 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void ScalarConverte::Converte(std::string str)
 {
   convert_to_char(str);
   convert_to_int(str);
-  convert_to_double(str);
   convert_to_float(str);
+  convert_to_double(str);
 }

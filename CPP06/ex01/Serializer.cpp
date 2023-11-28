@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:18:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:30:24 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/28 09:32:14 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ Serializer::Serializer(Serializer &obj)
 Serializer Serializer::operator=(Serializer &obj)
 {
 	if(this != &obj)
-	{
-		
+	{	
 	}
 	return(*this);
 }

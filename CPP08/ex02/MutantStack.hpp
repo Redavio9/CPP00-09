@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.cpp                                              :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 09:40:38 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:36:49 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/28 12:23:04 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/28 12:25:35 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "C.hpp"
+#ifndef MUNTANTSTACK_HPP
+# define MUNTANTSTACK_HPP
 
-C::C()
+#include <iostream>
+
+
+class MutantStack
 {
-}
-C::~C()
-{
-}
-C::C(C &obj)
-{
-  *this = obj;
-}
-C C::operator=(C &obj)
-{
-  if(this != &obj)
-  {
-  }
-  return(*this);
-}
+  
+};
+
+
+#endif

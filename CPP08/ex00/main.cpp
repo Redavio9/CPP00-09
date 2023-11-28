@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.cpp                                              :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 09:40:38 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:36:49 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/28 10:29:41 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/28 11:50:07 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "C.hpp"
+#include "easyfind.hpp"
 
-C::C()
+int main() 
 {
-}
-C::~C()
-{
-}
-C::C(C &obj)
-{
-  *this = obj;
-}
-C C::operator=(C &obj)
-{
-  if(this != &obj)
+  std::vector<int> myvector;
+  myvector.push_back(1);
+  myvector.push_back(2);
+  myvector.push_back(3);
+  myvector.push_back(4);
+  myvector.push_back(5);
+  try 
   {
+   int result = easyFind(myvector, 3);
+   std::cout << result << std::endl;
+  } 
+  catch (const char* msg) 
+  {
+   std::cerr << "Erreur : " << msg << std::endl;
   }
-  return(*this);
+  return 0;
 }

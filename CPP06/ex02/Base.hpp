@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:35:16 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:30:47 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/28 09:44:09 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define BASE_HPP
 
 
-#include "iostream"
+#include <iostream>
 
 class  Base
 {
@@ -25,8 +25,7 @@ class  Base
     Base operator=(Base &boj);
 };
 
-
-Base * generate(void);
+Base *generate(void);
 void identify(Base* p);
 void identify(Base& p);
 

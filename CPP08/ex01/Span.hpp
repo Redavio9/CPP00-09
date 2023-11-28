@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.cpp                                              :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 09:40:38 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:36:49 by rarraji          ###   ########.fr       */
+/*   Created: 2023/11/28 11:51:28 by rarraji           #+#    #+#             */
+/*   Updated: 2023/11/28 12:10:47 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "C.hpp"
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
-C::C()
+#include <vector>
+#include <iostream>
+#include <stdexcept>
+
+
+class Span
 {
-}
-C::~C()
-{
-}
-C::C(C &obj)
-{
-  *this = obj;
-}
-C C::operator=(C &obj)
-{
-  if(this != &obj)
-  {
-  }
-  return(*this);
-}
+  private:
+    unsigned int Max;
+    std::vector<int> myvector;
+    
+  public:
+    Span();
+    Span(unsigned int N);
+    ~Span();
+    Span(Span const &obj);
+    Span operator=(Span const &obj);
+    void addNumber(int num);
+    int shortestSpan();
+    int longestSpan();
+};
+
+
+#endif

@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/15 14:34:29 by rarraji           #+#    #+#              #
-#    Updated: 2023/11/28 09:45:48 by rarraji          ###   ########.fr        #
+#    Created: 2023/11/28 10:29:44 by rarraji           #+#    #+#              #
+#    Updated: 2023/11/28 10:51:13 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Base
+NAME	= Easyfind
 	
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
-SRC		= main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC		= main.cpp
 OBJ   = $(SRC:.cpp=.o)
 #Colors:
 RED = \033[0;31m
