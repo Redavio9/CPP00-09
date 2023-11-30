@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/30 11:31:46 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/30 11:41:33 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int check_digit(std::string str)
 		return(0);
 	return (1);	
 }
-int check_rang(std::string str, int *check)
+int check_rang(std::string str, int *check, int *print)
 {
 	double num;
 	int i = 0;
@@ -76,7 +76,8 @@ int check_rang(std::string str, int *check)
 		return (0);
 	else if ((num < 32 || num > 126) && (std::isdigit(str[0]) || *check == 1))
 	{
-		std::cout << "char : is not displayable ";
+		*print = 1;
+		std::cout << "char : is not displayable\n";
 		return(1);
 	}
 	return (0);	
@@ -107,9 +108,11 @@ void printf_char(std::string str, int *check)
 void convert_to_char(std::string str)
 {
 	int check = 0;
-	if(check_is_string(str) || check_point(str) || check_rang(str, &check))
+	int print = 0;
+	if(check_is_string(str) || check_point(str) || check_rang(str, &check, &print))
 	{
-		std::cout << "char : IMPOSSIBLE !!\n";
+		if (print == 0)
+			std::cout << "char : IMPOSSIBLE !!\n";
 	}
 	else
 	  printf_char(str, &check);
