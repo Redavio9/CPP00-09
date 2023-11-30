@@ -6,33 +6,11 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:30:42 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/30 11:31:46 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverte.hpp"
-
-
-// int check_after_point1(std::string str)
-// {
-// 	int cnt = 0;
-// 	for (size_t i = 0; i < str.length(); i++)
-// 	{
-// 		if (str[i] == '.')
-// 			cnt++;
-// 	}
-// 	return(cnt);
-	
-	
-// 	// int i = str.find('.');
-//   // int cnt = 0; 
-//   // for (size_t j = i + 1 ; j < str.length(); j++)
-//   // {
-//   //   cnt++;
-//   // }
-//   // std::cout << cnt << std::endl;
-//   return(cnt);
-// }
 
 
 int check_point(std::string str)
@@ -43,41 +21,31 @@ int check_point(std::string str)
 		if(str[i] == '.')
 			check_point++;  
 	}
-	if (check_point > 1)
+	if (check_point > 1) 
 		return(1);
-	// std::cout << "Double" << std::endl;	
 	return(0);  
 }
 int check_is_string(std::string str)
 {
-// 	if(!str)
-// 		return(1);
+
+	if(str[0] == '\0')
+		return(1);
 	for (size_t i = 0; i < str.length(); i++)
 	{
-		if(str[0] == '-' && str[0] == '+')
-			continue;
+		// std::cout << str[i] << std::endl;
 		if (str[i] == '.' && str[i + 1] == 'f')
+		{
+			i++;
 			continue;
-		if(std::isdigit(str[i]) == 0 && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '\0') && str.length() > 1)
-		{
-			// printf("here1");
-			return(1);  
 		}
-		if (std::isdigit(str[i]) == 0 && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '\0'))
-		{
-			printf("here22");
+		if (std::isdigit(str[i]) || str[i] == '.')
+			continue;
+		if (std::isdigit(str[i]) == 0 &&  str[i + 1] != '\0'  && str[i] != '-' && str[i] != '+')
 			return(1);
-		}
-		// if ((std::isdigit(str[i]) == 1 && str[i] != '.') && (std::isdigit(str[i + 1]) == 0 && str[i + 1] != '.'))
-		// {
-		// 	printf("here44");
-		// 	return(1);
-		// }
-		// if(strtod(str.c_str(), NULL) > 126 || strtod(str.c_str(), NULL) <= 32)
-		// {
-		// 	printf("here10");
-		// 	return(1);
-		// }
+		if (std::isdigit(str[i]) == 0 && (str[i] != '.' && str[i] != 'f' && str[i] != '-' && str[i] != '+') && str[i + 1] != '\0')
+			return(1);
+		if(i != 0 && std::isdigit(str[i]) == 0 )
+			return(1);
 	}
 	return(0);
 }
@@ -106,13 +74,11 @@ int check_rang(std::string str, int *check)
 		return (0);
 	else if (std::isdigit(str[i]) && std::isdigit(str[i + 1]) && check_digit(str))
 		return (0);
-	// else if (static_cast<int>(str[0]) <= 32 || static_cast<int>(str[0]) > 126)
-	// {
-	// 	// printf("here7");
-	// 	return(1);
-	// }
 	else if ((num < 32 || num > 126) && (std::isdigit(str[0]) || *check == 1))
+	{
+		std::cout << "char : is not displayable ";
 		return(1);
+	}
 	return (0);	
 }
 void printf_char(std::string str, int *check)
@@ -125,16 +91,16 @@ void printf_char(std::string str, int *check)
 	else if (std::isdigit(str[0]) == 1 && std::isdigit(str[1]) == 1)
 	{
 		num = strtod(str.c_str(), NULL);
-		std::cout << "char : " << static_cast<char>(num) << std::endl;
+		std::cout << "char : " << '\'' << static_cast<char>(num) << '\'' << std::endl;
 	}
 	else
 	{
 		if (*check == 1 && str[2] == '\0')
-			std::cout << "Char : " << static_cast<char>(str[1]) << std::endl;
+			std::cout << "Char : " << '\'' << static_cast<char>(str[1]) << '\'' << std::endl;
 		else if (*check == 1 && str[2] != '\0')	
-			std::cout << "Char : " << static_cast<char>(strtod(str.c_str(), NULL)) << std::endl;
+			std::cout << "Char : " << '\'' << static_cast<char>(strtod(str.c_str(), NULL)) << '\'' << std::endl;
 		else	
-			std::cout << "Char : " << str << std::endl;
+			std::cout << "Char : " << '\'' << str << '\'' << std::endl;
 	}
 }
 
@@ -148,32 +114,3 @@ void convert_to_char(std::string str)
 	else
 	  printf_char(str, &check);
 }
-
-// int check_digit(std::string str)
-// {
-// 	int res = static_cast<int>(str[1]) + static_cast<int>(str[2]);
-// 	if (res <= 32 || res > 126)
-// 		return(0);
-// 	return (1);	
-// }
-
-// int check_rang(std::string str)
-// {
-// 	double num;
-// 	int i = 0;
-// 	// num = strtod(str.c_str(), NULL);
-// 	if (str[i] == '+' || str[i] == '-')
-// 		i++;
-// 	if (std::isdigit(str[i]) && str[i + 1] == '\0')
-// 		return (0);
-// 	else if (std::isdigit(str[i]) && std::isdigit(str[i + 1]) && str[i + 2] == '\0' && check_digit(str))
-// 		return(0);	
-// 	else if (static_cast<int>(str[0]) <= 32 || static_cast<int>(str[0]) > 126)
-// 		return(1);
-// 	// else if (num <= 32 || num > 126)
-// 	// {
-// 	// 	printf("reda\n");
-// 	// 	return (1);
-// 	// }
-// 	return (0);	
-// }

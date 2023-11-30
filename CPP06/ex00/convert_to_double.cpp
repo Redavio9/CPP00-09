@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:36:19 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:29:05 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/30 11:35:35 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,22 @@
 
 int check_after_point(std::string str)
 {
+	int check_point = 0;
+	int cnt = 0;
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if(str[i] == '.')
+			check_point++;  
+	}
+	if (check_point == 0)
+		return(1);
 	int i = str.find('.');
-  int cnt = 0; 
   for (size_t j = i + 1 ; j < str.length(); j++)
   {
     cnt++;
   }
-  // std::cout << cnt << std::endl;
+	if(cnt == 0)
+		cnt = 1;
   return(cnt);
 }
 
@@ -39,7 +48,7 @@ void printf_double(std::string str)
 	{
       std::cout << std::fixed;
 	    num = strtod(str.c_str(), NULL);
-	    std::cout << "Double : " << std::setprecision(check_after_point(str)) << num  << std::endl;
+	    std::cout << "Double : " << num <<  std::setprecision(check_after_point(str)) << std::endl;
 	}
 }
 
@@ -50,5 +59,5 @@ void convert_to_double(std::string str)
 		std::cout << "Double : IMPOSSIBLE !!\n";
 	}
 	else
-	  printf_double(str);   
+	  printf_double(str);
 }
