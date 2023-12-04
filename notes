@@ -1,0 +1,315 @@
+ 42 wizzard is up to date 
+☁  CPP00-04 [master] ⚡  cd CPP06 
+☁  CPP06 [master] ⚡  ls
+cast.cpp       en.subject.pdf ex00           ex01           ex02
+☁  CPP06 [master] ⚡  cd ex00
+☁  ex00 [master] ⚡  make re
+    - OBJ removed.
+    - Executable removed.
+c++ -Wall -Wextra -Werror -std=c++98 -c main.cpp -o main.o
+c++ -Wall -Wextra -Werror -std=c++98 -c convert_to_char.cpp -o convert_to_char.o
+c++ -Wall -Wextra -Werror -std=c++98 -c convert_to_double.cpp -o convert_to_double.o
+c++ -Wall -Wextra -Werror -std=c++98 -c ScalarConverte.cpp -o ScalarConverte.o
+c++ -Wall -Wextra -Werror -std=c++98 -c convert_to_float.cpp -o convert_to_float.o
+c++ -Wall -Wextra -Werror -std=c++98 -c convert_to_int.cpp -o convert_to_int.o
+ Compiling ScalarConverter... 
+ Executable ready.
+☁  ex00 [master] ⚡  ./ScalarConverter 'a'
+Char : a
+Int : 97
+float : 97.0f
+Double : 97.0
+☁  ex00 [master] ⚡  ./ScalarConverter    
+☁  ex00 [master] ⚡  ./ScalarConverter ""
+Char : 
+Int : 0
+float : 0f
+Double : 0
+☁  ex00 [master] ⚡  ./ScalarConverter "0"
+char : IMPOSSIBLE !!
+Int : 0
+float : 0.0f
+Double : 0.0
+☁  ex00 [master] ⚡  man ascii
+☁  ex00 [master] ⚡  ./ScalarConverter 1212
+char : IMPOSSIBLE !!
+Int : 1212
+float : 1212.0000f
+Double : 1212.0000
+☁  ex00 [master] ⚡  ./ScalarConverter 1212.
+char : IMPOSSIBLE !!
+Int : 1212
+float : 1212f
+Double : 1212
+☁  ex00 [master] ⚡  ./ScalarConverter 1212.s
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : IMPOSSIBLE !!
+Double : IMPOSSIBLE !!
+☁  ex00 [master] ⚡  ./ScalarConverter 1212.3
+char : IMPOSSIBLE !!
+Int : 1212
+float : 1212.3f
+Double : 1212.3
+☁  ex00 [master] ⚡  ./ScalarConverter 1212.34
+char : IMPOSSIBLE !!
+Int : 1212
+float : 1212.34f
+Double : 1212.34
+☁  ex00 [master] ⚡  ./ScalarConverter 1212.3434
+char : IMPOSSIBLE !!
+Int : 1212
+float : 1212.3434f
+Double : 1212.3434
+☁  ex00 [master] ⚡  ./ScalarConverter 1212.3434456
+char : IMPOSSIBLE !!
+Int : 1212
+float : 1212.3434456f
+Double : 1212.3434456
+☁  ex00 [master] ⚡  ./ScalarConverter 65.3434456  
+char : A
+Int : 65
+float : 65.3434456f
+Double : 65.3434456
+☁  ex00 [master] ⚡  ./ScalarConverter 65        
+char : A
+Int : 65
+float : 65.00f
+Double : 65.00
+☁  ex00 [master] ⚡  ./ScalarConverter 6"5"
+char : A
+Int : 65
+float : 65.00f
+Double : 65.00
+☁  ex00 [master] ⚡  ./ScalarConverter "5" 
+char : IMPOSSIBLE !!
+Int : 5
+float : 5.0f
+Double : 5.0
+☁  ex00 [master] ⚡  ./ScalarConverter "7"
+char : IMPOSSIBLE !!
+Int : 7
+float : 7.0f
+Double : 7.0
+☁  ex00 [master] ⚡  ./ScalarConverter "\32"
+Char : \32
+Int : 0
+float : 0.000f
+Double : 0.000
+☁  ex00 [master] ⚡  ./ScalarConverter "32" 
+char :  
+Int : 32
+float : 32.00f
+Double : 32.00
+☁  ex00 [master] ⚡  ./ScalarConverter "/32"
+Char : /32
+Int : 0
+float : 0.000f
+Double : 0.000
+☁  ex00 [master] ⚡  ./ScalarConverter "test32"
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : IMPOSSIBLE !!
+Double : IMPOSSIBLE !!
+☁  ex00 [master] ⚡  ./ScalarConverter "t32"   
+Char : t32
+Int : 0
+float : 0.000f
+Double : 0.000
+☁  ex00 [master] ⚡  ./ScalarConverter "tdw32"
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : IMPOSSIBLE !!
+Double : IMPOSSIBLE !!
+☁  ex00 [master] ⚡  ./ScalarConverter "Z32"  
+Char : Z32
+Int : 0
+float : 0.000f
+Double : 0.000
+☁  ex00 [master] ⚡  ./ScalarConverter "32a"
+char :  
+Int : 32
+float : 32.000f
+Double : 32.000
+☁  ex00 [master] ⚡  ./ScalarConverter "32f"
+char :  
+Int : 32
+float : 32.000f
+Double : 32.000
+☁  ex00 [master] ⚡  ./ScalarConverter "32ff"
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : IMPOSSIBLE !!
+Double : IMPOSSIBLE !!
+☁  ex00 [master] ⚡  ./ScalarConverter "32"  
+char :  
+Int : 32
+float : 32.00f
+Double : 32.00
+☁  ex00 [master] ⚡  ./ScalarConverter k222.22
+Char : k222.22
+Int : 0
+float : 0.00f
+Double : 0.00
+☁  ex00 [master] ⚡  ./ScalarConverter -58585857858
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : -58585857858.000000000000f
+Double : -58585857858.000000000000
+☁  ex00 [master] ⚡  ./ScalarConverter -5858585    
+char : IMPOSSIBLE !!
+Int : -5858585
+float : -5858585.00000000f
+Double : -5858585.00000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.0000000000f
+Double : 2147483647.0000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483648
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483648.0000000000f
+Double : 2147483648.0000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.0000000000f
+Double : 2147483647.0000000000
+☁  ex00 [master] ⚡  ./ScalarConverter -2147483647
+char : IMPOSSIBLE !!
+Int : -2147483647
+float : -2147483647.00000000000f
+Double : -2147483647.00000000000
+☁  ex00 [master] ⚡  ./ScalarConverter -2147483648
+char : IMPOSSIBLE !!
+Int : -2147483648
+float : -2147483648.00000000000f
+Double : -2147483648.00000000000
+☁  ex00 [master] ⚡  ./ScalarConverter -2147483649
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : -2147483649.00000000000f
+Double : -2147483649.00000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647 
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.0000000000f
+Double : 2147483647.0000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.99
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483647.99f
+Double : 2147483647.99
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.9\
+> 
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.9 
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483647.9f
+Double : 2147483647.9
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647  
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.0000000000f
+Double : 2147483647.0000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.99
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483647.99f
+Double : 2147483647.99
+☁  ex00 [master] ⚡  ./ScalarConverter -2147483648.99
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : -2147483648.99f
+Double : -2147483648.99
+☁  ex00 [master] ⚡  ./ScalarConverter -2147483648   
+char : IMPOSSIBLE !!
+Int : -2147483648
+float : -2147483648.00000000000f
+Double : -2147483648.00000000000
+☁  ex00 [master] ⚡  ./ScalarConverter -2147483648.99
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : -2147483648.99f
+Double : -2147483648.99
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483648   
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483648.0000000000f
+Double : 2147483648.0000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.0000000000f
+Double : 2147483647.0000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.000000000000000000000001
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.000000000000000000000000f
+Double : 2147483647.000000000000000000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.000000001               
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.000000000f
+Double : 2147483647.000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000000 
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.00000000f
+Double : 2147483647.00000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.000000005634
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.000000000000f
+Double : 2147483647.000000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.0005634     
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483647.0005634f
+Double : 2147483647.0005634
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.000005634
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483647.000005722f
+Double : 2147483647.000005722
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.0000005634
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : 2147483647.0000004768f
+Double : 2147483647.0000004768
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000005634
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.00000000000f
+Double : 2147483647.00000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000005634f
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.000000000000f
+Double : 2147483647.000000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000005634f
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.000000000000f
+Double : 2147483647.000000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000005634ff
+char : IMPOSSIBLE !!
+int : IMPOSSIBLE !!
+float : IMPOSSIBLE !!
+Double : IMPOSSIBLE !!
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000005634  
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.00000000000f
+Double : 2147483647.00000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000005634f
+char : IMPOSSIBLE !!
+Int : 2147483647
+float : 2147483647.000000000000f
+Double : 2147483647.000000000000
+☁  ex00 [master] ⚡  ./ScalarConverter 2147483647.00000005634 
+char : IMPOSSIBLE !!
+Int : 2147483647
+☁  ex00 [master] ⚡  
+

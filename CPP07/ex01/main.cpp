@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:16:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:31:20 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/02 10:11:27 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,24 @@
 
 using std::cout; using std::endl;
 
-/*
- * Generic function to increment the passed variable by one.
- */
 template <typename T>
-static void
-plusOne(T& something)
+static void plusOne(T& something)
 {
 	something++;
 }
 
-/*
- * Converts the passed char to uppercase.
- */
-static void
-toUpper(char& c)
+static void toUpper(char& c)
 {
 	c = toupper(c);
 }
 
-int
-main()
+int main()
 {
+// -------------------||Declaration||-------------------------------------------- //
 	int int_array[] = {1, 2, 3, 4, 5};
 	char char_array[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
 	char string[] = "voy a pgepagag uma sena de picoteu, os apuntais?";
-
+// -------------------||INT_ARRAY||-------------------------------------------- //
 	cout << "Original int_array: {";
 	for (int i = 0; i < 5; i++)
 		cout << " " << int_array[i];
@@ -52,7 +44,7 @@ main()
 	for (int i = 0; i < 5; i++)
 		cout << " " << int_array[i];
 	cout << " }" << endl;
-
+// --------------------||CHAR_ARRAY||------------------------------------------------- //
 	cout << endl << "Original char_array: {";
 	for (int i = 0; i < 7; i++)
 		cout << " " << char_array[i];
@@ -62,7 +54,7 @@ main()
 	for (int i = 0; i < 7; i++)
 		cout << " " << char_array[i];
 	cout << " }" << endl;
-
+// --------------------||STRING||------------------------------------------------- //
 	cout << endl << "Original string: " << string << endl;
 	iter<char>(string, strlen(string), toUpper);
 	cout << "After applying toUpper() with iter(): " << string << endl;

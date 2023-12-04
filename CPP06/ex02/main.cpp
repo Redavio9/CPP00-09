@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:42:30 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:49:40 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/02 09:50:56 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,14 @@
 #include "B.hpp"
 #include "C.hpp"
 
-class X : public  Base
-{
-  
-};
 
 int main()
 {
-  Base n;
+  Base *a = generate();
+
   
-  X s;
-  // Base *a = new x();
-  
-  // a = generate();
-  identify(&s);
+  identify(a);
+  if(a)
+    identify(*a);
+  delete a;  
 }

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:39:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:30:45 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/02 10:02:35 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ Base Base::operator=(Base &obj)
 
 Base * generate(void)
 {
+  std::srand(std::time(0));
   int choice = std::rand() % 3 + 1;
   switch (choice) 
   {
@@ -66,26 +67,33 @@ void identify(Base& p)
 {
   try
   {
-    if(dynamic_cast<A *>(&p))
+    A& a = dynamic_cast<A&>(p);
+    (void)a;
     std::cout << "THIS IS A" << std::endl;
+    return;
   }
   catch(...)
   {
   }
   try
   {
-    if(dynamic_cast<B *>(&p))
+    B& b = dynamic_cast<B&>(p);
+    (void)b;
     std::cout << "THIS IS B" << std::endl;
+    return;
   }
   catch(...)
   {
   }
   try
   {
-    if(dynamic_cast<C *>(&p))
+    C& c = dynamic_cast<C&>(p);
+    (void)c;
     std::cout << "THIS IS C" << std::endl;
+    return;
   }
   catch(...)
   {
+    std::cout << "ERROR !!!" << std::endl;
   }
 }

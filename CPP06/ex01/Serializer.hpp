@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:18:25 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 09:37:20 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/30 11:46:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class  Serializer
     static uintptr_t serialize(Data* ptr);
     static Data* deserialize(uintptr_t raw);
 };
+
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:21:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 20:39:10 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/11/30 14:04:13 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,4 @@ void convert_to_int(std::string str)
 	}
 	else
 	    printf_int(str);
-      
 }

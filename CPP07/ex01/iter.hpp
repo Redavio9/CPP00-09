@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:16:51 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:31:16 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/02 10:06:11 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@
 
 #include <cstddef>
 
-/*
- * This function applies to each element of array (given its length) the passed
- * function.
- */
+
 template <typename T>
-void iter(T* array, size_t lenght, void (*func)(T& thing))
+void iter(T* array, size_t len, void (*func)(T& thing))
 {
-	for (size_t i = 0; i < lenght; i++)
+	for (size_t i = 0; i < len; i++)
 		func(array[i]);
 }
 

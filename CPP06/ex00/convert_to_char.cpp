@@ -6,11 +6,33 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:44:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/30 11:41:33 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/02 09:46:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverte.hpp"
+
+int	Check_inf(std::string str)
+{
+	std::string taab[6] = {"nan", "nanf", "-inf", "+inf", "-inff", "+inff"};
+
+	for (int j = 0;j < 6;j++)
+	{
+		if (str == taab[j])
+		{
+			std::cout << "char : IMPOSSIBLE !!\n";
+			std::cout << "int : IMPOSSIBLE !!\n";
+			if (str == "-inff" || str == "+inff")
+				std::cout << "float : IMPOSSIBLE !!\n";
+			else
+				std::cout << "float : " << str << "f\n";
+			std::cout << "Double : " << str << std::endl;
+			return (1);
+		}
+	}
+	return (0);
+}
+
 
 
 int check_point(std::string str)
@@ -32,7 +54,6 @@ int check_is_string(std::string str)
 		return(1);
 	for (size_t i = 0; i < str.length(); i++)
 	{
-		// std::cout << str[i] << std::endl;
 		if (str[i] == '.' && str[i + 1] == 'f')
 		{
 			i++;

@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/15 14:34:29 by rarraji           #+#    #+#              #
-#    Updated: 2023/12/01 11:06:53 by rarraji          ###   ########.fr        #
+#    Created: 2023/12/04 09:54:44 by rarraji           #+#    #+#              #
+#    Updated: 2023/12/04 14:44:27 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Base
+NAME	= BitcoinExchange
 	
 CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98 
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
-SRC		= main.cpp Base.cpp A.cpp B.cpp C.cpp
-OBJ   = $(SRC:.cpp=.o)
+SRC		= main.cpp
+
 #Colors:
 RED = \033[0;31m
 GREEN = \033[0;32m

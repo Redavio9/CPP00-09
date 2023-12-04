@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:17:02 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/23 15:21:35 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/02 10:29:06 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@
 template <typename T>
 class Array
 {
+	private:
+		T** _array;
+		unsigned int _lenght;
+		void killEmAll()
+		{
+			for (unsigned int i = 0; i < _lenght; i++)
+				delete _array[i];
+			delete[] _array;
+			_array = 0;
+			_lenght = 0;
+		}
+		
 	public:
 		class IndexOutOfBounds: public std::exception
 		{
@@ -32,7 +44,7 @@ class Array
 
 		Array<T>()
 		{
-			_array = nullptr;
+			_array = 0;
 			_lenght = 0;
 		}
 
@@ -46,7 +58,7 @@ class Array
 
 		Array<T>(const Array<T>& array)
 		{
-			_array = nullptr;
+			_array = 0;
 			_lenght = 0;
 			*this = array;
 		}
@@ -56,8 +68,7 @@ class Array
 			killEmAll();
 		}
 
-		Array<T>&
-		operator=(const Array<T>& array)
+		Array<T>&operator=(const Array<T>& array)
 		{
 			killEmAll();
 			_array = new T*[array._lenght];
@@ -68,36 +79,18 @@ class Array
 			return (*this);
 		}
 
-		T&
-		operator[](size_t i)
+		T& operator[](size_t i)
 		{
 			if (i >= _lenght)
 				throw IndexOutOfBounds();
 			return (*_array[i]);
 		}
 
-		size_t
-		size() const
+		size_t size() const
 		{
 			return (_lenght);
 		}
 
-	private:
-		T** _array;
-		unsigned int _lenght;
-
-		/*
-		 * This function will delete the array and leave it as empty.
-		 */
-		void
-		killEmAll()
-		{
-			for (unsigned int i = 0; i < _lenght; i++)
-				delete _array[i];
-			delete[] _array;
-			_array = nullptr;
-			_lenght = 0;
-		}
 };
 
 #endif

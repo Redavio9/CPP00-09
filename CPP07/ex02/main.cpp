@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:17:09 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/23 15:22:00 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/02 10:33:16 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int, char**)
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
-        const int value = rand();
+        int value = rand();
         numbers[i] = value;
         mirror[i] = value;
     }
