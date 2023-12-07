@@ -6,74 +6,51 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:16:40 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:31:06 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/07 10:15:52 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
-#include <iostream>
-#include <string>
 
-
-using std::cout; 
-using std::endl;
-using std::string;
 
 int main()
 {
-	int a_int, b_int;
-	double a_double, b_double;
-	string a_string, b_string;
-
-	cout << "swap() test:" << endl;
-	a_int = 123;
-	b_int = 789;
+	int A, B;
+	double C, D;
+	std::string Str1, Str2;
+	
+	// ------------------------------------------------------------------------------------- //
+														std::cout << "swap() test:" << std::endl;
+	// ------------------------------------------------------------------------------------- //
+	
+	A = 100;
+	B = 200;
   
-	cout << "a_int: " << a_int << "  ||||  " << " b_int: " << b_int << endl;
-	swap(a_int, b_int);
-	cout << "After swap():" << endl;
-	cout << "a_int: " << a_int << "  ||||  " << " b_int: " << b_int << endl;
-
-	cout << endl << "min() test:" << endl;
-	a_double = 123.123;
-	b_double = 789.789;
+	std::cout << "A: " << A << "      " << " B: " << B << std::endl;
+	swap(A, B);
+	std::cout << "After swap :" << std::endl;
+	std::cout << "A: " << A << "      " << " B: " << B << std::endl;
+	// ------------------------------------------------------------------------------------- //
+														std::cout << std::endl << "min() test:" << std::endl;
+	// ------------------------------------------------------------------------------------- //
+	C = 100.788;
+	D = 200.547;
   
-	cout << "a_double: " << a_double << " (" << &a_double << ") b_double: " << b_double;
-	cout << " (" << &b_double << ") min(a_double, b_double): ";
-	cout << min(a_double, b_double) << " (" << min(a_double, b_double) << ")" << endl;
+	std::cout << "C: " << C << "      " << " D: " << D << std::endl;
+	std::cout << "min(C, D):     ";
+	std::cout << min(C, D) << std::endl;
   
-	a_double = 123.123;
-	b_double = 123.123;
+	// ------------------------------------------------------------------------------------- //
+														std::cout << std::endl << "Max() test:" << std::endl;
+	// ------------------------------------------------------------------------------------- //
+	Str1 = "aaa";
+	Str2 = "bbb";
   
-	cout << "a_double: " << a_double << " (" << &a_double << ") b_double: " << b_double;
-	cout << " (" << &b_double << ") min(a_double, b_double): ";
-	cout << min(a_double, b_double) << " (" << min(a_double, b_double) << ")" << endl;
-  
-	a_double = 789.789;
-	b_double = 123.123;
-  
-	cout << "a_double: " << a_double << " (" << &a_double << ") b_double: " << b_double;
-	cout << " (" << &b_double << ") min(a_double, b_double): ";
-	cout << min(a_double, b_double) << " (" << min(a_double, b_double) << ")" << endl;
-
-	cout << endl << "Max() test:" << endl;
-	a_string = "asd";
-	b_string = "zxc";
-  
-	cout << "a_string: " << a_string << " (" << &a_string << ") b_string: " << b_string;
-	cout << " (" << &b_string << ") Max(a_string, b_string): ";
-	cout << Max(a_string, b_string) << " (" << Max(a_string, b_string) << ")" << endl;
-	a_string = "asd";
-	b_string = "asd";
-	cout << "a_string: " << a_string << " (" << &a_string << ") b_string: " << b_string;
-	cout << " (" << &b_string << ") Max(a_string, b_string): ";
-	cout << Max(a_string, b_string) << " (" << Max(a_string, b_string) << ")" << endl;
-	a_string = "zxc";
-	b_string = "asd";
-	cout << "a_string: " << a_string << " (" << &a_string << ") b_string: " << b_string;
-	cout << " (" << &b_string << ") Max(a_string, b_string): ";
-	cout << Max(a_string, b_string) << " (" << Max(a_string, b_string) << ")" << endl;
-
+	std::cout << "Str1: " << Str1 << "      " << " Str2: " << Str2 << std::endl;
+	std::cout << "Max(Str1, Str2):      ";
+	std::cout << Max(Str1, Str2) << std::endl;
+	
+	// ------------------------------------------------------------------------------------- //
 	return (0);
 }
 

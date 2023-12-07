@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:17:09 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/02 10:33:16 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/07 10:09:00 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "Array.hpp"
 
 #define MAX_VAL 750
-int main(int, char**)
+
+int main_1()
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
@@ -25,12 +26,10 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
-
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -55,7 +54,6 @@ int main(int, char**)
     {
         std::cerr << e.what() << '\n';
     }
-
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
@@ -63,3 +61,10 @@ int main(int, char**)
     delete [] mirror;//
     return 0;
 }
+int main()
+{
+    main_1(); 
+    system("leaks -q Array");
+}
+
+

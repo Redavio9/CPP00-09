@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 09:54:50 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/04 14:36:24 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/06 10:59:04 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,16 @@ class BitcoinExchange
     BitcoinExchange(const BitcoinExchange& ref);
     BitcoinExchange& operator=(const BitcoinExchange& ref);
     ~BitcoinExchange();
-    // void play(char *file);
-    int validateDate(std::string s);
-    int validateInput(std::string s);
     void checkCsvFile();
+    int validDate_csv(std::string s);
+    int checkValue_csv(std::string s);
     void checkInputFile(char *file);
-    void bitcoin(char *file);
-    void checkInfo(std::string);
-    int checkDate(const std::string&);
-    int checkValue(const std::string&);
+    void checkInfoInput(std::string info);
+    int checkDateInput(const std::string&);
+    int checkValueInput(const std::string&);
+    // void printBtc(const std::string& date);
+    // void printBtc(std::string date);
     void printBit(std::string date, float n);
-    class Error : public std::exception {
-      public:
-        const char* what() const throw();
-    };
 };
 
 

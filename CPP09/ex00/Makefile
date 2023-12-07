@@ -6,18 +6,19 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 09:54:44 by rarraji           #+#    #+#              #
-#    Updated: 2023/12/04 14:44:27 by rarraji          ###   ########.fr        #
+#    Updated: 2023/12/06 08:21:20 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= BitcoinExchange
-	
-CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
-RM		= rm -rf
-SRC		= main.cpp
+NAME    = Btc
 
-#Colors:
+CC      = c++
+FLAGS   = -Wall -Wextra -Werror -std=c++98
+RM      = rm -rf
+SRC     = BitcoinExchange.cpp main.cpp
+OBJ     = $(SRC:.cpp=.o) 
+
+# Colors
 RED = \033[0;31m
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
@@ -43,3 +44,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

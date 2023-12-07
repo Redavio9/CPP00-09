@@ -6,10 +6,9 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 09:16:42 by rarraji           #+#    #+#              #
-#    Updated: 2023/12/02 10:34:35 by rarraji          ###   ########.fr        #
+#    Updated: 2023/12/07 09:38:16 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME	= whatever
 	
@@ -18,6 +17,7 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 SRC		= main.cpp
 OBJ   = $(SRC:.cpp=.o)
+
 #Colors:
 RED = \033[0;31m
 GREEN = \033[0;32m

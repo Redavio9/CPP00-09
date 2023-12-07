@@ -6,12 +6,14 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 09:16:47 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/27 10:31:11 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/07 10:09:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP
+
+#include <iostream>
 
 template <typename T>
 void swap(T &a, T &b)
