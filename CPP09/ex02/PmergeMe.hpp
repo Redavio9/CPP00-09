@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:58:57 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/16 10:20:22 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/16 11:05:30 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <list>
 
 typedef std::vector<std::pair<std::vector<double>, std::vector<std::vector<double> >::iterator> > pend;
 
@@ -23,9 +24,12 @@ class PermegeMe
 {
   private:
     size_t                 size;
+    std::string Input;
+    std::list<double> list_pair;
+    std::list<double> list_rest;
+    std::list<std::list<double> >SubList;
     std::vector<double> pair;
     std::vector<double> rest;
-    std::string Input;
     std::vector<std::vector<double> >subVectors;
     std::vector<std::vector<double> >MainChain;
     std::vector<std::pair<std::vector<double>, std::vector<std::vector<double> >::iterator> >PandChain;
