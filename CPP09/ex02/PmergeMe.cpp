@@ -6,11 +6,12 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:58:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/15 11:57:01 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/16 10:20:53 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+int cnt = 0;
 
 PermegeMe::PermegeMe()
 {
@@ -54,14 +55,33 @@ void PermegeMe::print_PandChain(std::vector<std::pair<std::vector<double>, std::
 {
 	for (size_t i = 0; i < PandChain.size(); ++i)
 	{
-		std::cout << "SousPandChain " << i + 1 << ": ";
-		// std::cout << PandChain << " ";
+		std::cout << "PandChain " << i + 1 << ": ";
 		for (size_t j = 0; j < PandChain[i].first.size(); ++j)
 		{
 			std::cout << PandChain[i].first[j] << " ";
 		}
 		std::cout << std::endl;
 	}
+}
+
+void PermegeMe::add_Vector_OfVectors_rest()
+{
+	subVectors.clear();
+	for (size_t i = 0; i < pair.size(); i += size)
+	{
+		std::vector<double> subVector;
+		for (size_t j = i; j < i + size && j < pair.size(); j++)
+		{
+			subVector.push_back(pair[j]);
+		}
+		subVectors.push_back(subVector);
+	}
+	if (subVectors.back().size() != size)
+	{
+		rest = subVectors.back();
+		subVectors.pop_back();
+	}
+	std::cout << "here\n";
 }
 
 bool PermegeMe::checkInput(std::string str)
@@ -81,22 +101,21 @@ void PermegeMe::AddDataToPair(std::string str)
 	this->pair.push_back(nb);
 }
 
-void PermegeMe::PushBackData()
+void PermegeMe::PushBackData_Merge()
 {
 	pair.clear();
 	for (size_t i = 0; i < subVectors.size(); ++i)
 	{
 		for (size_t j = 0; j < subVectors[i].size(); ++j)
 		{
-			// std::cout << "HERE ::   "<< subVectors[i][j] << std::endl;
 			pair.push_back(subVectors[i][j]);
 		}
 	}
-	pair.insert(pair.end(), rest.begin(), rest.end());
-	rest.clear();
+	// pair.insert(pair.end(), rest.begin(), rest.end());
+	// rest.clear();
 }
 
-void PermegeMe::PushBackData1()
+void PermegeMe::PushBackData_RevMerge()
 {
 	pair.clear();
 	for (size_t i = 0; i < MainChain.size(); ++i)
@@ -114,35 +133,15 @@ void PermegeMe::PushBackData1()
 
 void PermegeMe::checkSort()
 {
-	// size_t size = subVectors.size();
-	// std::cout << "size block 0: " << subVectors[0].size() << std::endl;
-	// std::cout << "size block end: " << subVectors[subVectors.size() - 1].size() << std::endl;
 
-	// add rest and erase in the subvector
-	// std::cout << "len my vector : " <<  subVectors[subVectors.size() - 1].size() << std::endl;
-
-	/*{
-		std::cout << "********************REST***********************: \n";
-		size = subVectors.size() - 1;
-		for (size_t i = 0; i < subVectors[subVectors.size() - 1].size(); i++)
-		{
-			rest.push_back(subVectors[subVectors.size() - 1][i]);
-		}
-		for (size_t i = 0; i < rest.size(); i++)
-		{
-				std::cout << rest[i] << std::endl;
-		}
-		subVectors.erase(subVectors.end() - 1);
-		std::cout << "************************************************: \n";
-	}*/
-
-	// swap if you can
+	std::cout << "size : "<< subVectors.size() << std::endl;
 	for (size_t i = 0; i < subVectors.size() - 1; i += 2)
 	{
+		std::cout << "redas\n";
+		cnt++;
 		if (subVectors[i].back() > subVectors[i + 1].back())
 			std::swap(subVectors[i], subVectors[i + 1]);
 	}
-
 	// print SousVecteur
 	std::cout << "///////////////////BEGINE-SORT////////////////////  : \n";
 	for (size_t i = 0; i < subVectors.size(); ++i)
@@ -154,7 +153,7 @@ void PermegeMe::checkSort()
 		}
 		std::cout << std::endl;
 	}
-	PushBackData();
+	PushBackData_Merge();
 	std::cout << "////////////////////////END-SORT/////////////////////  : \n";
 }
 
@@ -187,7 +186,7 @@ void PermegeMe::AddMainchainPand()
 
 bool compare(std::vector<double> first, std::vector<double> second)
 {
-	// cnt++;
+	cnt++;
 	return (first.back() < second.back());
 }
 
@@ -204,8 +203,6 @@ void PermegeMe::update_iterator(std::vector<std::vector<double> >::iterator it)
 
 void PermegeMe::insert_pend_to_main()
 {
-	// std::pair<std::vector<double>, std::vector<std::vector<double> >::iterator> tmp;
-	// std::vector<std::pair<std::vector<double>, std::vector<std::vector<double> >::iterator> > rest2;
 	std::vector<std::vector<double> >::iterator it;
 	for (size_t i = 0; i < PandChain.size(); i++)
 	{
@@ -213,76 +210,32 @@ void PermegeMe::insert_pend_to_main()
 		MainChain.insert(it, PandChain[i].first);
 		update_iterator(it);
 	}
-	// if (size == 1)
-	// {
-	// 	for (size_t i = 0; i < rest.size(); i++)
-	// 	{
-	// 		std::vector<double> tmp2;
-	// 		tmp2.push_back(rest[i]);
-	// 		tmp.first = tmp2;
-	// 		tmp.second = MainChain.end();
-	// 		rest2.push_back(tmp);
-	// 		it = lower_bound(MainChain.begin(), MainChain.end(), rest2[i].first, compare);
-	// 		MainChain.insert(it, rest2[i].first);
-	// 	}
-	// }
 }
 void PermegeMe::RevMerge()
 {
 	std::cout << "-----------------------------REVERSE-----------------------------\n";
-	subVectors.clear();
-	for (size_t i = 0; i < pair.size(); i += size)
-	{
-		std::vector<double> subVector;
-		for (size_t j = i; j < i + size && j < pair.size(); ++j)
-		{
-			subVector.push_back(pair[j]);
-		}
-		subVectors.push_back(subVector);
-	}
-	if (subVectors.back().size() != size)
-	{
-		rest = subVectors.back();
-		subVectors.pop_back();
-	} 
+	add_Vector_OfVectors_rest();
 	AddMainchainPand();
 	print_vectorOfvectors(MainChain, "MainChain");
 	print_PandChain(PandChain);
 	insert_pend_to_main();
-	PushBackData1();
-	// it = rest[0].end();
-	// std::cout << " ===== >> HI << ==== :   " << *it << std::endl;
-	std::cout << "********************REST-REV***********************: \n";
-	for (size_t i = 0; i < rest.size(); i++)
-	{
-		std::cout << rest[i] << std::endl;
-	}
-	std::cout << "************************************************: \n";
+	PushBackData_RevMerge();
+	// std::cout << "********************REST-REV***********************: \n";
+	// for (size_t i = 0; i < rest.size(); i++)
+	// {
+	// 	std::cout << rest[i] << std::endl;
+	// }
+	// std::cout << "************************************************: \n";
 }
 
 void PermegeMe::merge()
 {
-	std::cout << "--------------------ETAPE ( " << size << " )----------------  : \n";
-	subVectors.clear();
-	for (size_t i = 0; i < pair.size(); i += size)
-	{
-		std::vector<double> subVector;
-		for (size_t j = i; j < i + size && j < pair.size(); j++)
-		{
-			subVector.push_back(pair[j]);
-		}
-		subVectors.push_back(subVector);
-	}
-	if (subVectors.back().size() != size)
-	{
-		rest = subVectors.back();
-		subVectors.pop_back();
-	}
-
+	add_Vector_OfVectors_rest();
+	std::cout << "Here ##" << std::endl;
 	std::cout << "elSize : " << subVectors.front().size() << std::endl;
-
-	// print_vectorOfvectors(subVectors);
+	// print_vectorOfvectors(subVectors, "vector");
 	checkSort();
+	std::cout << "here2\n";
 	std::cout << subVectors.size() << std::endl;
 	if (subVectors.size() > 3)
 	{
@@ -292,7 +245,6 @@ void PermegeMe::merge()
 		size /= 2;
 	}
 	RevMerge();
-	
 	dump();
 }
 
@@ -323,4 +275,5 @@ void PermegeMe::parse()
 	}
 	std::cout << size << std::endl;
 	merge();
+	std::cout << "cnt :  " << cnt << std::endl;
 }
