@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 10:29:37 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/18 14:27:49 by rarraji          ###   ########.fr       */
+/*   Created: 2023/12/07 19:05:09 by rarraji           #+#    #+#             */
+/*   Updated: 2023/12/09 10:32:55 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#include "RPN.hpp"
 
-#include <iostream>
-#include <vector>
-#include <stdexcept>
-#include <algorithm>
-
-
-template <typename T>
-typename T::value_type easyFind(T &vec , int value) 
+int main(int ac, char **av)
 {
-   if (std::find(vec.begin(), vec.end(), value) != vec.end()) 
-           return value;
-   throw "value is not in this container";
+  if(ac == 2)
+  {
+    Rpn A(av[1]);
+    A.splitNum();
+    if (A.size() != 1)
+      std::cout << "ERROR !!" << std::endl;
+  }
 }
-
-# endif

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:51:26 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 12:18:24 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/17 09:43:36 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void Span::addNumber(int num)
 // Member function to find the shortest span
   int Span::shortestSpan() 
   {
-      if (myvector.size() < 2) 
-          throw "Not enough numbers to find a span.";
-      std::sort(myvector.begin(), myvector.end());
-      return myvector[1] - myvector[0];
+    if (myvector.size() < 2) 
+        throw "Not enough numbers to find a span.";
+    std::sort(myvector.begin(), myvector.end());
+    return myvector[1] - myvector[0];
   }
 
   // Member function to find the longest span
@@ -59,5 +59,6 @@ void Span::addNumber(int num)
   {
       if (myvector.size() < 2) 
           throw "Not enough numbers to find a span.";
+      std::sort(myvector.begin(), myvector.end());    
       return myvector.back() - myvector.front();
   }

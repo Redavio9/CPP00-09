@@ -5,21 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/09 11:58:52 by rarraji           #+#    #+#              #
-#    Updated: 2023/12/18 09:37:55 by rarraji          ###   ########.fr        #
+#    Created: 2023/12/04 09:54:44 by rarraji           #+#    #+#              #
+#    Updated: 2023/12/08 10:00:53 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= PmergeMe
-	
-CC		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
-RM		= rm -rf
-SRC		= main.cpp PmergeMe_copy.cpp
-OBJ   = $(SRC:.cpp=.o)
+NAME    = RPN
 
-#Colors:
+CC      = c++
+FLAGS   = -Wall -Wextra -Werror -std=c++98
+RM      = rm -rf
+SRC     = RPN.cpp main.cpp
+OBJ     = $(SRC:.cpp=.o) 
 
+# Colors
 RED = \033[0;31m
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
@@ -45,3 +44,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

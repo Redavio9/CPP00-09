@@ -1,0 +1,51 @@
+Cette fonction gère toutes les erreurs qui se produisent dans les fonctions de fractionnement et de calcul. 
+Par conséquent, la classe RPN créée contient les fonctions membres et variables suivantes. 
+
+Constructeur: 
+
+
+RPN() : constructeur par défaut 
+RPN(char *av) : Constructeur qui prend une chaîne en entrée et initialise le calculateur RPN. 
+RPN(const RPN& ref) : constructeur de copie 
+
+
+Surcharges des opérateurs d’affectation : 
+
+
+Operator=(const RPN& ref) : copiez la valeur de l'objet RPN en surchargeant l'opérateur d'affectation. 
+
+
+Destructeur : 
+
+
+~RPN() : destructeur 
+
+
+Fonctions des membres : 
+
+
+play() : contient la logique globale et génère une erreur si une erreur se produit. 
+
+split() : séparez les chaînes avec des espaces et stockez les opérandes et les opérateurs sur la pile. 
+
+validateInput(std::string s) : vérifie si la chaîne d'entrée est valide et met à jour le nombre d'opérandes. 
+
+isOperator(char op) : Vérifiez si un caractère est un opérateur 
+
+calculatrice (double a, double b, char op) : effectue une opération en utilisant deux opérandes et un opérateur. 
+
+calculate() : calcule l'expression RPN et imprime le résultat 
+
+
+Variables membres : 
+
+
+std::stackstd::string splitString : Une pile qui stocke la chaîne d'entrée séparée par des espaces. 
+std::stack<double> rpn : Une pile qui stocke les valeurs réelles utilisées dans les calculs RPN. 
+int numberOfValues : nombre d'opérandes trouvés dans la chaîne d'entrée. 
+
+
+Classe d'exceptions : 
+
+
+Erreur : classe d'exception pour gérer les erreurs se produisant dans la classe RPN.  Hérite de std::exception.

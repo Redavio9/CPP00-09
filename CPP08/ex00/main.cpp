@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:29:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 15:11:35 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/13 16:26:29 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
   myvector.push_back(5);
   try 
   {
-   int result = easyFind(myvector, 3);
+   int result = easyFind(myvector, 9);
    std::cout << result << std::endl;
   } 
   catch (const char* msg) 
