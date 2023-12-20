@@ -6,31 +6,31 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:51:21 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/17 09:45:54 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/20 12:31:59 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-int main() {
+int main() 
+{
   Span span(10000);
-  // for (int i = 0; i < 10000; i++) 
-  // {
-  //     span.addNumber(i);
-  // }
-  span.addNumber(1);
-  span.addNumber(5);
-  span.addNumber(3);
-  span.addNumber(4);
-  span.addNumber(2);
+  std::vector<int> vec;
+		vec.push_back(6);
+		vec.push_back(3);
+		vec.push_back(17);
+		vec.push_back(9);
+		vec.push_back(11);
+		vec.push_back(15);
   try 
   {
-      std::cout << "Shortest span: " << span.shortestSpan() << '\n';
-      std::cout << "Longest span: " << span.longestSpan() << '\n';
+    span.addNumbers(vec.begin(), vec.end());  
+    std::cout << "Shortest span: " << span.shortestSpan() << '\n';
+    std::cout << "Longest span: " << span.longestSpan() << '\n';
   } 
   catch (char *e) 
   {
-      std::cerr << e << '\n';
+    std::cerr << e << '\n';
   }
   return 0;
 }
