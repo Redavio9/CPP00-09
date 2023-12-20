@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:51:26 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/17 09:43:36 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/20 11:03:12 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,15 @@ void Span::addNumber(int num)
       std::sort(myvector.begin(), myvector.end());    
       return myvector.back() - myvector.front();
   }
+
+  void Span::addNumbers( std::vector<int>::iterator begin , std::vector<int>::iterator end)
+  {
+    for (; begin != end;)
+    {
+      if (myvector.size() >= Max)
+        throw "Span is full. Cannot add more numbers.";
+      myvector.push_back(*begin);
+      begin++;
+    }
+  }
+  

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:29:41 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/13 16:26:29 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/20 10:46:32 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ int main()
   myvector.push_back(1);
   myvector.push_back(2);
   myvector.push_back(9);
-  myvector.push_back(4);
+  myvector.push_back(10);
   myvector.push_back(5);
   try 
   {
-   int result = easyFind(myvector, 9);
+   int result = easyFind(myvector, 10);
    std::cout << result << std::endl;
   } 
   catch (const char* msg) 
   {
-   std::cerr << "Erreur : " << msg << std::endl;
+   std::cerr << "ERROR : " << msg << std::endl;
   }
   return 0;
 }

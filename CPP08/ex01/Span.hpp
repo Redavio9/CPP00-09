@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:51:28 by rarraji           #+#    #+#             */
-/*   Updated: 2023/11/28 12:10:47 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/20 10:59:38 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+#include <algorithm>
 
 
 class Span
@@ -31,6 +32,7 @@ class Span
     Span(Span const &obj);
     Span operator=(Span const &obj);
     void addNumber(int num);
+    void addNumbers( std::vector<int>::iterator begin , std::vector<int>::iterator end);
     int shortestSpan();
     int longestSpan();
 };

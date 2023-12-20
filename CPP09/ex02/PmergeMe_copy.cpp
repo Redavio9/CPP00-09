@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:58:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/18 19:22:10 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/20 12:21:18 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void PermegeMe::print_dequeOfdeques(std::deque<std::deque<double> > vec, std::st
 		std::cout << std::endl;
 	}
 }
+
 void PermegeMe::print_PandChain(std::deque<std::pair<std::deque<double>, std::deque<std::deque<double> >::iterator> > PandChain)
 {
 	for (size_t i = 0; i < PandChain.size(); ++i)
@@ -63,6 +64,7 @@ void PermegeMe::print_PandChain(std::deque<std::pair<std::deque<double>, std::de
 		std::cout << std::endl;
 	}
 }
+
 
 void PermegeMe::add_deque_Ofdeques_rest()
 {
@@ -81,8 +83,8 @@ void PermegeMe::add_deque_Ofdeques_rest()
 		rest = subdeques.back();
 		subdeques.pop_back();
 	}
-	std::cout << "here\n";
 }
+
 
 bool PermegeMe::checkInput(std::string str)
 {
@@ -93,6 +95,7 @@ bool PermegeMe::checkInput(std::string str)
 	return (true);
 }
 
+
 void PermegeMe::AddDataToPair(std::string str)
 {
 	double nb;
@@ -100,6 +103,7 @@ void PermegeMe::AddDataToPair(std::string str)
 	nb = strtod(str.c_str(), NULL);
 	this->pair.push_back(nb);
 }
+
 
 void PermegeMe::PushBackData_Merge()
 {
@@ -112,6 +116,7 @@ void PermegeMe::PushBackData_Merge()
 		}
 	}
 }
+
 
 void PermegeMe::PushBackData_RevMerge()
 {
@@ -128,6 +133,7 @@ void PermegeMe::PushBackData_RevMerge()
 	MainChain.clear();
 	PandChain.clear();
 }
+
 
 void PermegeMe::checkSort()
 {
@@ -153,16 +159,11 @@ void PermegeMe::checkSort()
 	std::cout << "////////////////////////END-SORT/////////////////////  : \n";
 }
 
+
 void PermegeMe::AddMainchainPand()
 {
 	std::pair<std::deque<double>, std::deque<std::deque<double> >::iterator> Solix;
-	// if ()
-	// {
-	// 	// save rest
-	// 		pop
-	// }
-	// PandChain.reserve(pair.size());
-	// MainChain.resize(pair.size());
+	
 	MainChain.push_back(subdeques[0]);
 	MainChain.push_back(subdeques[1]);
 	for (size_t i = 2; i < subdeques.size();)
@@ -175,8 +176,6 @@ void PermegeMe::AddMainchainPand()
 		PandChain.push_back(Solix);
 		++i;
 	}
-	// Solix
-	// PandChain.push_back(rest.end());
 	std::cout << "-----------------------------------------------------\n";
 }
 
@@ -186,25 +185,35 @@ bool compare(std::deque<double> first, std::deque<double> second)
 	return (first.back() < second.back());
 }
 
-void PermegeMe::update_iterator(std::deque<std::deque<double> >::iterator it)
-{
-	pend::iterator cur = PandChain.begin();
-
-	for (; cur != PandChain.end(); ++cur)
-	{
-		if (it <= cur->second)
-			++cur->second;
-	}
-}
-
 void PermegeMe::insert_pend_to_main()
 {
+	unsigned long jacob[] = {3, 5, 11, 21, 43, 85, 171, 341, 683, 1365, 2731, 5461, 10923, 21845, 43691, 87381, 174763, 
+	349525, 699051, 1398101, 2796203, 5592405, 11184811, 22369621, 44739243, 89478485, 178956971, 357913941, 
+	715827883, 1431655765, 2863311531, 5726623061, 11453246123, 22906492245, 45812984491, 91625968981, 183251937963};
+	
+	long befor = 1;
+	int added = 1;
 	std::deque<std::deque<double> >::iterator it;
-	for (size_t i = 0; i < PandChain.size(); i++)
+	bool ok = false;
+	for (size_t i = 0; i < 37; i++)
 	{
-		it = lower_bound(MainChain.begin(), MainChain.end(), PandChain[i].first, compare);
-		MainChain.insert(it, PandChain[i].first);
-		// update_iterator(it);
+		int current = jacob[i];
+		if (PandChain.size() + 1 < (size_t)current)
+		{
+			current = PandChain.size() + 1;
+			ok = true;
+		}
+		for (;current > befor;)
+		{
+			std::cout << current << std::endl;
+			it = lower_bound(MainChain.begin(), MainChain.begin() + (current - 1) + added, PandChain[current - 2].first, compare);
+			MainChain.insert(it, PandChain[current - 2].first);
+			current--;
+			added++;
+		}
+		if (ok)
+			break ;
+		befor = jacob[i];
 	}
 }
 void PermegeMe::RevMerge()
@@ -216,19 +225,12 @@ void PermegeMe::RevMerge()
 	print_PandChain(PandChain);
 	insert_pend_to_main();
 	PushBackData_RevMerge();
-	// std::cout << "********************REST-REV***********************: \n";
-	// for (size_t i = 0; i < rest.size(); i++)
-	// {
-	// 	std::cout << rest[i] << std::endl;
-	// }
-	// std::cout << "************************************************: \n";
 }
 
 void PermegeMe::merge()
 {
 	add_deque_Ofdeques_rest();
 	std::cout << "elSize : " << subdeques.front().size() << std::endl;
-	// print_dequeOfdeques(subdeques, "deque");
 	checkSort();
 	std::cout << "here2\n";
 	std::cout << subdeques.size() << std::endl;
@@ -269,7 +271,6 @@ void PermegeMe::parse()
 		AddDataToPair(str);
 	}
 	std::cout << size << std::endl;
-	// MainChain.resize(3000);
 	merge();
 	std::cout << "cnt :  " << cnt << std::endl;
 }
