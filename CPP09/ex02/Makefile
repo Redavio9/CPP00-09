@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/09 11:58:52 by rarraji           #+#    #+#              #
-#    Updated: 2023/12/20 12:22:15 by rarraji          ###   ########.fr        #
+#    Updated: 2023/12/20 12:24:10 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	= PmergeMe
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM		= rm -rf
-SRC		= main.cpp PmergeMe_copy.cpp
+SRC		= main.cpp PmergeMe.cpp
 OBJ   = $(SRC:.cpp=.o)
 
 #Colors:

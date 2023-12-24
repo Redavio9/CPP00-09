@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:29:37 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/18 14:27:49 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/21 17:53:01 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 
 
 template <typename T>
-typename T::value_type easyFind(T &vec , int value) 
+int easyFind(T &vec , int value) 
 {
    if (std::find(vec.begin(), vec.end(), value) != vec.end()) 
-           return value;
+        return value;
    throw "value is not in this container";
 }
 
