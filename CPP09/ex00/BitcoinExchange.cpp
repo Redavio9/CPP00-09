@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 09:54:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/07 14:49:55 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/27 14:03:31 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 BitcoinExchange::BitcoinExchange()
 {
-	std::cout <<  "Default BitcoinExchange constructor\n";
 }
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
 {
@@ -26,15 +25,12 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
 }
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &assign)
 {
-		(void)assign;
-		return(*this);
+	(void)assign;
+	return(*this);
 }
-
 BitcoinExchange::~BitcoinExchange()
 {
-	std::cout << "BitcoinExchange Destructor\n";
 }
-
 //----------------------------------------------------------------------------------------------//
 																					// CsvFile //
 //----------------------------------------------------------------------------------------------//
@@ -78,6 +74,8 @@ void BitcoinExchange::checkCsvFile()
 	csv.close();
 	return;
 }
+
+//----------------------------------------------------------------------------------------------//
 
 int BitcoinExchange::validDate_csv(std::string s) 
 {
@@ -129,6 +127,8 @@ int BitcoinExchange::validDate_csv(std::string s)
 	return 1;
 }
 
+//----------------------------------------------------------------------------------------------//
+
 int BitcoinExchange::checkValue_csv(std::string s) 
 {
 	double value = std::strtod(s.c_str(), NULL);
@@ -150,9 +150,10 @@ int BitcoinExchange::checkDateInput(const std::string &s)
 		std::istringstream ss(s);
 		int	year;
 		int	month;
-		int	day;
+		int	day = 0;
 		int idx = 0;
 		int cnt = 0;
+		// int day = 0;
 
 		if (s.find('-', s.length()) != std::string::npos) 
 		{
@@ -181,12 +182,25 @@ int BitcoinExchange::checkDateInput(const std::string &s)
 			} 
 			if (idx == 2) 
 			{
+				// std::cout << "Debugging = " << date_split << std::endl;
+				int checker = 0;
+				for (int j = 0; j < 3;j++)
+				{
+					if ((date_split[j] >= '0' && date_split[j] <= '9' ))
+						checker++;
+				}
+				if (checker == 1)
+				{
+					// std::cout << "Invalid date digits (xxxx-xx-xx)" <<std::endl;
+					return (0);
+				}
 				std::istringstream(date_split) >> day;
+				
 				if (day < 1 || day > 31)
 					return 0;
+				idx = -1;	
 				cnt++;
-				continue;  
-			} 
+			}
 			if (day == 31 && (month == 4 || month == 6 || month == 9 || month == 11))
 					return 0;
 			else if (day > 29 && month == 2) 
@@ -197,9 +211,21 @@ int BitcoinExchange::checkDateInput(const std::string &s)
 		return 1;
 }
 
+//----------------------------------------------------------------------------------------------//
+
 int BitcoinExchange::checkValueInput(const std::string& str) 
 {
-	double value = std::strtod(str.c_str(), NULL);
+	// std::cout << str << std::endl;
+	char *i;
+	int j = 0;
+	
+	double value = std::strtod(str.c_str(), &i);
+	
+	if (i[j])
+	{
+		std::cout << "Error: not a Number" << std::endl;
+		return 0;
+	}	
 	if ((value == 0.0 && !std::isdigit(str[0])) || str.find('.', 0) == 0) 
 	{
 		std::cout << "Error: not a Number" << std::endl;
@@ -218,6 +244,7 @@ int BitcoinExchange::checkValueInput(const std::string& str)
 	return 1;
 }
 
+//----------------------------------------------------------------------------------------------//
 
 int BitcoinExchange::check(std::string str, std::string date, float value)
 {
@@ -232,8 +259,8 @@ int BitcoinExchange::check(std::string str, std::string date, float value)
 		{
       if (checkDateInput(str) == 0)
 			{
-				std::cout << "here1\n";
-				return (0);
+				std::cout << "Error: bad input => " << str << std::endl;
+				return (1);
 			}
 			idx = 1;
 			cnt++;
@@ -242,36 +269,35 @@ int BitcoinExchange::check(std::string str, std::string date, float value)
 		}
 		if (idx == 1 && str1 == "|") 
 		{
-			// std::cout << "Error: bad input  => " << std::endl;
-			// return ;
       idx = 2;
 			cnt++;
 			continue;
 		}
 		if (idx == 2) 
 		{
-			if (checkValueInput(str1) == 0) 
-				return (0);
+			if (checkValueInput(str1) == 0)
+			{
+					return(1);
+			}
 			value = std::strtod(str1.c_str(), NULL);
 			if (value > 1000) 
 			{
 				std::cout << "Error: too large a number." <<std::endl;
-				return (0);
+				return (1);
 			}
       cnt++;
 		}
 	}
 	if (cnt != 3) 
 	{
-		std::cout << "Error: bad input => "<< std::endl;
-			return (0);
+		std::cout << "Error: bad input => " << str << std::endl;
+		return (1);
 	}
 	printBit(date, value);
   return (1);
 }
-
-
-void   BitcoinExchange::checkInfoInput() 
+//----------------------------------------------------------------------------------------------//
+void   BitcoinExchange::checkInfoInput(std::string av) 
 {
 	std::string date;
 	std::string date1;
@@ -280,7 +306,7 @@ void   BitcoinExchange::checkInfoInput()
 	std::fstream fs;
 	std::string str;
 
-	fs.open("file.txt");
+	fs.open(av);
 	value = 0.0;
 	if(!fs.is_open()) 
 	{
@@ -304,6 +330,9 @@ void   BitcoinExchange::checkInfoInput()
 			return;
   }
 }
+//----------------------------------------------------------------------------------------------//
+																					// PrintBTC //
+//----------------------------------------------------------------------------------------------//
 
 void	BitcoinExchange::printBit(std::string date, float n) 
 {
@@ -317,7 +346,6 @@ void	BitcoinExchange::printBit(std::string date, float n)
   else 
   {
     iter = bitcoinData.lower_bound(date);
-		std::cout << iter->second << std::endl;
     if (iter == bitcoinData.begin()) 
     {
       std::cout << "Error : invalid date" << std::endl;
@@ -328,6 +356,7 @@ void	BitcoinExchange::printBit(std::string date, float n)
   }
 	std::cout << date << " => " << n << " = " << res << std::endl;
 }
+
 //   (n == static_cast<int>(n)) ?
 //     std::cout << date << " => " << static_cast<int>(n) << " = " << res << std::endl :
 //     std::cout << date << " => " << n << " = " << res << std::endl;

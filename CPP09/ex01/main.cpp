@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 19:05:09 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/09 10:32:55 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/27 13:01:29 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int ac, char **av)
   {
     Rpn A(av[1]);
     A.splitNum();
-    if (A.size() != 1)
-      std::cout << "ERROR !!" << std::endl;
+    // if (A.size() != 1)
+    //   std::cout << "ERROR !!" << std::endl;
   }
 }

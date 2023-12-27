@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:58:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/20 12:21:18 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/27 14:27:30 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,9 +248,21 @@ void PermegeMe::merge()
 void PermegeMe::dump()
 {
 	std::cout << "res: [ ";
-	for (std::deque<double>::iterator it = pair.begin(); it != pair.end(); ++it)
+	bool ok = false;
+	std::deque<double>::iterator it = pair.begin();
+	std::deque<double>::iterator second = pair.begin() + 1;
+	for (; it != pair.end(); ++it)
+	{
+		if (second != pair.end() && *it > *second)
+			ok = true;
+		second++;
 		std::cout << *it << " ";
+	}
 	std::cout << "]\n" << std::flush;
+	if (ok)
+		std::cout << "Not sorted!!!" << std::endl;
+	else
+		std::cout << "sorted!!!" << std::endl;
 }
 
 void PermegeMe::parse()
