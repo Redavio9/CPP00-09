@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:58:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/27 14:27:30 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/28 09:19:40 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ PermegeMe PermegeMe::operator=(const PermegeMe &obj)
 // --------------------------------------------------------------------------------------------------------- //
 
 void PermegeMe::print_dequeOfdeques(std::deque<std::deque<double> > vec, std::string str)
+
 {
 	for (size_t i = 0; i < vec.size(); ++i)
 	{
@@ -65,7 +66,6 @@ void PermegeMe::print_PandChain(std::deque<std::pair<std::deque<double>, std::de
 	}
 }
 
-
 void PermegeMe::add_deque_Ofdeques_rest()
 {
 	subdeques.clear();
@@ -85,7 +85,6 @@ void PermegeMe::add_deque_Ofdeques_rest()
 	}
 }
 
-
 bool PermegeMe::checkInput(std::string str)
 {
 	double nb;
@@ -95,7 +94,6 @@ bool PermegeMe::checkInput(std::string str)
 	return (true);
 }
 
-
 void PermegeMe::AddDataToPair(std::string str)
 {
 	double nb;
@@ -103,7 +101,6 @@ void PermegeMe::AddDataToPair(std::string str)
 	nb = strtod(str.c_str(), NULL);
 	this->pair.push_back(nb);
 }
-
 
 void PermegeMe::PushBackData_Merge()
 {
@@ -115,8 +112,9 @@ void PermegeMe::PushBackData_Merge()
 			pair.push_back(subdeques[i][j]);
 		}
 	}
+	pair.insert(pair.end(), rest.begin(), rest.end());
+	rest.clear();
 }
-
 
 void PermegeMe::PushBackData_RevMerge()
 {
@@ -134,10 +132,9 @@ void PermegeMe::PushBackData_RevMerge()
 	PandChain.clear();
 }
 
-
 void PermegeMe::checkSort()
 {
-	std::cout << "size : "<< subdeques.size() << std::endl;
+	//sort(swap)
 	for (size_t i = 0; i < subdeques.size() - 1; i += 2)
 	{
 		cnt++;
@@ -145,7 +142,6 @@ void PermegeMe::checkSort()
 			std::swap(subdeques[i], subdeques[i + 1]);
 	}
 	// print SousVecteur
-	std::cout << "///////////////////BEGINE-SORT////////////////////  : \n";
 	for (size_t i = 0; i < subdeques.size(); ++i)
 	{
 		std::cout << "SousVecteur " << i + 1 << ": ";
@@ -155,10 +151,9 @@ void PermegeMe::checkSort()
 		}
 		std::cout << std::endl;
 	}
+	//clear data and update paire
 	PushBackData_Merge();
-	std::cout << "////////////////////////END-SORT/////////////////////  : \n";
 }
-
 
 void PermegeMe::AddMainchainPand()
 {
@@ -182,8 +177,11 @@ void PermegeMe::AddMainchainPand()
 bool compare(std::deque<double> first, std::deque<double> second)
 {
 	cnt++;
-	return (first.back() < second.back());
+	return (first.back() <= second.back());
 }
+
+
+
 
 void PermegeMe::insert_pend_to_main()
 {
@@ -205,7 +203,7 @@ void PermegeMe::insert_pend_to_main()
 		}
 		for (;current > befor;)
 		{
-			std::cout << current << std::endl;
+			// std::cout << current << std::endl;
 			it = lower_bound(MainChain.begin(), MainChain.begin() + (current - 1) + added, PandChain[current - 2].first, compare);
 			MainChain.insert(it, PandChain[current - 2].first);
 			current--;
@@ -216,6 +214,7 @@ void PermegeMe::insert_pend_to_main()
 		befor = jacob[i];
 	}
 }
+
 void PermegeMe::RevMerge()
 {
 	std::cout << "-----------------------------REVERSE-----------------------------\n";
@@ -230,9 +229,7 @@ void PermegeMe::RevMerge()
 void PermegeMe::merge()
 {
 	add_deque_Ofdeques_rest();
-	std::cout << "elSize : " << subdeques.front().size() << std::endl;
 	checkSort();
-	std::cout << "here2\n";
 	std::cout << subdeques.size() << std::endl;
 	if (subdeques.size() > 3)
 	{
