@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 19:05:05 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/27 13:22:41 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/28 09:53:43 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,8 @@ int Rpn::calculate(std::string s)
 	std::string tab[4] = {"+", "-", "/", "*"};
 
 	nb1 = rpn.top();
-	//  std::cout << "nb1 : " << nb1 << std::endl;
-	// std::cout << "HEREeeeee\n";
 	rpn.pop();
 	nb2 = rpn.top();
-	// std::cout << "nb2 : " << nb2 << std::endl;
-	// std::cout << "-------------------------\n" << nb2 << std::endl;
 	rpn.pop();
 	for (i = 0; i < 4; i++)
 	{
@@ -55,20 +51,20 @@ int Rpn::calculate(std::string s)
 	}
 	switch (i)
 	{
-	case 0:
-		return res = nb1 + nb2;
-		break;
-	case 1:
-		return res = nb2 - nb1;
-		break;
-	case 2:
-		return res = nb2 / nb1;
-		break;
-	case 3:
-		return res = nb1 * nb2;
-		break;
-	default:
-		break;
+		case 0:
+			return res = nb1 + nb2;
+			break;
+		case 1:
+			return res = nb2 - nb1;
+			break;
+		case 2:
+			return res = nb2 / nb1;
+			break;
+		case 3:
+			return res = nb1 * nb2;
+			break;
+		default:
+			break;
 	}
 	return (-99999);
 }
@@ -77,7 +73,6 @@ int Rpn::isOperator(const char *op)
 {
 	std::string tmp = op;
 	double res;
-	// std::cout << "!!" << tmp[0] << std::endl;
 	if ((tmp[0] == '+' || tmp[0] == '-' || tmp[0] == '*' || tmp[0] == '/') && tmp.length() == 1)
 	{
 		if(rpn.size() <= 1)
@@ -86,7 +81,6 @@ int Rpn::isOperator(const char *op)
 			return(-1);
 		}
 		res = calculate(tmp);
-		// std::cout << "-->"<< res << std::endl;
 		if(res != -99999)
 		{
 			rpn.push(res);
@@ -104,57 +98,6 @@ int Rpn::isOperator(const char *op)
 		return(1);
 	return(1);
 }
-
-// bool Rpn::isOperator(const std::string& str)
-// {
-// 	std::string	ops = "+-*/";
-// 	if (str.length() == 1 && ops.find(str) != std::string::npos)
-// 		return true;
-// 	return false;
-// }
-
-// void	Rpn::fromArgsToStack(const std::string& args)
-// {
-// 	std::istringstream split(stringArgv);
-// 	std::string					word;
-// 	double 							op, n;
-
-// 	while (split)
-// 	{
-// 		split >> word;
-// 		op = isOperator(word);
-// 		if (op != Rpn::ERR) {
-// 			rpn.push(op);
-// 			continue;
-// 		}
-// 		n = parseNumber(word);
-		
-// 		if (n == Rpn::ERR)
-// 			//error;
-// 		rpn.push(n);
-// 	}
-// }
-
-// void	Rpn::dump()
-// {
-// 	double m;
-// 	while (rpn.size())
-// 	{
-// 		m = rpn.top();
-// 		rpn.pop();
-// 		if (m == Rpn::ADD)
-// 			std::cout << "+";
-// 		else if (m == Rpn::SUB)
-// 			std::cout << "-";
-// 		else if (m == Rpn::MUL)
-// 			std::cout << "*";
-// 		else if (m == Rpn::DIV)
-// 			std::cout << "/";
-// 		else
-// 			std::cout << static_cast<int>(m);
-// 		std::cout << " ";
-// 	}
-// }
 
 double Rpn::size()
 {
@@ -175,29 +118,17 @@ void Rpn::splitNum()
 		split >> Str;
 		if (!split)
 			break;
-		// std::cout << "{" << Str << "}" << std::endl;
 		res = isOperator(Str.c_str());
 		if(res == -1)
 			return;	
 		if(res == 0)
-		{
-			
-			// std::cout << rpn.top() << std::endl;
-			// std::cout << rpn.size() << std::endl;
-			// std::cout << "*-----------------------------------------" << std::endl;
-			// split >> Str;
 			continue ;
-		}
 		else
 		{
 			nb = strtod(Str.c_str(), NULL);
 			rpn.push(nb);
-			// std::cout << rpn.top() << std::endl;
-			// std::cout << rpn.size() << std::endl;
-			// std::cout << "-----------------------------------------" << std::endl;
 		}
 	}
 	if(rpn.size() == 1)
 		std::cout << rpn.top() << std::endl;  
-	// std::cout << "cnt : " << cnt;
 }

@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 09:54:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/27 14:03:31 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/29 11:36:58 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void BitcoinExchange::checkCsvFile()
 
 	if (!csv) 
 	{
-		std::cout << "Error: could not open database file" << std::endl;
+		std::cout << "Error: could not open database file CSV" << std::endl;
 		return;
 	}
 	if (std::getline(csv, read).eof()) 
@@ -77,90 +77,17 @@ void BitcoinExchange::checkCsvFile()
 
 //----------------------------------------------------------------------------------------------//
 
-int BitcoinExchange::validDate_csv(std::string s) 
+int BitcoinExchange::checkDateFiles(const std::string &s)
 {
-	std::string date_split;
-	std::istringstream ss(s);
-	int	year;
-	int	month;
-	int	day;
-	int idx = 0;
-	int cnt = 0;
-
-	if (s.length() != 10) 
-		return 0;
-	while (std::getline(ss, date_split , '-')) 
-	{
-		if (idx == 0) 
-		{
-			std::istringstream(date_split) >> year;
-			if (year < 1000 || year > 9999) 
-				return 0;
-			idx = 1;
-			cnt++;
-			continue;
-		}
-		if (idx == 1) 
-		{
-			std::istringstream(date_split) >> month;
-			if (month < 1 || month > 12) 
-				return 0;
-			idx = 2;
-			cnt++;
-			continue;
-		} 
-		if (idx == 2) 
-		{
-			std::istringstream(date_split) >> day;
-			if (day < 1 || day > 31) 
-				return 0;
-			cnt++;
-			continue;  
-		} 
-		if (day == 31 && (month == 4 || month == 6 || month == 9 || month == 11))
-				return 0;
-		else if (day > 29 && month == 2) 
-			return 0;
-	}
-	if (cnt != 3) 
-		return 0;
-	return 1;
-}
-
-//----------------------------------------------------------------------------------------------//
-
-int BitcoinExchange::checkValue_csv(std::string s) 
-{
-	double value = std::strtod(s.c_str(), NULL);
-	if (value == 0.0 && !std::isdigit(s[0]))
-		return 0;
-	if (value < 0) 
-		return 0;
-	return 1;
-}
-
-
-//----------------------------------------------------------------------------------------------//
-																					// InputFile //
-//----------------------------------------------------------------------------------------------//
-
-int BitcoinExchange::checkDateInput(const std::string &s) 
-	{
-		std::string date_split;
+    std::string date_split;
 		std::istringstream ss(s);
 		int	year;
 		int	month;
 		int	day = 0;
 		int idx = 0;
 		int cnt = 0;
-		// int day = 0;
 
-		if (s.find('-', s.length()) != std::string::npos) 
-		{
-			std::cout << "Error: incorrect date formate => " << s << std::endl;
-			return 0;
-		}
-		while (std::getline(ss, date_split , '-')) 
+    while (std::getline(ss, date_split , '-')) 
 		{
 			if (idx == 0) 
 			{
@@ -182,7 +109,6 @@ int BitcoinExchange::checkDateInput(const std::string &s)
 			} 
 			if (idx == 2) 
 			{
-				// std::cout << "Debugging = " << date_split << std::endl;
 				int checker = 0;
 				for (int j = 0; j < 3;j++)
 				{
@@ -190,10 +116,7 @@ int BitcoinExchange::checkDateInput(const std::string &s)
 						checker++;
 				}
 				if (checker == 1)
-				{
-					// std::cout << "Invalid date digits (xxxx-xx-xx)" <<std::endl;
 					return (0);
-				}
 				std::istringstream(date_split) >> day;
 				
 				if (day < 1 || day > 31)
@@ -210,35 +133,73 @@ int BitcoinExchange::checkDateInput(const std::string &s)
 			return 0;
 		return 1;
 }
+//----------------------------------------------------------------------------------------------//
+
+int BitcoinExchange::validDate_csv(std::string s) 
+{
+	int ret;
+
+	if (s.length() != 10) 
+		return 0;
+	ret = checkDateFiles(s);
+	return(ret);
+}
+
+//----------------------------------------------------------------------------------------------//
+
+int BitcoinExchange::checkValue_csv(std::string s) 
+{
+	double value = std::strtod(s.c_str(), NULL);
+	if (value == 0.0 && !std::isdigit(s[0]))
+		return 0;
+	if (value < 0) 
+		return 0;
+	return 1;
+}
+
+//----------------------------------------------------------------------------------------------//
+																					// InputFile //
+//----------------------------------------------------------------------------------------------//
+
+int BitcoinExchange::checkDateInput(const std::string &s) 
+{
+	int ret;
+	if (s.find('-', s.length()) != std::string::npos) 
+	{
+		std::cout << "Error: incorrect date formate => " << s << std::endl;
+		return 0;
+	}
+	ret = checkDateFiles(s);
+	return(ret);
+}
 
 //----------------------------------------------------------------------------------------------//
 
 int BitcoinExchange::checkValueInput(const std::string& str) 
 {
-	// std::cout << str << std::endl;
-	char *i;
+	char *check_value;
 	int j = 0;
 	
-	double value = std::strtod(str.c_str(), &i);
+	double value = std::strtod(str.c_str(), &check_value);
 	
-	if (i[j])
+	if (check_value[j])
 	{
-		std::cout << "Error: not a Number" << std::endl;
+		std::cout << "not a Number" << std::endl;
 		return 0;
 	}	
 	if ((value == 0.0 && !std::isdigit(str[0])) || str.find('.', 0) == 0) 
 	{
-		std::cout << "Error: not a Number" << std::endl;
+		std::cout << "not a Number" << std::endl;
 		return 0;
 	}
 	if (value < 0) 
 	{
-		std::cout << "Error: not a positive number." << std::endl;
+		std::cout << "not a positive number." << std::endl;
 		return 0;
 	}
 	if (str.length() > 10 ||  value > 2147483647)
 	{
-		std::cout << "Error: too large a number."<< std::endl;
+		std::cout << "too large a number."<< std::endl;
 		return 0;
 	}
 	return 1;
@@ -248,8 +209,8 @@ int BitcoinExchange::checkValueInput(const std::string& str)
 
 int BitcoinExchange::check(std::string str, std::string date, float value)
 {
-  int idx =0;
-  int cnt =0;
+  int idx = 0;
+  int cnt = 0;
   std::string str1;
   std::istringstream ss(str);
 	
@@ -259,7 +220,7 @@ int BitcoinExchange::check(std::string str, std::string date, float value)
 		{
       if (checkDateInput(str) == 0)
 			{
-				std::cout << "Error: bad input => " << str << std::endl;
+				std::cout << "bad input => " << str << std::endl;
 				return (1);
 			}
 			idx = 1;
@@ -282,7 +243,7 @@ int BitcoinExchange::check(std::string str, std::string date, float value)
 			value = std::strtod(str1.c_str(), NULL);
 			if (value > 1000) 
 			{
-				std::cout << "Error: too large a number." <<std::endl;
+				std::cout << "too large a number." <<std::endl;
 				return (1);
 			}
       cnt++;
@@ -290,19 +251,19 @@ int BitcoinExchange::check(std::string str, std::string date, float value)
 	}
 	if (cnt != 3) 
 	{
-		std::cout << "Error: bad input => " << str << std::endl;
+		std::cout << "bad input => " << str << std::endl;
 		return (1);
 	}
 	printBit(date, value);
   return (1);
 }
 //----------------------------------------------------------------------------------------------//
+
 void   BitcoinExchange::checkInfoInput(std::string av) 
 {
+	float    value;
 	std::string date;
 	std::string date1;
-	float    value;
-
 	std::fstream fs;
 	std::string str;
 
@@ -310,17 +271,17 @@ void   BitcoinExchange::checkInfoInput(std::string av)
 	value = 0.0;
 	if(!fs.is_open()) 
 	{
-		std::cout << "Error : could not open file." << std::endl;
+		std::cout << "could not open file INPUT." << std::endl;
 		return;
 	}
 	if (std::getline(fs, str).eof()) 
 	{
-		std::cout << "Error : File empty or no data in." << std::endl;
+		std::cout << "File empty or no data in." << std::endl;
 		return;
 	}
 	if(str.compare("date | value") != 0) 
 	{
-		std::cout << "Error : File format error." << std::endl;
+		std::cout << "File format error." << std::endl;
 		return;
 	}
 	str.erase();
@@ -348,7 +309,7 @@ void	BitcoinExchange::printBit(std::string date, float n)
     iter = bitcoinData.lower_bound(date);
     if (iter == bitcoinData.begin()) 
     {
-      std::cout << "Error : invalid date" << std::endl;
+      std::cout << "invalid date" << std::endl;
       return;
     }
     --iter;
@@ -356,8 +317,3 @@ void	BitcoinExchange::printBit(std::string date, float n)
   }
 	std::cout << date << " => " << n << " = " << res << std::endl;
 }
-
-//   (n == static_cast<int>(n)) ?
-//     std::cout << date << " => " << static_cast<int>(n) << " = " << res << std::endl :
-//     std::cout << date << " => " << n << " = " << res << std::endl;
-// }

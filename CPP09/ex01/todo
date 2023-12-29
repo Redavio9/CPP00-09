@@ -49,3 +49,8 @@ Classe d'exceptions :
 
 
 Erreur : classe d'exception pour gérer les erreurs se produisant dans la classe RPN.  Hérite de std::exception.
+
+
+//-----------------------------------//
+
+-> how stack work;

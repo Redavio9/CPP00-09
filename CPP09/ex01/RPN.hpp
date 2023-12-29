@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 18:47:49 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/09 10:32:09 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/29 11:38:34 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class Rpn
   private:
     std::string stringArgv;
     std::stack<double> rpn;
-    int numberOfValues;
   public:
   
     Rpn();
@@ -40,18 +39,13 @@ class Rpn
     ~Rpn();
     
     void splitNum();
-    void validateInput(std::string s);
+    // void validateInput(std::string s);
     int isOperator(const char *op);
-    bool  isOperator(const std::string& str);
-    void  fromArgsToStack(const std::string& args);
+    // bool  isOperator(const std::string& str);
+    // void  fromArgsToStack(const std::string& args);
     int calculate(std::string s);
-    void  dump();
+    // void  dump();
     double size();
-    class RpnException : public std::exception 
-    {
-      public:
-        const char* what() const throw();
-    };
 };
 
 #endif

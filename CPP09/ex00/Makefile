@@ -6,7 +6,7 @@
 #    By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/04 09:54:44 by rarraji           #+#    #+#              #
-#    Updated: 2023/12/06 08:21:20 by rarraji          ###   ########.fr        #
+#    Updated: 2023/12/28 09:51:43 by rarraji          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ RED = \033[0;31m
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
 
-%.o : %.cpp
+%.o : %.cpp BitcoinExchange.hpp
 	${CC} ${FLAGS} -c $< -o $@
 
 all: $(NAME)

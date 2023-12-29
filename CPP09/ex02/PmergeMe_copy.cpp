@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:58:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/28 09:19:40 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/28 09:26:31 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,6 @@ void PermegeMe::AddMainchainPand()
 		PandChain.push_back(Solix);
 		++i;
 	}
-	std::cout << "-----------------------------------------------------\n";
 }
 
 bool compare(std::deque<double> first, std::deque<double> second)
@@ -203,7 +202,6 @@ void PermegeMe::insert_pend_to_main()
 		}
 		for (;current > befor;)
 		{
-			// std::cout << current << std::endl;
 			it = lower_bound(MainChain.begin(), MainChain.begin() + (current - 1) + added, PandChain[current - 2].first, compare);
 			MainChain.insert(it, PandChain[current - 2].first);
 			current--;
