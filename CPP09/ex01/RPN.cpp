@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 19:05:05 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/28 09:53:43 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/30 10:47:12 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,20 @@ Rpn::Rpn(char *av)
 	this->stringArgv = av;
 };
 
-Rpn::Rpn(const Rpn &ref)
+Rpn::Rpn(const Rpn &obj)
 {
-	*this = ref;
-};
-Rpn &Rpn::operator=(const Rpn obj)
+	this->rpn = obj.rpn;
+	this->stringArgv = obj.stringArgv;
+}
+
+Rpn &Rpn::operator=(const Rpn &obj)
 {
-	(void)obj;
+	if (this == &obj)
+		return (*this);
+	this->rpn = obj.rpn;
+	this->stringArgv = obj.stringArgv;
 	return (*this);
-};
+}
 
 Rpn::~Rpn(){};
 
@@ -75,13 +80,13 @@ int Rpn::isOperator(const char *op)
 	double res;
 	if ((tmp[0] == '+' || tmp[0] == '-' || tmp[0] == '*' || tmp[0] == '/') && tmp.length() == 1)
 	{
-		if(rpn.size() <= 1)
+		if (rpn.size() <= 1)
 		{
 			std::cout << "ERROR !!" << std::endl;
 			return(-1);
 		}
 		res = calculate(tmp);
-		if(res != -99999)
+		if (res != -99999)
 		{
 			rpn.push(res);
 			return(0);
@@ -94,8 +99,6 @@ int Rpn::isOperator(const char *op)
 			std::cout << "ERROR !!" << std::endl;
 			return(-1);
 	}	
-	else
-		return(1);
 	return(1);
 }
 

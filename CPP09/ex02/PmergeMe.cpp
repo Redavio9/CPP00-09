@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 11:58:55 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/29 11:45:38 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/30 11:27:40 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,18 +157,18 @@ void PermegeMe::checkSort()
 
 void PermegeMe::AddMainchainPand()
 {
-	std::pair<std::vector<double>, std::vector<std::vector<double> >::iterator> Solix;
+	std::pair<std::vector<double>, std::vector<std::vector<double> >::iterator> iter;
 	
 	MainChain.push_back(subVectors[0]);
 	MainChain.push_back(subVectors[1]);
 	for (size_t i = 2; i < subVectors.size();)
 	{
-		Solix.first = subVectors[i];
-		Solix.second = MainChain.end();
+		iter.first = subVectors[i];
+		iter.second = MainChain.end();
 		++i;
 		if (i < subVectors.size())
-			Solix.second = MainChain.insert(MainChain.end(), subVectors[i]);
-		PandChain.push_back(Solix);
+			iter.second = MainChain.insert(MainChain.end(), subVectors[i]);
+		PandChain.push_back(iter);
 		++i;
 	}
 	std::cout << "-----------------------------------------------------\n";

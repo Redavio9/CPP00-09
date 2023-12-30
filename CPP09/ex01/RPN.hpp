@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 18:47:49 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/29 11:38:34 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/30 10:47:36 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class Rpn
   
     Rpn();
     Rpn(char *av);
-    Rpn(const Rpn& ref);
-    Rpn &operator=(const Rpn obj);
+    Rpn(const Rpn& obj);
+    Rpn &operator=(const Rpn &obj);
     ~Rpn();
     
     void splitNum();

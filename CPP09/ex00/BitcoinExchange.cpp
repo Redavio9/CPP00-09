@@ -6,7 +6,7 @@
 /*   By: rarraji <rarraji@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 09:54:53 by rarraji           #+#    #+#             */
-/*   Updated: 2023/12/29 11:36:58 by rarraji          ###   ########.fr       */
+/*   Updated: 2023/12/30 10:53:09 by rarraji          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,17 @@
 BitcoinExchange::BitcoinExchange()
 {
 }
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &obj)
 {
-	(void)copy;
+	*this = obj;
 }
-BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &assign)
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &obj)
 {
-	(void)assign;
-	return(*this);
+	if (this != &obj)
+	{
+		this->bitcoinData = obj.bitcoinData;	
+	}
+	return (*this);
 }
 BitcoinExchange::~BitcoinExchange()
 {
@@ -38,37 +41,37 @@ BitcoinExchange::~BitcoinExchange()
 void BitcoinExchange::checkCsvFile() 
 {
 	std::ifstream csv("data.csv");
-	std::string read;
-	int size;
+	std::string buff;
+	int pos;
 	float value;
 
 	if (!csv) 
 	{
-		std::cout << "Error: could not open database file CSV" << std::endl;
+		std::cout << "could not open database file CSV" << std::endl;
 		return;
 	}
-	if (std::getline(csv, read).eof()) 
+	if (std::getline(csv, buff).eof()) 
 	{
-		std::cout << "Error: file empty." << std::endl;
+		std::cout << "file empty." << std::endl;
 		return;
 	}
-	while(std::getline(csv, read)) 
+	while(std::getline(csv, buff)) 
 	{
-		if (read != "date,exchange_rate") 
+		if (buff != "date,exchange_rate") 
 		{
-			size = read.find(',');
-			if (validDate_csv(read.substr(0, size)) == 0) 
+			pos = buff.find(',');
+			if (validDate_csv(buff.substr(0, pos)) == 0) 
 			{
-				std::cout << "Error: include invalid date." << std::endl;
+				std::cout << "invalid date." << std::endl;
 				return;
 			}
-			if (checkValue_csv(read.substr(size + 1, read.length())) == 0) 
+			if (checkValue_csv(buff.substr(pos + 1, buff.length())) == 0) 
 			{
-				std::cout << "Error: include invalid value." << std::endl;
+				std::cout << "invalid value." << std::endl;
 				return;
 			}
-			std::istringstream(read.substr(size + 1, read.length())) >> value;
-			this->bitcoinData[read.substr(0, size)] = value;
+			std::istringstream(buff.substr(pos + 1, buff.length())) >> value;
+			this->bitcoinData[buff.substr(0, pos)] = value;
 		}
 	}
 	csv.close();
@@ -166,7 +169,7 @@ int BitcoinExchange::checkDateInput(const std::string &s)
 	int ret;
 	if (s.find('-', s.length()) != std::string::npos) 
 	{
-		std::cout << "Error: incorrect date formate => " << s << std::endl;
+		std::cout << "incorrect date formate => " << s << std::endl;
 		return 0;
 	}
 	ret = checkDateFiles(s);
@@ -276,12 +279,12 @@ void   BitcoinExchange::checkInfoInput(std::string av)
 	}
 	if (std::getline(fs, str).eof()) 
 	{
-		std::cout << "File empty or no data in." << std::endl;
+		std::cout << "no data in." << std::endl;
 		return;
 	}
 	if(str.compare("date | value") != 0) 
 	{
-		std::cout << "File format error." << std::endl;
+		std::cout << "format error." << std::endl;
 		return;
 	}
 	str.erase();
@@ -291,6 +294,7 @@ void   BitcoinExchange::checkInfoInput(std::string av)
 			return;
   }
 }
+
 //----------------------------------------------------------------------------------------------//
 																					// PrintBTC //
 //----------------------------------------------------------------------------------------------//
